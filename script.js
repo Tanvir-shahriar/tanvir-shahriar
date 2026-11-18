@@ -92,6 +92,141 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Project Detail View Loader
     // --------------------------------------------------------------------------
     const projectData = {
+        'lorvey': {
+            title: 'LORVEY',
+            date: '• NOV 2025',
+            subtitle: 'Enterprise B2B Export & Manufacturing Platform with Template-Locked CMS and Clerk RBAC.',
+            tags: ['B2B EXPORT', 'REACT 18', 'CLERK RBAC', 'SEO / AEO'],
+            liveUrl: 'https://www.lorvey.com',
+            meta: {
+                role: 'Lead Full-Stack Architect',
+                timeline: '4 months',
+                team: 'Solo Architect & Dev',
+                year: '2025'
+            },
+            heroImage: 'assets/images/previews/preview-lorvey.webp',
+            narrative: "Lorvey (Wuxi Lorvey Bags Co., Ltd.) is an international B2B export and OEM/ODM manufacturing partner supporting custom bag development for global buyers. Engineered a live, template-locked bilingual CMS preventing client UI breakage through draft/publish workflows. Implemented enterprise Clerk organization auth featuring MFA, passkeys, real-time RBAC, and zero client-side credential storage. Built a resilient data engine with automated DB-to-JSON failover and expiring signed media URLs, paired with build-time HTML snapshots and JSON-LD schemas for search and AI retrieval (AEO).",
+            results: {
+                metric1: '100%',
+                label1: 'LOCKED-TEMPLATE CMS INTEGRITY',
+                metric2: '<120ms',
+                label2: 'GLOBAL TTFB VIA PRE-RENDERED SNAPSHOTS',
+                metric3: '0',
+                label3: 'CLIENT-SIDE CREDENTIAL LEAKS'
+            },
+            gallery: [
+                'assets/images/previews/preview-lorvey.webp',
+                'assets/images/desktop-accessories.jpg'
+            ]
+        },
+        'yumeng': {
+            title: 'YUMENG TEXTILE',
+            date: '• OCT 2025',
+            subtitle: 'B2B Export & Dynamic Enquiry Platform with Decoupled CDN/Serverless Architecture.',
+            tags: ['TEXTILE EXPORT', 'CLERK ORGS', 'RESEND QUEUE', 'HYBRID CLOUD'],
+            liveUrl: 'https://www.yumengtextile.com',
+            meta: {
+                role: 'Full-Stack Engineer',
+                timeline: '3.5 months',
+                team: 'Lead Engineer',
+                year: '2025'
+            },
+            heroImage: 'assets/images/previews/preview-yumeng.png',
+            narrative: "Yumeng Textile is a Wuxi, China-based integrated manufacturer and supply partner for garment, luggage, and outdoor materials and accessories. Delivered a template-locked bilingual CMS with full audit logging and a 3-tier dynamic product catalog. Enforced invitation-only Clerk Organizations with strict Owner, Admin, and Editor permissions. Architected a real-time enquiry messaging engine featuring file attachment validation and idempotent Resend transactional notifications deployed across Hostinger static CDN and Vercel serverless APIs.",
+            results: {
+                metric1: '3-Tier',
+                label1: 'DYNAMIC PRODUCT CATALOG HIERARCHY',
+                metric2: '99.9%',
+                label2: 'IDEMPOTENT EMAIL DELIVERY VIA RESEND',
+                metric3: '150+',
+                label3: 'GLOBAL INQUIRY THREADS PROCESSED'
+            },
+            gallery: [
+                'assets/images/previews/preview-yumeng.png',
+                'assets/images/desk-setup.jpg'
+            ]
+        },
+        'onechem': {
+            title: 'ONE CHEM SOLUTIONS',
+            date: '• AUG 2025',
+            subtitle: 'Chemical Sourcing & RFQ Platform with In-Memory Cache Resilience and AI Lead Bot.',
+            tags: ['CHEMICAL RFQ', 'FRAMER MOTION', 'IN-MEMORY CACHE', 'AI AGENTS'],
+            liveUrl: 'https://www.onechemsolutions.com',
+            meta: {
+                role: 'Full-Stack Developer & AI Specialist',
+                timeline: '4 months',
+                team: 'Engineering Lead',
+                year: '2025'
+            },
+            heroImage: 'assets/images/previews/preview-onechem.png',
+            narrative: "One Chem Solutions (OCS) is a global chemical trading and distribution partner for industrial raw materials across printing ink, coatings, plastics, and textiles. Built an interactive compound filtering catalog paired with an instant RFQ quotation workflow for B2B procurement. Integrated an in-memory caching layer ensuring 100% quotation uptime during database disruptions, high-performance Framer Motion interfaces, and an AI conversational lead qualification agent automating CAS registry lookups and client consultation.",
+            results: {
+                metric1: '100%',
+                label1: 'RFQ UPTIME VIA RESILIENT CACHE',
+                metric2: '4.2x',
+                label2: 'FASTER COMPOUND SPEC DISCOVERY',
+                metric3: 'CAS',
+                label3: 'REGISTRY LOOKUP & AI QUALIFICATION'
+            },
+            gallery: [
+                'assets/images/previews/preview-onechem.png',
+                'assets/images/forge-laptop.jpg'
+            ]
+        },
+        'reatray': {
+            title: "REAT RAY'S CANDLE",
+            date: '• DEC 2025',
+            subtitle: 'Luxury E-Commerce Storefront with Atomic Checkout Locking (FOR UPDATE) and Drizzle ORM.',
+            tags: ['NEXT.JS 15', 'DRIZZLE ORM', 'STRIPE CHECKOUT', 'POSTGRESQL'],
+            liveUrl: 'https://reatraycandle.com',
+            meta: {
+                role: 'Full-Stack Next.js Architect',
+                timeline: '3 months',
+                team: 'Lead Engineer',
+                year: '2025'
+            },
+            heroImage: 'assets/images/previews/preview-reatray.png',
+            narrative: "London-based Reat Ray's Candle crafts artisanal bakery-style and dessert-inspired luxury candles. Built on Next.js 15 App Router, TypeScript, Tailwind CSS, and Drizzle ORM with PostgreSQL. Engineered an atomic checkout pipeline utilizing row-level database locking (FOR UPDATE) and Stripe idempotency keys to completely prevent inventory overselling during viral drops. Features persistent multi-variant cart and wishlist state, a Clerk-authenticated RBAC admin portal for live orders and commissions, and Resend transactional queues.",
+            results: {
+                metric1: '0',
+                label1: 'OVERSELL INCIDENTS (FOR UPDATE LOCKS)',
+                metric2: '<100ms',
+                label2: 'DRIZZLE ORM QUERY LATENCY',
+                metric3: '100%',
+                label3: 'STRIPE IDEMPOTENCY CONSISTENCY'
+            },
+            gallery: [
+                'assets/images/previews/preview-reatray.png',
+                'assets/images/desktop-accessories.jpg'
+            ]
+        },
+        'suborno': {
+            title: 'SUBORNO APP',
+            date: '• JAN 2026',
+            subtitle: 'Accessibility & Assistive Mobile App Ecosystem Built with Flutter for People with Special Needs.',
+            tags: ['FLUTTER', 'DART', 'ACCESSIBILITY', 'MOBILE APP'],
+            liveUrl: 'https://www.suborno.com.bd',
+            meta: {
+                role: 'Mobile & Frontend Engineer',
+                timeline: '5 months',
+                team: 'Core Flutter Team',
+                year: '2026'
+            },
+            heroImage: 'assets/images/previews/preview-suborno-interface.png',
+            narrative: "Suborno is an all-in-one assistive ecosystem designed to empower individuals with disabilities and special needs across Bangladesh. Built with Flutter and Dart for fluid 60fps native performance on entry-level smartphones. Incorporates one-tap emergency doctor connection, accessible transport route guides, offline-capable audiobook streaming, mental health consultation directory, and adaptive cognitive brain games. Engineered with large tactile touch targets, high-contrast visual modes, and full screen-reader compliance.",
+            results: {
+                metric1: '60fps',
+                label1: 'NATIVE FLUTTER PERFORMANCE ON ENTRY DEVICES',
+                metric2: '1-Tap',
+                label2: 'EMERGENCY DOCTOR & HOTLINE ACCESS',
+                metric3: '100%',
+                label3: 'ACCESSIBLE & SCREEN-READER COMPLIANT'
+            },
+            gallery: [
+                'assets/images/previews/preview-suborno.png',
+                'assets/images/previews/preview-suborno-interface.png'
+            ]
+        },
         'wayline': {
             title: 'WAYLINE',
             date: '• MAR 19, 2024',
@@ -225,6 +360,20 @@ document.addEventListener('DOMContentLoaded', () => {
         const gal2 = document.getElementById('project-gallery-2');
         if (gal1 && data.gallery[0]) gal1.src = data.gallery[0];
         if (gal2 && data.gallery[1]) gal2.src = data.gallery[1];
+
+        // Live Website Link
+        const liveLinkEl = document.getElementById('project-detail-live-link');
+        if (liveLinkEl) {
+            if (data.liveUrl) {
+                liveLinkEl.href = data.liveUrl;
+                liveLinkEl.setAttribute('target', '_blank');
+                liveLinkEl.style.display = 'inline-flex';
+                const span = liveLinkEl.querySelector('span');
+                if (span) span.textContent = `VISIT LIVE WEBSITE ↗`;
+            } else {
+                liveLinkEl.style.display = 'none';
+            }
+        }
 
         // Switch to project-detail view
         switchView('project-detail', false);

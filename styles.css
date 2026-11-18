@@ -321,6 +321,67 @@ body {
   color: #FFFFFF;
 }
 
+.folder-tab-mint {
+  background: #A7F3D0;
+  color: #141416;
+}
+
+.folder-card-blue {
+  position: relative;
+  background: #EBF4FF;
+  border: 2px solid #141416;
+  border-radius: 0 14px 14px 14px;
+  box-shadow: 5px 7px 0px #141416;
+  color: #141416;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.folder-card-blue:hover {
+  transform: translateY(-4px);
+  box-shadow: 7px 11px 0px #141416;
+}
+
+.folder-card-mint {
+  position: relative;
+  background: #ECFDF5;
+  border: 2px solid #141416;
+  border-radius: 0 14px 14px 14px;
+  box-shadow: 5px 7px 0px #141416;
+  color: #141416;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.folder-card-mint:hover {
+  transform: translateY(-4px);
+  box-shadow: 7px 11px 0px #141416;
+}
+
+/* Accessible Focus Indicators */
+:focus-visible {
+  outline: 2px solid #141416;
+  outline-offset: 2px;
+}
+
+@media (max-width: 480px) {
+  .nav-capsule {
+    max-width: calc(100vw - 20px);
+    overflow-x: auto;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  .nav-capsule::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 /* ==========================================================================
    Figma Vector Bounding Box with 8 Drag Handles
    ========================================================================== */

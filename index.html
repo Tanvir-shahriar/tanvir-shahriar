@@ -239,7 +239,7 @@
                         <span class="sticker-tag sticker-mint">Next.js & TypeScript</span>
                         <span class="sticker-tag sticker-pink">AI & LangGraph</span>
                         <span class="sticker-tag sticker-lavender">Multi-Tenant SaaS ✦</span>
-                        <button onclick="switchView('skills')" class="w-8 h-8 rounded-full bg-[#BADBFB] border-1.5 border-black flex items-center justify-center font-bold text-xs hover:scale-110 transition-transform" title="View details">
+                        <button onclick="switchView('about')" class="w-8 h-8 rounded-full bg-[#BADBFB] border-1.5 border-black flex items-center justify-center font-bold text-xs hover:scale-110 transition-transform" title="View full backstory in About">
                             &gt;&gt;
                         </button>
                     </div>
@@ -248,7 +248,7 @@
 
             </section>
 
-            <!-- 1.3 Featured Works Teaser (Screen 5 preview) -->
+            <!-- 1.3 Featured Works Teaser (Real Client & Production Platforms) -->
             <section class="max-w-4xl mx-auto pt-6">
                 
                 <div class="flex items-center justify-between mb-8">
@@ -257,42 +257,112 @@
                         <h2 class="font-pixel text-4xl sm:text-5xl text-ink-black">FEATURED WORKS</h2>
                     </div>
                     <button onclick="switchView('works')" class="btn-pixel-yellow text-xs">
-                        <span>VIEW ALL WORKS →</span>
+                        <span>VIEW ALL 5 WORKS →</span>
                     </button>
                 </div>
 
                 <!-- 2-Column Folder Teaser Cards -->
                 <div class="grid md:grid-cols-2 gap-8 pt-4">
                     
-                    <!-- Wayline Manila Card -->
-                    <div onclick="loadProjectDetail('wayline')" class="folder-card-cream p-6 cursor-pointer group">
-                        <div class="folder-tab-header folder-tab-cream">
-                            <span>• MAR 19, 2024</span>
+                    <!-- 1. Lorvey Manila Folder Card -->
+                    <div onclick="loadProjectDetail('lorvey')" class="folder-card-cream p-6 cursor-pointer group flex flex-col justify-between">
+                        <div>
+                            <div class="folder-tab-header folder-tab-cream flex items-center justify-between">
+                                <span>• NOV 2025</span>
+                            </div>
+                            <div class="aspect-[16/9] bg-white rounded-lg overflow-hidden border border-black/10 my-3 p-2 flex items-center justify-center relative">
+                                <span class="tape-strip tape-tl !w-16"></span>
+                                <img src="assets/images/previews/preview-lorvey.webp" alt="Lorvey B2B Export Platform" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="flex items-center justify-between mt-4 mb-1">
+                                <h3 class="font-pixel text-2xl text-ink-black">Lorvey</h3>
+                                <a href="https://www.lorvey.com" target="_blank" onclick="event.stopPropagation();" class="text-[11px] font-mono font-bold text-blue-700 hover:underline">
+                                    lorvey.com ↗
+                                </a>
+                            </div>
+                            <p class="text-xs text-ink-muted mb-3 font-mono-code leading-relaxed">
+                                Enterprise B2B Export Platform. Locked-template bilingual CMS with draft/publish workflows to prevent UI breakage, Clerk RBAC with MFA, and multi-tier DB failover.
+                            </p>
                         </div>
-                        <div class="aspect-video bg-slate-900 rounded-lg overflow-hidden border border-black/10 my-3">
-                            <img src="assets/images/wayline-train.jpg" alt="Wayline Transit App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                        </div>
-                        <h3 class="font-pixel text-2xl text-ink-black mt-4 mb-1">Wayline</h3>
-                        <p class="text-xs text-ink-muted mb-4 font-mono-code">Making a whole city's transit app feel less like decoding a puzzle.</p>
-                        <div class="flex gap-2">
-                            <span class="sticker-tag sticker-yellow text-xs">MOBILITY</span>
-                            <span class="sticker-tag sticker-mint text-xs">CONSUMER APP</span>
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-3">
+                                <span class="sticker-tag sticker-yellow text-[10px]">REACT 18</span>
+                                <span class="sticker-tag sticker-mint text-[10px]">CLERK RBAC</span>
+                                <span class="sticker-tag sticker-blue text-[10px]">MYSQL + MONGO</span>
+                            </div>
+                            <span class="inline-flex items-center text-xs font-bold font-mono text-black group-hover:translate-x-1 transition-transform">
+                                CASE STUDY →
+                            </span>
                         </div>
                     </div>
 
-                    <!-- Tandem Dark Folder Card -->
-                    <div onclick="loadProjectDetail('tandem')" class="folder-card-navy p-6 cursor-pointer group">
-                        <div class="folder-tab-header folder-tab-navy">
-                            <span>• MAR 3, 2024</span>
+                    <!-- 2. Reat Ray's Candle Dark Folder Card -->
+                    <div onclick="loadProjectDetail('reatray')" class="folder-card-navy p-6 cursor-pointer group flex flex-col justify-between">
+                        <div>
+                            <div class="folder-tab-header folder-tab-navy flex items-center justify-between">
+                                <span>• DEC 2025</span>
+                            </div>
+                            <div class="aspect-[16/9] bg-[#FAF7F2] rounded-lg overflow-hidden border border-white/10 my-3 p-2 flex items-center justify-center relative">
+                                <span class="tape-strip tape-tr !w-16"></span>
+                                <img src="assets/images/previews/preview-reatray.png" alt="Reat Ray Candle" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="flex items-center justify-between mt-4 mb-1">
+                                <h3 class="font-pixel text-2xl text-white">Reat Ray's Candle</h3>
+                                <a href="https://reatraycandle.com" target="_blank" onclick="event.stopPropagation();" class="text-[11px] font-mono font-bold text-accent-yellow hover:underline">
+                                    reatraycandle.com ↗
+                                </a>
+                            </div>
+                            <p class="text-xs text-slate-300 mb-3 font-mono-code leading-relaxed">
+                                Luxury Bakery Candle Studio. Atomic checkout with row-level locking (FOR UPDATE) & Stripe idempotency to eliminate overselling, persistent cart, and Clerk admin.
+                            </p>
                         </div>
-                        <div class="aspect-video bg-slate-800 rounded-lg overflow-hidden border border-white/10 my-3">
-                            <img src="assets/images/tandem-app.jpg" alt="Tandem Audio Habits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        <div>
+                            <div class="flex flex-wrap gap-1.5 mb-3">
+                                <span class="sticker-tag sticker-yellow text-[10px]">NEXT.JS 15</span>
+                                <span class="sticker-tag sticker-mint text-[10px]">DRIZZLE ORM</span>
+                                <span class="sticker-tag sticker-pink text-[10px]">STRIPE</span>
+                            </div>
+                            <span class="inline-flex items-center text-xs font-bold font-mono text-accent-yellow group-hover:translate-x-1 transition-transform">
+                                CASE STUDY →
+                            </span>
                         </div>
-                        <h3 class="font-pixel text-2xl text-white mt-4 mb-1">Tandem</h3>
-                        <p class="text-xs text-slate-300 mb-4 font-mono-code">Dark/light mode companion app for tracking audio telemetry and habits.</p>
-                        <div class="flex gap-2">
-                            <span class="sticker-tag sticker-blue text-xs">AUDIO TECH</span>
-                            <span class="sticker-tag sticker-lavender text-xs">DARK MODE</span>
+                    </div>
+
+                    <!-- 3. Suborno Flutter Mobile App (Full-Width Feature) -->
+                    <div onclick="loadProjectDetail('suborno')" class="folder-card-yellow p-6 sm:p-8 cursor-pointer group md:col-span-2">
+                        <div class="folder-tab-header folder-tab-yellow">
+                            <span>• JAN 2026 // FLUTTER MOBILE APP</span>
+                        </div>
+                        <div class="grid md:grid-cols-12 gap-6 items-center">
+                            <div class="md:col-span-5 bg-slate-900 rounded-lg overflow-hidden border border-black/20 p-2 flex items-center justify-center relative">
+                                <span class="tape-strip tape-tl !w-16"></span>
+                                <img src="assets/images/previews/preview-suborno-interface.png" alt="Suborno Flutter App" class="w-full max-h-56 object-contain group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="md:col-span-7 flex flex-col justify-between">
+                                <div>
+                                    <div class="flex items-center justify-between mb-1">
+                                        <h3 class="font-pixel text-3xl text-ink-black">Suborno App</h3>
+                                        <a href="https://www.suborno.com.bd" target="_blank" onclick="event.stopPropagation();" class="text-xs font-mono font-bold text-blue-800 hover:underline">
+                                            suborno.com.bd ↗
+                                        </a>
+                                    </div>
+                                    <p class="text-xs sm:text-sm text-ink-black mb-3 font-mono-code leading-relaxed">
+                                        Assistive mobile application ecosystem built with Flutter for individuals with special needs. Features one-tap doctor access, accessible transport routes, free audiobooks, and independent skill learning with 60fps native performance.
+                                    </p>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="sticker-tag bg-white text-xs">FLUTTER</span>
+                                        <span class="sticker-tag bg-white text-xs">DART</span>
+                                        <span class="sticker-tag bg-white text-xs">ACCESSIBILITY</span>
+                                        <span class="sticker-tag bg-white text-xs">FIREBASE</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between pt-2">
+                                    <span class="inline-flex items-center text-xs font-bold font-mono text-black group-hover:translate-x-1 transition-transform">
+                                        VIEW FULL CASE STUDY →
+                                    </span>
+                                    <span class="font-hand text-sm text-ink-muted">built for impact //</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
@@ -484,60 +554,46 @@
                 </div>
             </div>
 
-            <!-- MODE A: 2-Column Manila Folder Grid (Screen 5) -->
+            <!-- MODE A: 2-Column Manila & Colorful Folder Grid (All 5 Live Projects) -->
             <div id="works-folder-grid" class="grid md:grid-cols-2 gap-8 pt-6">
                 
-                <!-- Project 1: Wayline -->
-                <div onclick="loadProjectDetail('wayline')" class="folder-card-cream p-6 cursor-pointer group">
-                    <div class="folder-tab-header folder-tab-cream">
-                        <span>• MAR 19, 2024</span>
-                    </div>
-                    <div class="aspect-video bg-slate-900 rounded-lg overflow-hidden border border-black/10 my-3">
-                        <img src="assets/images/wayline-train.jpg" alt="Wayline" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <h3 class="font-pixel text-3xl text-ink-black mt-4 mb-1">Wayline</h3>
-                    <p class="text-sm text-ink-muted mb-4 font-mono-code">Making a whole city's transit app feel less like decoding a puzzle.</p>
-                    <div class="flex gap-2">
-                        <span class="sticker-tag sticker-yellow text-xs">MOBILITY</span>
-                        <span class="sticker-tag sticker-mint text-xs">CONSUMER APP</span>
-                    </div>
-                </div>
-
-                <!-- Project 2: Tandem -->
-                <div onclick="loadProjectDetail('tandem')" class="folder-card-navy p-6 cursor-pointer group">
-                    <div class="folder-tab-header folder-tab-navy">
-                        <span>• MAR 3, 2024</span>
-                    </div>
-                    <div class="aspect-video bg-slate-800 rounded-lg overflow-hidden border border-white/10 my-3">
-                        <img src="assets/images/tandem-app.jpg" alt="Tandem" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                    </div>
-                    <h3 class="font-pixel text-3xl text-white mt-4 mb-1">Tandem</h3>
-                    <p class="text-sm text-slate-300 mb-4 font-mono-code">Dark/light mode companion app for tracking fitness and audio telemetry.</p>
-                    <div class="flex gap-2">
-                        <span class="sticker-tag sticker-blue text-xs">AUDIO TECH</span>
-                        <span class="sticker-tag sticker-lavender text-xs">DARK MODE</span>
-                    </div>
-                </div>
-
-                <!-- Project 3: Forge -->
-                <div onclick="loadProjectDetail('forge')" class="folder-card-yellow p-6 cursor-pointer group md:col-span-2">
-                    <div class="folder-tab-header folder-tab-yellow">
-                        <span>• JAN 2, 2024</span>
-                    </div>
-                    <div class="grid md:grid-cols-2 gap-6 items-center">
-                        <div class="aspect-video bg-slate-900 rounded-lg overflow-hidden border border-black/20 my-3">
-                            <img src="assets/images/forge-laptop.jpg" alt="Forge Devtools" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                <!-- 1. Lorvey (Manila Cream Folder) -->
+                <div onclick="loadProjectDetail('lorvey')" class="folder-card-cream p-6 cursor-pointer group flex flex-col justify-between">
+                    <div>
+                        <div class="folder-tab-header folder-tab-cream flex items-center justify-between">
+                            <span>• NOV 2025 // B2B EXPORT</span>
                         </div>
-                        <div>
-                            <h3 class="font-pixel text-3xl text-ink-black mb-2">Forge Developer Engine</h3>
-                            <p class="text-sm text-ink-black mb-4 font-mono-code">
-                                Building a new developer workstation tool from day one to shipping without friction or type regressions.
-                            </p>
-                            <div class="flex flex-wrap gap-2 mb-4">
-                                <span class="sticker-tag bg-white text-xs">DEV TOOLS</span>
-                                <span class="sticker-tag bg-white text-xs">TYPESCRIPT</span>
-                                <span class="sticker-tag bg-white text-xs">DRIZZLE ORM</span>
-                            </div>
+                        <div class="aspect-[16/9] bg-white rounded-lg overflow-hidden border border-black/10 my-3 p-3 flex items-center justify-center relative">
+                            <span class="tape-strip tape-tl !w-20"></span>
+                            <img src="assets/images/previews/preview-lorvey.webp" alt="Lorvey" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="flex items-center justify-between mt-3 mb-1">
+                            <h3 class="font-pixel text-3xl text-ink-black">Lorvey</h3>
+                            <a href="https://www.lorvey.com" target="_blank" onclick="event.stopPropagation();" class="text-xs font-mono font-bold text-blue-700 hover:underline">
+                                www.lorvey.com ↗
+                            </a>
+                        </div>
+                        <p class="text-xs text-ink-muted mb-3 font-mono-code leading-relaxed">
+                            Enterprise B2B Export Platform. Locked-template bilingual editor with draft/publish workflows to prevent UI breakage, Clerk organization auth with MFA, passkeys, real-time RBAC, and automated DB-to-JSON failover.
+                        </p>
+                        <div class="space-y-1 text-[11px] font-mono text-slate-700 mb-4 bg-amber-50/50 p-2.5 rounded border border-amber-200/60">
+                            <div>• <strong>Locked CMS:</strong> Template-locked bilingual editor with safe draft/publish</div>
+                            <div>• <strong>Security:</strong> Clerk Org auth, MFA, passkeys, real-time RBAC</div>
+                            <div>• <strong>Resilience:</strong> Multi-tier storage with automated DB-to-JSON failover</div>
+                            <div>• <strong>SEO/AEO:</strong> Build-time HTML snapshots & JSON-LD schemas</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="sticker-tag sticker-yellow text-[10px]">REACT 18</span>
+                            <span class="sticker-tag sticker-mint text-[10px]">CLERK RBAC</span>
+                            <span class="sticker-tag sticker-blue text-[10px]">MYSQL + MONGO</span>
+                            <span class="sticker-tag sticker-orange text-[10px]">SEO / AEO</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-2 border-t border-black/10">
+                            <a href="https://www.lorvey.com" target="_blank" onclick="event.stopPropagation();" class="btn-pixel-black text-[11px] py-1 px-3">
+                                VISIT SITE ↗
+                            </a>
                             <span class="inline-flex items-center text-xs font-bold font-mono text-black group-hover:translate-x-1 transition-transform">
                                 VIEW CASE STUDY →
                             </span>
@@ -545,67 +601,344 @@
                     </div>
                 </div>
 
+                <!-- 2. Yumeng Textile (Dark Navy Folder) -->
+                <div onclick="loadProjectDetail('yumeng')" class="folder-card-navy p-6 cursor-pointer group flex flex-col justify-between">
+                    <div>
+                        <div class="folder-tab-header folder-tab-navy flex items-center justify-between">
+                            <span>• OCT 2025 // B2B ENQUIRY</span>
+                        </div>
+                        <div class="aspect-[16/9] bg-white rounded-lg overflow-hidden border border-white/10 my-3 p-3 flex items-center justify-center relative">
+                            <span class="tape-strip tape-tr !w-20"></span>
+                            <img src="assets/images/previews/preview-yumeng.png" alt="Yumeng Textile" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="flex items-center justify-between mt-3 mb-1">
+                            <h3 class="font-pixel text-3xl text-white">Yumeng Textile</h3>
+                            <a href="https://www.yumengtextile.com" target="_blank" onclick="event.stopPropagation();" class="text-xs font-mono font-bold text-accent-yellow hover:underline">
+                                www.yumengtextile.com ↗
+                            </a>
+                        </div>
+                        <p class="text-xs text-slate-300 mb-3 font-mono-code leading-relaxed">
+                            B2B Export & Enquiry Platform. 3-tier dynamic product catalog, template-locked CMS with bilingual draft workflows, audit logging, and invitation-only Clerk Organizations.
+                        </p>
+                        <div class="space-y-1 text-[11px] font-mono text-slate-300 mb-4 bg-slate-800/80 p-2.5 rounded border border-slate-700">
+                            <div>• <strong>Template-Locked CMS:</strong> Bilingual draft workflows & audit logs</div>
+                            <div>• <strong>Granular RBAC:</strong> Invitation-only Clerk Orgs (Owner/Admin/Editor)</div>
+                            <div>• <strong>Enquiry Engine:</strong> Real-time chat with idempotent Resend emails</div>
+                            <div>• <strong>Decoupled:</strong> Hostinger static CDN + Vercel serverless API</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="sticker-tag sticker-yellow text-[10px]">REACT</span>
+                            <span class="sticker-tag sticker-mint text-[10px]">CLERK ORGS</span>
+                            <span class="sticker-tag sticker-pink text-[10px]">RESEND</span>
+                            <span class="sticker-tag sticker-blue text-[10px]">VERCEL</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-2 border-t border-white/10">
+                            <a href="https://www.yumengtextile.com" target="_blank" onclick="event.stopPropagation();" class="btn-pixel-yellow text-[11px] py-1 px-3">
+                                VISIT SITE ↗
+                            </a>
+                            <span class="inline-flex items-center text-xs font-bold font-mono text-accent-yellow group-hover:translate-x-1 transition-transform">
+                                VIEW CASE STUDY →
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. One Chem Solutions Ltd (Powder Blue Folder) -->
+                <div onclick="loadProjectDetail('onechem')" class="folder-card-blue p-6 cursor-pointer group flex flex-col justify-between">
+                    <div>
+                        <div class="folder-tab-header folder-tab-blue flex items-center justify-between">
+                            <span>• AUG 2025 // CHEMICAL RFQ</span>
+                        </div>
+                        <div class="aspect-[16/9] bg-white rounded-lg overflow-hidden border border-black/10 my-3 p-3 flex items-center justify-center relative">
+                            <span class="tape-strip tape-tl !w-20"></span>
+                            <img src="assets/images/previews/preview-onechem.png" alt="One Chem Solutions" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="flex items-center justify-between mt-3 mb-1">
+                            <h3 class="font-pixel text-3xl text-ink-black">One Chem Solutions</h3>
+                            <a href="https://www.onechemsolutions.com" target="_blank" onclick="event.stopPropagation();" class="text-xs font-mono font-bold text-blue-800 hover:underline">
+                                www.onechemsolutions.com ↗
+                            </a>
+                        </div>
+                        <p class="text-xs text-ink-muted mb-3 font-mono-code leading-relaxed">
+                            Chemical Sourcing & RFQ Platform. Live compound filtering with interactive quotation workflow, in-memory caching layer for 100% quotation uptime, and conversational AI lead bot.
+                        </p>
+                        <div class="space-y-1 text-[11px] font-mono text-slate-700 mb-4 bg-blue-100/60 p-2.5 rounded border border-blue-200">
+                            <div>• <strong>Catalog & RFQ:</strong> Live compound filtering & interactive quotation</div>
+                            <div>• <strong>Resilient Fallback:</strong> In-memory caching for 100% disruption uptime</div>
+                            <div>• <strong>Animated UI:</strong> High-performance Framer Motion interfaces</div>
+                            <div>• <strong>AI Qualification:</strong> Conversational CAS registry lookup bot</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="sticker-tag sticker-blue text-[10px]">REACT</span>
+                            <span class="sticker-tag sticker-yellow text-[10px]">FRAMER MOTION</span>
+                            <span class="sticker-tag sticker-mint text-[10px]">IN-MEMORY CACHE</span>
+                            <span class="sticker-tag sticker-pink text-[10px]">AI AGENT</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-2 border-t border-black/10">
+                            <a href="https://www.onechemsolutions.com" target="_blank" onclick="event.stopPropagation();" class="btn-pixel-black text-[11px] py-1 px-3">
+                                VISIT SITE ↗
+                            </a>
+                            <span class="inline-flex items-center text-xs font-bold font-mono text-black group-hover:translate-x-1 transition-transform">
+                                VIEW CASE STUDY →
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. Reat Ray's Candle (Mustard Yellow Folder) -->
+                <div onclick="loadProjectDetail('reatray')" class="folder-card-yellow p-6 cursor-pointer group flex flex-col justify-between">
+                    <div>
+                        <div class="folder-tab-header folder-tab-yellow flex items-center justify-between">
+                            <span>• DEC 2025 // E-COMMERCE</span>
+                        </div>
+                        <div class="aspect-[16/9] bg-[#FAF7F2] rounded-lg overflow-hidden border border-black/10 my-3 p-3 flex items-center justify-center relative">
+                            <span class="tape-strip tape-tr !w-20"></span>
+                            <img src="assets/images/previews/preview-reatray.png" alt="Reat Ray's Candle" class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div class="flex items-center justify-between mt-3 mb-1">
+                            <h3 class="font-pixel text-3xl text-ink-black">Reat Ray’s Candle</h3>
+                            <a href="https://reatraycandle.com" target="_blank" onclick="event.stopPropagation();" class="text-xs font-mono font-bold text-black hover:underline">
+                                www.reatraycandle.com ↗
+                            </a>
+                        </div>
+                        <p class="text-xs text-ink-black mb-3 font-mono-code leading-relaxed">
+                            Handmade Luxury Candle E-Commerce. Atomic checkout with row-level locking (FOR UPDATE) and Stripe idempotency keys to eliminate overselling during viral drops.
+                        </p>
+                        <div class="space-y-1 text-[11px] font-mono text-ink-black mb-4 bg-yellow-200/70 p-2.5 rounded border border-black/20">
+                            <div>• <strong>Safe Checkout:</strong> FOR UPDATE locks & Stripe idempotency keys</div>
+                            <div>• <strong>Dynamic Catalog:</strong> Multi-variant config, persistent cart & wishlist</div>
+                            <div>• <strong>Admin Portal:</strong> Clerk RBAC dashboard for orders & promo discounts</div>
+                            <div>• <strong>Reliable Outbox:</strong> Resend transactional queue & structured data</div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-4">
+                            <span class="sticker-tag bg-white text-[10px]">NEXT.JS 15</span>
+                            <span class="sticker-tag bg-white text-[10px]">DRIZZLE ORM</span>
+                            <span class="sticker-tag bg-white text-[10px]">POSTGRESQL</span>
+                            <span class="sticker-tag bg-white text-[10px]">STRIPE</span>
+                        </div>
+                        <div class="flex items-center justify-between pt-2 border-t border-black/10">
+                            <a href="https://reatraycandle.com" target="_blank" onclick="event.stopPropagation();" class="btn-pixel-black text-[11px] py-1 px-3">
+                                VISIT SITE ↗
+                            </a>
+                            <span class="inline-flex items-center text-xs font-bold font-mono text-black group-hover:translate-x-1 transition-transform">
+                                VIEW CASE STUDY →
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. Suborno App (Mint Green Folder - Full Width Feature) -->
+                <div onclick="loadProjectDetail('suborno')" class="folder-card-mint p-6 sm:p-8 cursor-pointer group md:col-span-2 flex flex-col justify-between">
+                    <div>
+                        <div class="folder-tab-header folder-tab-mint flex items-center justify-between">
+                            <span>• JAN 2026 // FLUTTER ACCESSIBILITY ECOSYSTEM</span>
+                        </div>
+                        <div class="grid md:grid-cols-12 gap-8 items-center my-3">
+                            <div class="md:col-span-5 bg-white rounded-xl overflow-hidden border border-black/15 p-3 flex items-center justify-center relative shadow-sm">
+                                <span class="tape-strip tape-tl !w-20"></span>
+                                <span class="tape-strip tape-br !w-20"></span>
+                                <img src="assets/images/previews/preview-suborno-interface.png" alt="Suborno Flutter Interface" class="w-full max-h-72 object-contain group-hover:scale-105 transition-transform duration-300">
+                            </div>
+                            <div class="md:col-span-7 space-y-3">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="font-pixel text-4xl text-ink-black">Suborno App</h3>
+                                    <a href="https://www.suborno.com.bd" target="_blank" onclick="event.stopPropagation();" class="text-xs font-mono font-bold text-blue-800 hover:underline">
+                                        www.suborno.com.bd ↗
+                                    </a>
+                                </div>
+                                <p class="text-sm text-ink-black font-mono-code leading-relaxed">
+                                    Comprehensive mobile accessibility platform built with Flutter and Dart to support the everyday needs of people with disabilities and special needs across Bangladesh.
+                                </p>
+                                <div class="grid sm:grid-cols-2 gap-2 text-[11px] font-mono text-emerald-950 bg-emerald-100/70 p-3 rounded-lg border border-emerald-300">
+                                    <div>• <strong>One-Tap Telemedicine:</strong> Instant doctor & helpline access</div>
+                                    <div>• <strong>Audiobook Library:</strong> Free accessible audiobooks anytime</div>
+                                    <div>• <strong>Accessible Transport:</strong> Barrier-free route information</div>
+                                    <div>• <strong>Mental Health & Skills:</strong> In-home training & brain games</div>
+                                    <div>• <strong>High Tactile UI:</strong> Large touch targets & screen reader friendly</div>
+                                    <div>• <strong>Flutter Engine:</strong> 60fps native performance on Android & iOS</div>
+                                </div>
+                                <div class="flex flex-wrap gap-2 pt-1">
+                                    <span class="sticker-tag bg-white text-xs">FLUTTER</span>
+                                    <span class="sticker-tag bg-white text-xs">DART</span>
+                                    <span class="sticker-tag bg-white text-xs">ACCESSIBILITY</span>
+                                    <span class="sticker-tag bg-white text-xs">FIREBASE</span>
+                                    <span class="sticker-tag bg-white text-xs">REST APIS</span>
+                                    <span class="sticker-tag bg-white text-xs">ANDROID & IOS</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex items-center justify-between pt-4 border-t border-black/10 mt-3">
+                        <a href="https://www.suborno.com.bd" target="_blank" onclick="event.stopPropagation();" class="btn-pixel-black text-xs py-1.5 px-4">
+                            VISIT SUBORNO.COM.BD ↗
+                        </a>
+                        <span class="inline-flex items-center text-xs font-bold font-mono text-black group-hover:translate-x-1 transition-transform">
+                            VIEW COMPLETE CASE STUDY →
+                        </span>
+                    </div>
+                </div>
+
             </div>
 
             <!-- MODE B: Overlapping Stacked Physical Folder Tabs (Screen 6) -->
-            <div id="works-stacked-folders" class="hidden space-y-8 pt-4">
+            <div id="works-stacked-folders" class="hidden space-y-10 pt-4">
                 
-                <!-- Stacked Folder 1: Tandem (Navy) -->
-                <div class="folder-card-navy p-8 sm:p-10 relative">
-                    <!-- Protruding Tab Set -->
-                    <div class="flex space-x-2 absolute -top-[31px] left-6">
-                        <span class="folder-tab-header folder-tab-blue !relative !top-0 !left-0">
-                            • PROJECT 01
-                        </span>
-                        <span class="folder-tab-header folder-tab-navy !relative !top-0 !left-0">
-                            • PROJECT 02
-                        </span>
+                <!-- Stacked 1: Lorvey (Cream) -->
+                <div class="folder-card-cream p-8 sm:p-10 relative">
+                    <div class="folder-tab-header folder-tab-cream -top-[31px] left-6">
+                        <span>• PROJECT 01: LORVEY</span>
                     </div>
-
                     <div class="grid md:grid-cols-12 gap-8 items-center">
                         <div class="md:col-span-7 space-y-4">
-                            <span class="text-xs font-mono text-slate-400">• MAR 3, 2024</span>
-                            <h3 class="font-pixel text-4xl text-white">Tandem</h3>
-                            <p class="text-sm text-slate-300 leading-relaxed font-mono">
-                                Audio habits where tech meets daily rituals. Built with low-latency audio pipelines and adaptive dark-mode telemetry.
+                            <span class="text-xs font-mono text-ink-muted">• NOV 2025 // B2B EXPORT</span>
+                            <h3 class="font-pixel text-4xl text-ink-black">Lorvey</h3>
+                            <p class="text-sm text-ink-muted leading-relaxed font-mono">
+                                Enterprise B2B Export Platform. Locked-template bilingual CMS with draft/publish workflows to prevent UI breakage, Clerk RBAC with MFA and zero-client storage, automated DB-to-JSON failover, and build-time SEO/AEO snapshots.
                             </p>
-                            <button onclick="loadProjectDetail('tandem')" class="text-xs font-mono font-bold text-accent-yellow hover:underline block pt-2">
-                                VIEW PROJECT →
-                            </button>
+                            <div class="flex items-center space-x-4 pt-2">
+                                <a href="https://www.lorvey.com" target="_blank" class="btn-pixel-black text-xs py-1.5 px-3">
+                                    VISIT LORVEY.COM ↗
+                                </a>
+                                <button onclick="loadProjectDetail('lorvey')" class="text-xs font-mono font-bold text-black hover:underline">
+                                    VIEW CASE STUDY →
+                                </button>
+                            </div>
                         </div>
                         <div class="md:col-span-5 relative flex justify-center">
-                            <div class="polaroid-card rotate-3 w-60 !p-2 !bg-[#222A38] border border-white/20">
+                            <div class="polaroid-card rotate-2 w-64 !p-3 !bg-white border border-black/20">
                                 <span class="tape-strip tape-tl"></span>
                                 <span class="tape-strip tape-br"></span>
-                                <img src="assets/images/tandem-app.jpg" alt="Tandem Screen" class="w-full rounded">
+                                <img src="assets/images/previews/preview-lorvey.webp" alt="Lorvey Preview" class="w-full rounded">
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Stacked Folder 2: Forge (Mustard Yellow) -->
-                <div class="folder-card-yellow p-8 sm:p-10 relative">
-                    <!-- Protruding Tab -->
-                    <div class="folder-tab-header folder-tab-yellow -top-[31px] left-6">
-                        <span>• PROJECT 03</span>
+                <!-- Stacked 2: Yumeng Textile (Navy) -->
+                <div class="folder-card-navy p-8 sm:p-10 relative">
+                    <div class="folder-tab-header folder-tab-navy -top-[31px] left-6">
+                        <span>• PROJECT 02: YUMENG TEXTILE</span>
                     </div>
-
                     <div class="grid md:grid-cols-12 gap-8 items-center">
                         <div class="md:col-span-7 space-y-4">
-                            <span class="text-xs font-mono text-black/70">• JAN 2, 2024</span>
-                            <h3 class="font-pixel text-4xl text-ink-black">Forge</h3>
-                            <p class="text-sm text-ink-black leading-relaxed font-mono">
-                                Building a new developer tool from day one to shipping without the barriers. Modular layered architecture with strict Zod contracts.
+                            <span class="text-xs font-mono text-slate-400">• OCT 2025 // B2B ENQUIRY</span>
+                            <h3 class="font-pixel text-4xl text-white">Yumeng Textile</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed font-mono">
+                                Global export portal with 3-tier dynamic product catalog, template-locked CMS with bilingual draft workflows, invitation-only Clerk Organizations, and real-time enquiry messaging with idempotent Resend emails.
                             </p>
-                            <button onclick="loadProjectDetail('forge')" class="text-xs font-mono font-bold text-black hover:underline block pt-2">
-                                VIEW PROJECT →
-                            </button>
+                            <div class="flex items-center space-x-4 pt-2">
+                                <a href="https://www.yumengtextile.com" target="_blank" class="btn-pixel-yellow text-xs py-1.5 px-3">
+                                    VISIT YUMENGTEXTILE.COM ↗
+                                </a>
+                                <button onclick="loadProjectDetail('yumeng')" class="text-xs font-mono font-bold text-accent-yellow hover:underline">
+                                    VIEW CASE STUDY →
+                                </button>
+                            </div>
                         </div>
                         <div class="md:col-span-5 relative flex justify-center">
-                            <div class="polaroid-card -rotate-2 w-64 !p-2">
+                            <div class="polaroid-card -rotate-2 w-64 !p-3 !bg-white border border-white/20">
                                 <span class="tape-strip tape-tr"></span>
                                 <span class="tape-strip tape-bl"></span>
-                                <img src="assets/images/forge-laptop.jpg" alt="Forge Dev" class="w-full rounded">
+                                <img src="assets/images/previews/preview-yumeng.png" alt="Yumeng Preview" class="w-full rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stacked 3: One Chem Solutions (Blue) -->
+                <div class="folder-card-blue p-8 sm:p-10 relative">
+                    <div class="folder-tab-header folder-tab-blue -top-[31px] left-6">
+                        <span>• PROJECT 03: ONE CHEM SOLUTIONS</span>
+                    </div>
+                    <div class="grid md:grid-cols-12 gap-8 items-center">
+                        <div class="md:col-span-7 space-y-4">
+                            <span class="text-xs font-mono text-slate-600">• AUG 2025 // CHEMICAL RFQ</span>
+                            <h3 class="font-pixel text-4xl text-ink-black">One Chem Solutions</h3>
+                            <p class="text-sm text-slate-700 leading-relaxed font-mono">
+                                Chemical sourcing & quotation platform with live CAS compound filtering, in-memory caching layer ensuring 100% quotation uptime during disruptions, Framer Motion UI, and AI intake lead qualification bot.
+                            </p>
+                            <div class="flex items-center space-x-4 pt-2">
+                                <a href="https://www.onechemsolutions.com" target="_blank" class="btn-pixel-black text-xs py-1.5 px-3">
+                                    VISIT ONECHEMSOLUTIONS.COM ↗
+                                </a>
+                                <button onclick="loadProjectDetail('onechem')" class="text-xs font-mono font-bold text-black hover:underline">
+                                    VIEW CASE STUDY →
+                                </button>
+                            </div>
+                        </div>
+                        <div class="md:col-span-5 relative flex justify-center">
+                            <div class="polaroid-card rotate-2 w-64 !p-3 !bg-white border border-black/20">
+                                <span class="tape-strip tape-tl"></span>
+                                <span class="tape-strip tape-br"></span>
+                                <img src="assets/images/previews/preview-onechem.png" alt="One Chem Preview" class="w-full rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stacked 4: Reat Ray's Candle (Mustard Yellow) -->
+                <div class="folder-card-yellow p-8 sm:p-10 relative">
+                    <div class="folder-tab-header folder-tab-yellow -top-[31px] left-6">
+                        <span>• PROJECT 04: REAT RAY'S CANDLE</span>
+                    </div>
+                    <div class="grid md:grid-cols-12 gap-8 items-center">
+                        <div class="md:col-span-7 space-y-4">
+                            <span class="text-xs font-mono text-black/70">• DEC 2025 // E-COMMERCE</span>
+                            <h3 class="font-pixel text-4xl text-ink-black">Reat Ray’s Candle</h3>
+                            <p class="text-sm text-ink-black leading-relaxed font-mono">
+                                Next.js 15 luxury bakery candle e-commerce with row-level locking (FOR UPDATE) and Stripe idempotency keys to eliminate overselling during drops, Clerk RBAC admin dashboard, and Resend email outbox queue.
+                            </p>
+                            <div class="flex items-center space-x-4 pt-2">
+                                <a href="https://reatraycandle.com" target="_blank" class="btn-pixel-black text-xs py-1.5 px-3">
+                                    VISIT REATRAYCANDLE.COM ↗
+                                </a>
+                                <button onclick="loadProjectDetail('reatray')" class="text-xs font-mono font-bold text-black hover:underline">
+                                    VIEW CASE STUDY →
+                                </button>
+                            </div>
+                        </div>
+                        <div class="md:col-span-5 relative flex justify-center">
+                            <div class="polaroid-card -rotate-2 w-64 !p-3 !bg-[#FAF7F2] border border-black/20">
+                                <span class="tape-strip tape-tr"></span>
+                                <span class="tape-strip tape-bl"></span>
+                                <img src="assets/images/previews/preview-reatray.png" alt="Reat Ray Preview" class="w-full rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stacked 5: Suborno App (Mint Green) -->
+                <div class="folder-card-mint p-8 sm:p-10 relative">
+                    <div class="folder-tab-header folder-tab-mint -top-[31px] left-6">
+                        <span>• PROJECT 05: SUBORNO APP</span>
+                    </div>
+                    <div class="grid md:grid-cols-12 gap-8 items-center">
+                        <div class="md:col-span-7 space-y-4">
+                            <span class="text-xs font-mono text-emerald-800">• JAN 2026 // FLUTTER ECOSYSTEM</span>
+                            <h3 class="font-pixel text-4xl text-ink-black">Suborno App</h3>
+                            <p class="text-sm text-ink-black leading-relaxed font-mono">
+                                Assistive mobile application built with Flutter & Dart for people with special needs. Features one-tap doctor access, free audiobooks, accessible transport route guides, mental health support, and 60fps performance on entry smartphones.
+                            </p>
+                            <div class="flex items-center space-x-4 pt-2">
+                                <a href="https://www.suborno.com.bd" target="_blank" class="btn-pixel-black text-xs py-1.5 px-3">
+                                    VISIT SUBORNO.COM.BD ↗
+                                </a>
+                                <button onclick="loadProjectDetail('suborno')" class="text-xs font-mono font-bold text-black hover:underline">
+                                    VIEW CASE STUDY →
+                                </button>
+                            </div>
+                        </div>
+                        <div class="md:col-span-5 relative flex justify-center">
+                            <div class="polaroid-card rotate-2 w-64 !p-3 !bg-white border border-black/20">
+                                <span class="tape-strip tape-tl"></span>
+                                <span class="tape-strip tape-br"></span>
+                                <img src="assets/images/previews/preview-suborno-interface.png" alt="Suborno Preview" class="w-full rounded">
                             </div>
                         </div>
                     </div>
@@ -620,11 +953,14 @@
              ==================================================================== -->
         <div id="view-project-detail" class="view-container space-y-12">
             
-            <!-- Top Back Link -->
-            <div class="pt-4">
+            <!-- Top Back Link & Live Site Link -->
+            <div class="pt-4 flex items-center justify-between flex-wrap gap-3">
                 <button onclick="switchView('works')" class="font-mono text-xs font-bold hover:underline inline-flex items-center space-x-1">
                     <span>← BACK TO ALL WORKS</span>
                 </button>
+                <a id="project-detail-live-link" href="#" target="_blank" class="btn-pixel-yellow text-xs inline-flex items-center space-x-1.5 py-1.5 px-3">
+                    <span>VISIT LIVE WEBSITE ↗</span>
+                </a>
             </div>
 
             <!-- Case Study Header & Bento Meta (Screen 7) -->
