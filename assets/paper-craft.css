@@ -1,0 +1,419 @@
+/**
+ * Paper Craft Design System & Scrapbook Stylesheet
+ * Handcrafted for Tanvir Shahriar Portfolio
+ * Matches reference collage aesthetic: ruled paper, masking tape, polaroids, folder tabs, doodles & stickers
+ */
+
+:root {
+  /* Core Paper & Ink Palette */
+  --paper-bg: #FBF9F5;
+  --paper-rule: #E5E0D8;
+  --primary-yellow: #FFD028;
+  --ink-black: #141416;
+  --ink-muted: #666461;
+  --card-cream: #F4EFE6;
+  --folder-navy: #181E29;
+
+  /* Pastel Sticker Palette */
+  --pastel-pink: #FFBBD3;
+  --pastel-pink-border: #E694AF;
+  --pastel-mint: #B9E7CA;
+  --pastel-mint-border: #86CD9E;
+  --pastel-blue: #BADBFB;
+  --pastel-blue-border: #88BAEC;
+  --pastel-lavender: #D6C7FB;
+  --pastel-lavender-border: #B097F3;
+  --pastel-butter: #FFF3A8;
+  --pastel-butter-border: #ECCF69;
+  --sticker-orange: #FFB366;
+
+  /* Tape & Selection */
+  --tape-color: rgba(251, 246, 217, 0.82);
+  --figma-blue: #2563EB;
+
+  /* Fonts */
+  --font-pixel: 'Pixelify Sans', 'Silkscreen', monospace;
+  --font-mono: 'JetBrains Mono', 'Space Mono', monospace;
+  --font-hand: 'Caveat', 'Reenie Beanie', cursive;
+  --font-body: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+/* ==========================================================================
+   1. RULED NOTEBOOK PAPER BACKGROUND
+   ========================================================================== */
+.ruled-paper {
+  background-color: var(--paper-bg);
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 31px,
+    var(--paper-rule) 31px,
+    var(--paper-rule) 32px
+  );
+  background-size: 100% 32px;
+}
+
+/* Red / pink margin line option (classic notebook) */
+.ruled-paper-margin {
+  position: relative;
+}
+.ruled-paper-margin::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 64px;
+  width: 1.5px;
+  background-color: rgba(248, 113, 113, 0.35);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ==========================================================================
+   2. MASKING TAPE (Translucent Frosted Tape with Jagged Torn Ends)
+   ========================================================================== */
+.tape {
+  position: absolute;
+  background: var(--tape-color);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08), inset 0 1px 1px rgba(255, 255, 255, 0.6);
+  z-index: 15;
+  pointer-events: none;
+  mix-blend-mode: multiply;
+}
+
+/* Jagged horizontal tape strip */
+.tape-h {
+  width: 84px;
+  height: 24px;
+  clip-path: polygon(
+    0% 4px, 4% 0%, 96% 0%, 100% 3px, 97% 8px, 100% 12px, 96% 17px, 100% 21px, 97% 100%,
+    4% 100%, 0% 95%, 3% 88%, 0% 81%, 4% 73%, 0% 65%, 3% 50%, 0% 42%, 3% 29%, 0% 17%
+  );
+}
+
+/* Jagged vertical tape strip */
+.tape-v {
+  width: 24px;
+  height: 84px;
+  clip-path: polygon(
+    4px 0%, 0% 4%, 0% 96%, 3% 100%, 8% 97%, 12% 100%, 17% 96%, 21% 100%, 100% 97%,
+    100% 4%, 95% 0%, 88% 3%, 81% 0%, 73% 4%, 65% 0%, 50% 3%, 42% 0%, 29% 3%, 17% 0%
+  );
+}
+
+/* Corner positions */
+.tape-tl {
+  top: -10px;
+  left: -16px;
+  transform: rotate(-18deg);
+}
+.tape-tr {
+  top: -10px;
+  right: -16px;
+  transform: rotate(18deg);
+}
+.tape-bl {
+  bottom: -10px;
+  left: -16px;
+  transform: rotate(15deg);
+}
+.tape-br {
+  bottom: -10px;
+  right: -16px;
+  transform: rotate(-15deg);
+}
+.tape-top-center {
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+}
+.tape-bottom-center {
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-1.5deg);
+}
+
+/* Washi tape variants */
+.tape-yellow {
+  background: rgba(254, 240, 138, 0.78);
+}
+.tape-mint {
+  background: rgba(185, 231, 202, 0.75);
+}
+.tape-pink {
+  background: rgba(255, 187, 211, 0.75);
+}
+
+/* ==========================================================================
+   3. POLAROID INSTANT PHOTO CARDS
+   ========================================================================== */
+.polaroid {
+  background: #FFFFFF;
+  padding: 10px 10px 36px 10px;
+  border: 1px solid rgba(20, 20, 22, 0.12);
+  border-radius: 2px;
+  box-shadow: 0 8px 24px -4px rgba(20, 20, 22, 0.14), 0 2px 6px -1px rgba(20, 20, 22, 0.08);
+  transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.28s ease;
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+}
+.polaroid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1px;
+}
+.polaroid .caption {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  color: var(--ink-black);
+  text-align: center;
+  position: absolute;
+  bottom: 8px;
+  left: 10px;
+  right: 10px;
+}
+.polaroid:hover {
+  transform: scale(1.035) rotate(0deg) !important;
+  box-shadow: 0 18px 40px -6px rgba(20, 20, 22, 0.22), 0 4px 12px rgba(20, 20, 22, 0.12);
+  z-index: 35 !important;
+}
+
+/* ==========================================================================
+   4. FILE FOLDER CARDS & TABBED PANELS
+   ========================================================================== */
+/* Tab header connected to card body */
+.folder-container {
+  position: relative;
+}
+.folder-tab-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 18px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  border: 2px solid var(--ink-black);
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  position: relative;
+  margin-bottom: -2px;
+  z-index: 2;
+}
+
+.folder-body {
+  border: 2px solid var(--ink-black);
+  border-radius: 0 12px 12px 12px;
+  padding: 24px;
+  box-shadow: 4px 6px 0px rgba(20, 20, 22, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+/* Cream Manila Folder */
+.folder-cream .folder-tab-badge {
+  background-color: var(--card-cream);
+  color: var(--ink-black);
+}
+.folder-cream .folder-body {
+  background-color: var(--card-cream);
+  color: var(--ink-black);
+}
+
+/* Navy Folder (Tandem) */
+.folder-navy .folder-tab-badge {
+  background-color: var(--folder-navy);
+  color: #FBF9F5;
+}
+.folder-navy .folder-body {
+  background-color: var(--folder-navy);
+  color: #FBF9F5;
+  box-shadow: 4px 6px 0px rgba(0, 0, 0, 0.35);
+}
+
+/* Yellow Folder (Forge / Highlights) */
+.folder-yellow .folder-tab-badge {
+  background-color: var(--primary-yellow);
+  color: var(--ink-black);
+}
+.folder-yellow .folder-body {
+  background-color: var(--primary-yellow);
+  color: var(--ink-black);
+}
+
+/* CSS clip-path formula for single-element manila card */
+.folder-cutout {
+  clip-path: polygon(
+    0 32px,
+    18px 32px,
+    28px 0,
+    150px 0,
+    162px 32px,
+    100% 32px,
+    100% 100%,
+    0 100%
+  );
+}
+
+/* ==========================================================================
+   5. FIGMA / VECTOR SELECTION BOUNDING BOX
+   ========================================================================== */
+.figma-box {
+  border: 1.5px solid var(--figma-blue);
+  position: relative;
+  display: inline-block;
+  padding: 6px 16px;
+  user-select: none;
+}
+.figma-box .handle {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--figma-blue);
+  z-index: 20;
+}
+.figma-box .h-tl { top: -4px; left: -4px; cursor: nwse-resize; }
+.figma-box .h-tc { top: -4px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+.figma-box .h-tr { top: -4px; right: -4px; cursor: nesw-resize; }
+.figma-box .h-ml { top: 50%; left: -4px; transform: translateY(-50%); cursor: ew-resize; }
+.figma-box .h-mr { top: 50%; right: -4px; transform: translateY(-50%); cursor: ew-resize; }
+.figma-box .h-bl { bottom: -4px; left: -4px; cursor: nesw-resize; }
+.figma-box .h-bc { bottom: -4px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+.figma-box .h-br { bottom: -4px; right: -4px; cursor: nwse-resize; }
+
+/* ==========================================================================
+   6. STICKERS & BADGES
+   ========================================================================== */
+.sticker {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-radius: 9999px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  border: 1.5px solid var(--ink-black);
+  box-shadow: 2px 2px 0px rgba(20, 20, 22, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  white-space: nowrap;
+}
+.sticker:hover {
+  transform: translateY(-1px) scale(1.03);
+  box-shadow: 3px 4px 0px rgba(20, 20, 22, 0.16);
+}
+
+.sticker-yellow {
+  background-color: var(--primary-yellow);
+  color: var(--ink-black);
+}
+.sticker-pink {
+  background-color: var(--pastel-pink);
+  border-color: var(--ink-black);
+  color: var(--ink-black);
+}
+.sticker-mint {
+  background-color: var(--pastel-mint);
+  border-color: var(--ink-black);
+  color: var(--ink-black);
+}
+.sticker-blue {
+  background-color: var(--pastel-blue);
+  border-color: var(--ink-black);
+  color: var(--ink-black);
+}
+.sticker-lavender {
+  background-color: var(--pastel-lavender);
+  border-color: var(--ink-black);
+  color: var(--ink-black);
+}
+.sticker-butter {
+  background-color: var(--pastel-butter);
+  border-color: var(--ink-black);
+  color: var(--ink-black);
+}
+.sticker-orange {
+  background-color: var(--sticker-orange);
+  border-color: var(--ink-black);
+  color: var(--ink-black);
+}
+
+/* ==========================================================================
+   7. STICKY NOTES
+   ========================================================================== */
+.sticky-note {
+  padding: 20px 24px;
+  position: relative;
+  box-shadow: 0 10px 25px -5px rgba(20, 20, 22, 0.1), 0 4px 8px -2px rgba(20, 20, 22, 0.06);
+  border-radius: 2px;
+  border: 1px solid rgba(20, 20, 22, 0.08);
+}
+.sticky-note-yellow {
+  background-color: var(--pastel-butter);
+  color: var(--ink-black);
+}
+.sticky-note-mint {
+  background-color: var(--pastel-mint);
+  color: var(--ink-black);
+}
+.sticky-note-pink {
+  background-color: var(--pastel-pink);
+  color: var(--ink-black);
+}
+.sticky-note-lavender {
+  background-color: var(--pastel-lavender);
+  color: var(--ink-black);
+}
+
+/* ==========================================================================
+   8. POSTAGE STAMP SCALLOPED BORDER BADGE
+   ========================================================================== */
+.stamp-card {
+  background: var(--pastel-mint);
+  border: 2px solid var(--ink-black);
+  padding: 20px;
+  position: relative;
+  border-radius: 4px;
+  box-shadow: 3px 4px 0px rgba(20, 20, 22, 0.12);
+}
+
+/* ==========================================================================
+   9. TYPOGRAPHY HELPERS
+   ========================================================================== */
+.font-pixel {
+  font-family: var(--font-pixel);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+.font-mono-meta {
+  font-family: var(--font-mono);
+}
+.font-handwriting {
+  font-family: var(--font-hand);
+}
+.font-body-copy {
+  font-family: var(--font-body);
+}
+
+/* ==========================================================================
+   10. INTERACTIVE PLAYGROUND CANVAS PINBOARD
+   ========================================================================== */
+.pinboard-item {
+  cursor: grab;
+  user-select: none;
+  touch-action: none;
+  transition: box-shadow 0.2s ease;
+}
+.pinboard-item:active {
+  cursor: grabbing;
+  z-index: 50 !important;
+  box-shadow: 0 20px 30px -8px rgba(0,0,0,0.25) !important;
+}

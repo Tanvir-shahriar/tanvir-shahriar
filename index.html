@@ -3,1013 +3,951 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tanvir Shahriar | Full-Stack Software Engineer & AI Systems Developer</title>
-    <meta name="description" content="Portfolio of Tanvir Shahriar — Full-Stack Software Engineer specializing in MERN, Next.js, TypeScript, PostgreSQL, Multi-Tenant SaaS, and Agentic AI (LangGraph & RAG).">
+    <title>Tanvir Shahriar — Portfolio</title>
+    <meta name="description" content="Personal portfolio of Tanvir Shahriar — Full-Stack & AI Systems Software Engineer.">
     <link rel="canonical" href="https://tanvir-shahriar.vercel.app/">
-    <meta property="og:title" content="Tanvir Shahriar | Full-Stack Software Engineer & AI Systems Developer">
-    <meta property="og:description" content="Portfolio of Tanvir Shahriar — Full-Stack Software Engineer specializing in MERN, Next.js, TypeScript, PostgreSQL, Multi-Tenant SaaS, and Agentic AI.">
-    <meta property="og:url" content="https://tanvir-shahriar.vercel.app/">
-    <meta property="og:type" content="website">
-    
-    <!-- Google Fonts: Inter -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
-    <!-- Tailwind CDN -->
+    <link rel="icon" type="image/svg+xml" href="assets/svg/smiley-yellow.svg">
+
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
-            darkMode: 'class',
             theme: {
                 extend: {
-                    fontFamily: {
-                        sans: ['Inter', 'sans-serif'],
-                    },
                     colors: {
-                        dark: {
-                            950: '#030712',
-                            900: '#0b0f19',
-                            800: '#111827',
-                            700: '#1f2937',
+                        paper: {
+                            bg: '#FBF9F5',
+                            rule: '#E5E0D8',
+                            card: '#F4EFE6',
+                        },
+                        accent: {
+                            yellow: '#FFD028',
+                            navy: '#181E29',
+                            pink: '#FFBBD3',
+                            mint: '#B9E7CA',
+                            blue: '#BADBFB',
+                            lavender: '#D6C7FB',
+                            butter: '#FFF3A8',
+                        },
+                        ink: {
+                            black: '#141416',
+                            muted: '#666461',
                         }
+                    },
+                    fontFamily: {
+                        pixel: ['"Pixelify Sans"', '"Silkscreen"', 'monospace'],
+                        mono: ['"JetBrains Mono"', 'monospace'],
+                        hand: ['"Caveat"', 'cursive'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
                     }
                 }
             }
         }
     </script>
-    
-    <!-- Custom CSS -->
+
+    <!-- Custom Retro Stationery Stylesheet -->
     <link rel="stylesheet" href="styles.css">
 </head>
-<body class="bg-dark-950 text-slate-100 overflow-x-hidden selection:bg-blue-500/30 selection:text-blue-200">
+<body class="ruled-paper min-h-screen text-ink-black selection:bg-accent-yellow selection:text-ink-black flex flex-col justify-between">
 
-    <!-- Ambient Glow Blobs -->
-    <div class="blob blob-1"></div>
-    <div class="blob blob-2"></div>
-    <div class="blob blob-3"></div>
+    <!-- Top Capsule Navigation Bar -->
+    <header class="sticky top-4 z-50 max-w-4xl mx-auto w-full px-4 mb-8">
+        <div class="nav-capsule px-3 py-2 flex items-center justify-between">
+            
+            <!-- Left: Tab Navigation Pills -->
+            <nav class="flex items-center space-x-1 sm:space-x-2">
+                <button data-view="home" class="nav-pill active">
+                    <span class="w-2 h-2 rounded-full bg-ink-black"></span>
+                    <span>HOME</span>
+                </button>
+                <button data-view="about" class="nav-pill">
+                    <span class="w-1.5 h-1.5 rounded-full bg-ink-muted"></span>
+                    <span>ABOUT</span>
+                </button>
+                <button data-view="works" class="nav-pill">
+                    <span class="w-1.5 h-1.5 rounded-full bg-ink-muted"></span>
+                    <span class="hidden sm:inline">CASE STUDY</span>
+                    <span class="sm:hidden">WORKS</span>
+                </button>
+                <button data-view="playground" class="nav-pill">
+                    <span class="w-1.5 h-1.5 rounded-full bg-ink-muted"></span>
+                    <span>PLAYGROUND</span>
+                </button>
+            </nav>
 
-    <!-- Top Navigation Bar -->
-    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center py-4">
+            <!-- Right: Traffic Light Dots & Contact Pill -->
+            <div class="flex items-center space-x-3 sm:space-x-4">
+                <!-- Mac-Style Traffic Dots -->
+                <div class="hidden sm:flex items-center space-x-1.5">
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#FF5F56] border border-black/20"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#FFBD2E] border border-black/20"></span>
+                    <span class="w-2.5 h-2.5 rounded-full bg-[#27C93F] border border-black/20"></span>
+                </div>
+
+                <!-- Contact Action Pill -->
+                <button data-view="contact" class="nav-pill hover:bg-black hover:text-white">
+                    <span class="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+                    <span>CONTACT</span>
+                </button>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main Dynamic View Container -->
+    <main class="flex-grow max-w-5xl mx-auto w-full px-4 sm:px-6 pb-20">
+
+        <!-- ====================================================================
+             VIEW 1: HOME
+             ==================================================================== -->
+        <div id="view-home" class="view-container active-view space-y-24">
+            
+            <!-- 1.1 Hero Section -->
+            <section class="text-center pt-8 sm:pt-14 relative">
                 
-                <!-- Logo -->
-                <a href="#home" class="flex items-center space-x-3 group">
-                    <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-600 to-indigo-600 flex items-center justify-center font-bold text-white shadow-lg shadow-blue-500/25 group-hover:scale-105 transition-transform">
+                <!-- Top Annotations & Stickers Row -->
+                <div class="flex items-center justify-between max-w-2xl mx-auto mb-6 px-4">
+                    <div class="sticker-tag sticker-mint -rotate-3 text-xs">
+                        <span>● WEB & AI</span>
+                    </div>
+
+                    <div class="flex items-center space-x-1 font-hand text-xl text-ink-muted">
+                        <span>hi, meet //</span>
+                        <svg class="w-6 h-6 text-ink-muted rotate-45 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </div>
+
+                    <div class="sticker-tag sticker-orange rotate-3 text-xs">
+                        <span>ABOUT THE DETAILS</span>
+                    </div>
+                </div>
+
+                <!-- Center Display Name -->
+                <div class="relative inline-block my-4">
+                    <!-- Left Sticker -->
+                    <div class="hidden sm:block absolute -left-24 top-1/2 -translate-y-1/2 sticker-tag sticker-yellow -rotate-6 text-xs">
+                        <span>SOFTWARE & AI</span>
+                    </div>
+
+                    <!-- Massive Block / Pixel Title -->
+                    <h1 class="font-pixel text-6xl sm:text-8xl md:text-9xl tracking-tight text-ink-black select-none">
+                        TANVIR
+                    </h1>
+
+                    <!-- Right Sticker -->
+                    <div class="hidden sm:block absolute -right-20 top-1/2 -translate-y-1/2 sticker-tag sticker-mint rotate-6 text-xs">
+                        <span>ALWAYS IT ●</span>
+                    </div>
+                </div>
+
+                <!-- Subtitle Metadata & Flanking Photo Avatars -->
+                <div class="flex items-center justify-center space-x-4 sm:space-x-8 my-5">
+                    <!-- Circular Photo Badge Left -->
+                    <div class="w-11 h-11 rounded-full border-2 border-black overflow-hidden shadow-sm rotate-6 p-0.5 bg-white">
+                        <img src="assets/images/author-portrait.jpg" alt="Tanvir" class="w-full h-full object-cover rounded-full">
+                    </div>
+
+                    <!-- Centered Monospace Date String -->
+                    <p class="font-mono-code text-xs sm:text-sm font-bold tracking-widest text-ink-muted">
+                        • 2024 // 2025 PORTFOLIO •
+                    </p>
+
+                    <!-- Circular Stamp Badge Right -->
+                    <div class="w-11 h-11 rounded-full border-2 border-black overflow-hidden shadow-sm -rotate-6 p-0.5 bg-accent-yellow flex items-center justify-center font-pixel text-xs font-bold">
                         TS
                     </div>
-                    <div class="flex flex-col">
-                        <span class="font-bold text-lg tracking-tight text-white group-hover:text-blue-400 transition-colors">
-                            Tanvir Shahriar
-                        </span>
-                        <span class="text-xs text-slate-400 font-mono hidden sm:inline">
-                            Full-Stack & AI Engineer
-                        </span>
+                </div>
+
+                <!-- Two-Line Mission Statement with Inline Doodles -->
+                <div class="max-w-2xl mx-auto my-8">
+                    <p class="text-2xl sm:text-4xl font-extrabold tracking-tight leading-snug">
+                        I design software that 
+                        <img src="assets/svg/smiley-green.svg" alt="smiley" class="inline w-7 h-7 sm:w-8 sm:h-8 align-middle mx-1 -rotate-6">
+                        <br class="hidden sm:inline">
+                        gets out of your way.
+                        <img src="assets/svg/flower-pink.svg" alt="flower" class="inline w-7 h-7 sm:w-8 sm:h-8 align-middle mx-1 rotate-12">
+                    </p>
+                </div>
+
+                <!-- Black CTA Button -->
+                <div class="pt-2">
+                    <button onclick="switchView('contact')" class="btn-pixel-black">
+                        <span>CONTACT ME</span>
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+                </div>
+
+            </section>
+
+            <!-- 1.2 Introduction Card & Skills Bento (Screen 3) -->
+            <section class="max-w-4xl mx-auto relative pt-4">
+                
+                <!-- Section Header Annotation -->
+                <div class="flex items-center space-x-2 font-hand text-2xl text-ink-muted mb-4">
+                    <span>about me //</span>
+                </div>
+
+                <!-- Main White Paper Card with Masking Tape -->
+                <div class="relative bg-white border-2 border-ink-black rounded-lg p-6 sm:p-10 shadow-[6px_8px_0px_#141416]">
+                    
+                    <!-- Protruding "What's Up" Sticker -->
+                    <div class="absolute -top-4 left-1/2 -translate-x-1/2 sticker-tag sticker-yellow text-xs px-4 py-1">
+                        <span>what's up</span>
                     </div>
-                </a>
 
-                <!-- Desktop Nav Links -->
-                <div class="hidden md:flex items-center space-x-7">
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#skills" class="nav-link">Tech Stack</a>
-                    <a href="#architecture" class="nav-link">Architecture</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#contact" class="nav-link">Contact</a>
-                </div>
-
-                <!-- Desktop Quick Actions -->
-                <div class="hidden lg:flex items-center space-x-4">
-                    <a href="https://github.com/Tanvir-shahriar" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors p-2" aria-label="GitHub Profile">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/>
-                        </svg>
-                    </a>
-                    <a href="https://www.linkedin.com/in/tanvir-s-b59639117/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors p-2" aria-label="LinkedIn Profile">
-                        <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24">
-                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
-                        </svg>
-                    </a>
-                    <button onclick="openSocialModal()" class="hero-btn-primary text-xs py-2 px-4 shadow-sm">
-                        Get In Touch
-                    </button>
-                </div>
-
-                <!-- Mobile Hamburger Button -->
-                <div class="md:hidden flex items-center">
-                    <button id="mobile-menu-btn" class="hamburger" aria-label="Toggle navigation menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </button>
-                </div>
-            </div>
-
-            <!-- Mobile Navigation Menu Dropdown -->
-            <div id="mobile-menu" class="md:hidden transition-all duration-300 ease-in-out overflow-hidden max-h-0 opacity-0">
-                <div class="glass-card my-2 p-4 space-y-2 border border-slate-700/60 shadow-2xl">
-                    <a href="#about" class="mobile-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 text-sm font-medium">About</a>
-                    <a href="#skills" class="mobile-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 text-sm font-medium">Tech Stack</a>
-                    <a href="#architecture" class="mobile-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 text-sm font-medium">Architecture</a>
-                    <a href="#projects" class="mobile-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 text-sm font-medium">Projects</a>
-                    <a href="#contact" class="mobile-link block px-3 py-2 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800/60 text-sm font-medium">Contact</a>
-                    <div class="pt-2 border-t border-slate-700/50 flex items-center justify-between">
-                        <div class="flex space-x-3">
-                            <a href="https://github.com/Tanvir-shahriar" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white">GitHub</a>
-                            <a href="https://www.linkedin.com/in/tanvir-s-b59639117/" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white">LinkedIn</a>
+                    <div class="grid md:grid-cols-12 gap-8 items-center">
+                        
+                        <!-- Left: Taped Polaroid Portrait -->
+                        <div class="md:col-span-3 flex justify-center">
+                            <div class="polaroid-card -rotate-3 w-44">
+                                <span class="tape-strip tape-tl"></span>
+                                <span class="tape-strip tape-br"></span>
+                                <div class="aspect-[4/5] bg-slate-200 overflow-hidden mb-2">
+                                    <img src="assets/images/author-portrait.jpg" alt="Tanvir portrait" class="w-full h-full object-cover">
+                                </div>
+                                <p class="font-hand text-center text-sm font-bold text-ink-muted">Tanvir S.</p>
+                            </div>
                         </div>
-                        <button onclick="openSocialModal()" class="text-xs bg-blue-600 hover:bg-blue-500 text-white px-3 py-1.5 rounded-full font-medium">
-                            Connect
+
+                        <!-- Center: Handwritten Statement -->
+                        <div class="md:col-span-6 space-y-4 text-center md:text-left">
+                            <p class="font-hand text-2xl sm:text-3xl text-ink-black leading-relaxed">
+                                I'm a full-stack & AI software engineer who gets a little too excited about making complicated things feel simple. I care about the small details, the edge cases everyone forgets, and shipping work that genuinely makes someone's day easier. ☕
+                            </p>
+                        </div>
+
+                        <!-- Right: Taped Workspace Polaroid -->
+                        <div class="md:col-span-3 flex justify-center">
+                            <div class="polaroid-card rotate-4 w-44">
+                                <span class="tape-strip tape-tr"></span>
+                                <span class="tape-strip tape-bl"></span>
+                                <div class="aspect-[4/5] bg-slate-200 overflow-hidden mb-2">
+                                    <img src="assets/images/desk-setup.jpg" alt="Workspace desk setup" class="w-full h-full object-cover">
+                                </div>
+                                <p class="font-hand text-center text-sm font-bold text-ink-muted">desk setup</p>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Skills Pill Bar (Bottom of card) -->
+                    <div class="mt-8 pt-6 border-t border-dashed border-slate-300 flex flex-wrap items-center justify-center gap-3">
+                        <span class="sticker-tag sticker-yellow">System Design</span>
+                        <span class="sticker-tag sticker-mint">Next.js & TypeScript</span>
+                        <span class="sticker-tag sticker-pink">AI & LangGraph</span>
+                        <span class="sticker-tag sticker-lavender">Multi-Tenant SaaS ✦</span>
+                        <button onclick="switchView('skills')" class="w-8 h-8 rounded-full bg-[#BADBFB] border-1.5 border-black flex items-center justify-center font-bold text-xs hover:scale-110 transition-transform" title="View details">
+                            &gt;&gt;
                         </button>
                     </div>
+
                 </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="min-h-screen flex items-center justify-center relative pt-28 pb-16 px-4 bg-grid-pattern">
-        <div class="max-w-5xl mx-auto text-center z-10">
-            
-            <!-- Availability Pill -->
-            <div class="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-slate-800/80 border border-slate-700/60 text-xs font-medium text-slate-300 mb-8 backdrop-blur-md shadow-sm">
-                <span class="live-pulse"></span>
-                <span>Available for Full-Stack & AI Engineering Roles</span>
-            </div>
+            </section>
 
-            <!-- Main Heading -->
-            <h1 class="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight mb-6 leading-tight">
-                Hi, I'm <span class="gradient-text">Tanvir Shahriar</span>
-            </h1>
-
-            <!-- Animated Typing Subtitle -->
-            <div class="text-xl sm:text-2xl md:text-3xl font-semibold text-slate-300 mb-6 h-10 flex items-center justify-center">
-                <span id="typing-text" class="typing-cursor text-blue-400 font-mono">Full-Stack Software Engineer</span>
-            </div>
-
-            <!-- Narrative Tagline -->
-            <p class="text-base sm:text-lg md:text-xl text-slate-400 max-w-3xl mx-auto mb-10 leading-relaxed font-normal">
-                Architecting scalable web applications, multi-tenant SaaS platforms, and production-ready AI systems.
-                Combining end-to-end <span class="text-slate-200 font-medium">TypeScript</span>, <span class="text-slate-200 font-medium">Next.js/MERN</span>, 
-                and <span class="text-slate-200 font-medium">relational database engineering</span> with <span class="text-slate-200 font-medium">agentic AI workflows</span>.
-            </p>
-
-            <!-- Hero Action Buttons -->
-            <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16">
-                <a href="#projects" class="hero-btn-primary w-full sm:w-auto">
-                    <span>Explore Featured Projects</span>
-                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                    </svg>
-                </a>
-                <button onclick="openSocialModal()" class="hero-btn-secondary w-full sm:w-auto">
-                    <svg class="w-4 h-4 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"></path>
-                    </svg>
-                    <span>Get In Touch</span>
-                </button>
-                <button onclick="copyEmail()" class="hero-btn-secondary w-full sm:w-auto text-xs py-3 px-4" title="Click to copy email">
-                    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
-                    </svg>
-                    <span>Copy Email</span>
-                </button>
-            </div>
-
-            <!-- Core Architectural Pillars Cards -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
+            <!-- 1.3 Featured Works Teaser (Screen 5 preview) -->
+            <section class="max-w-4xl mx-auto pt-6">
                 
-                <div class="glass-card p-5 reveal-on-scroll">
-                    <div class="w-10 h-10 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center mb-3">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
-                        </svg>
+                <div class="flex items-center justify-between mb-8">
+                    <div>
+                        <span class="font-hand text-xl text-ink-muted block">selected my work //</span>
+                        <h2 class="font-pixel text-4xl sm:text-5xl text-ink-black">FEATURED WORKS</h2>
                     </div>
-                    <h3 class="font-bold text-white text-base mb-1">Multi-Tenant SaaS</h3>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        Workspace isolation, invitation workflows, RBAC & quota gating.
-                    </p>
+                    <button onclick="switchView('works')" class="btn-pixel-yellow text-xs">
+                        <span>VIEW ALL WORKS →</span>
+                    </button>
                 </div>
 
-                <div class="glass-card p-5 reveal-on-scroll">
-                    <div class="w-10 h-10 rounded-lg bg-indigo-500/20 text-indigo-400 flex items-center justify-center mb-3">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-bold text-white text-base mb-1">Agentic AI & RAG</h3>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        LangGraph agents, pgvector hybrid search & streaming citations.
-                    </p>
-                </div>
-
-                <div class="glass-card p-5 reveal-on-scroll">
-                    <div class="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-3">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7c0-2-1.5-3-3.5-3h-9C5.5 4 4 5 4 7zm0 5h16M9 4v16"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-bold text-white text-base mb-1">Clean Layered Code</h3>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        Route → Controller → Service → Repository with Zod validation.
-                    </p>
-                </div>
-
-                <div class="glass-card p-5 reveal-on-scroll">
-                    <div class="w-10 h-10 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center mb-3">
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 100-6 3 3 0 000 6z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="font-bold text-white text-base mb-1">DevOps & Cloud</h3>
-                    <p class="text-slate-400 text-xs leading-relaxed">
-                        Multi-container Docker Compose, NGINX proxy, AWS & CI/CD.
-                    </p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- About Me Section -->
-    <section id="about" class="py-24 relative border-t border-slate-800/60">
-        <div class="max-w-6xl mx-auto px-4">
-            
-            <div class="grid lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-                
-                <!-- Left Column: Story & Philosophy -->
-                <div class="lg:col-span-7 space-y-6">
+                <!-- 2-Column Folder Teaser Cards -->
+                <div class="grid md:grid-cols-2 gap-8 pt-4">
                     
-                    <div class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-blue-400">
-                        <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-                        <span>Engineering Background</span>
+                    <!-- Wayline Manila Card -->
+                    <div onclick="loadProjectDetail('wayline')" class="folder-card-cream p-6 cursor-pointer group">
+                        <div class="folder-tab-header folder-tab-cream">
+                            <span>• MAR 19, 2024</span>
+                        </div>
+                        <div class="aspect-video bg-slate-900 rounded-lg overflow-hidden border border-black/10 my-3">
+                            <img src="assets/images/wayline-train.jpg" alt="Wayline Transit App" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="font-pixel text-2xl text-ink-black mt-4 mb-1">Wayline</h3>
+                        <p class="text-xs text-ink-muted mb-4 font-mono-code">Making a whole city's transit app feel less like decoding a puzzle.</p>
+                        <div class="flex gap-2">
+                            <span class="sticker-tag sticker-yellow text-xs">MOBILITY</span>
+                            <span class="sticker-tag sticker-mint text-xs">CONSUMER APP</span>
+                        </div>
                     </div>
 
-                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
-                        Bridging Modern Web Architecture with <span class="gradient-text">Intelligent Automation</span>
+                    <!-- Tandem Dark Folder Card -->
+                    <div onclick="loadProjectDetail('tandem')" class="folder-card-navy p-6 cursor-pointer group">
+                        <div class="folder-tab-header folder-tab-navy">
+                            <span>• MAR 3, 2024</span>
+                        </div>
+                        <div class="aspect-video bg-slate-800 rounded-lg overflow-hidden border border-white/10 my-3">
+                            <img src="assets/images/tandem-app.jpg" alt="Tandem Audio Habits" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <h3 class="font-pixel text-2xl text-white mt-4 mb-1">Tandem</h3>
+                        <p class="text-xs text-slate-300 mb-4 font-mono-code">Dark/light mode companion app for tracking audio telemetry and habits.</p>
+                        <div class="flex gap-2">
+                            <span class="sticker-tag sticker-blue text-xs">AUDIO TECH</span>
+                            <span class="sticker-tag sticker-lavender text-xs">DARK MODE</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- 1.4 Trusted By & "LET'S TALK" Footer (Screen 9) -->
+            <section class="max-w-4xl mx-auto pt-10 text-center">
+                
+                <!-- Trusted By Logo Pills Row -->
+                <div class="mb-14">
+                    <span class="font-hand text-xl text-ink-muted block mb-4">trusted by //</span>
+                    <div class="flex flex-wrap items-center justify-center gap-3">
+                        <div class="sticker-tag bg-[#F4EFE6] px-4 py-2">
+                            <img src="assets/svg/logo-dji.svg" alt="DJI" class="h-4 w-auto inline">
+                        </div>
+                        <div class="sticker-tag bg-[#FFBBD3] px-4 py-2">
+                            <img src="assets/svg/logo-f1.svg" alt="F1" class="h-4 w-auto inline">
+                        </div>
+                        <div class="sticker-tag bg-[#BADBFB] px-4 py-2">
+                            <img src="assets/svg/logo-slack.svg" alt="Slack" class="h-5 w-auto inline">
+                            <span class="ml-1 text-xs font-bold">Slack</span>
+                        </div>
+                        <div class="sticker-tag bg-[#FFF3A8] px-4 py-2">
+                            <img src="assets/svg/logo-nike.svg" alt="Nike" class="h-3.5 w-auto inline">
+                        </div>
+                        <div class="sticker-tag bg-[#B9E7CA] px-4 py-2">
+                            <img src="assets/svg/logo-honda.svg" alt="Honda" class="h-4 w-auto inline">
+                        </div>
+                        <div class="sticker-tag bg-[#D6C7FB] px-4 py-2">
+                            <span class="text-xs font-bold font-mono">TypeScript</span>
+                        </div>
+                        <div class="sticker-tag bg-[#FFB366] px-4 py-2">
+                            <span class="text-xs font-bold font-mono">Next.js</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Big Yellow Smiley & Let's Talk Block -->
+                <div class="relative inline-block my-4">
+                    <img src="assets/svg/smiley-yellow.svg" alt="Smiley sticker" class="w-24 h-24 sm:w-28 sm:h-28 mx-auto mb-4 hover:scale-105 transition-transform cursor-pointer">
+                    <h2 class="font-pixel text-5xl sm:text-7xl md:text-8xl text-ink-black tracking-tight">
+                        LET'S TALK
                     </h2>
+                </div>
 
-                    <p class="text-slate-300 text-base sm:text-lg leading-relaxed">
-                        I am a Full-Stack Software Developer dedicated to writing clean, maintainable, and type-safe systems. My engineering approach combines the developer velocity of the <span class="text-white font-medium">MERN & Next.js ecosystem</span> with the uncompromising discipline of <span class="text-white font-medium">relational database engineering</span> and <span class="text-white font-medium">automated testing</span>.
-                    </p>
+                <!-- Handwritten Subtitle Note -->
+                <p class="font-hand text-2xl sm:text-3xl text-ink-muted max-w-xl mx-auto my-4">
+                    Got a project, a hard problem, or just want to say hi? Send me a line. I read every message.
+                </p>
 
-                    <p class="text-slate-400 text-base leading-relaxed">
-                        From designing multi-tenant SaaS backends with robust workspace isolation and RBAC to implementing production-ready RAG assistants and stateful <span class="text-slate-200 font-medium">LangGraph agent workflows</span>, I build systems built for longevity, auditability, and speed.
-                    </p>
+                <!-- Black Pill Button -->
+                <div class="mt-6">
+                    <button onclick="switchView('contact')" class="btn-pixel-black">
+                        <span>SAY HELLO →</span>
+                    </button>
+                </div>
 
-                    <!-- Fun Fact / Philosophy Callout -->
-                    <div class="glass-card p-5 border-l-4 border-l-indigo-500 bg-indigo-950/20">
-                        <p class="text-sm font-medium text-indigo-200 italic">
-                            ⚡ "I believe clean database schemas and strict TypeScript types save more hours than coffee ever could."
+            </section>
+
+        </div>
+
+        <!-- ====================================================================
+             VIEW 2: ABOUT (Screen 4)
+             ==================================================================== -->
+        <div id="view-about" class="view-container space-y-12">
+            
+            <!-- Header Title -->
+            <div class="pt-6">
+                <span class="font-hand text-2xl text-ink-muted block mb-1">behind the screen //</span>
+                <h1 class="font-pixel text-6xl sm:text-8xl text-ink-black">ABOUT</h1>
+            </div>
+
+            <!-- Paper-Framed Document Section with Left Margin Protruding Tabs -->
+            <div class="relative grid lg:grid-cols-12 gap-8 items-start">
+                
+                <!-- Left Margin Protruding Tabs (Binder style) -->
+                <div class="hidden lg:flex flex-col space-y-3 absolute -left-12 top-16 z-10">
+                    <span class="sticker-tag sticker-pink text-xs font-bold py-1 px-2.5 shadow-sm">01</span>
+                    <span class="sticker-tag sticker-yellow text-xs font-bold py-1 px-2.5 shadow-sm">02</span>
+                    <span class="sticker-tag sticker-blue text-xs font-bold py-1 px-2.5 shadow-sm">03</span>
+                </div>
+
+                <!-- Main Biography Document Card -->
+                <div class="lg:col-span-8 bg-white border-2 border-ink-black rounded-lg p-6 sm:p-10 shadow-[6px_8px_0px_#141416] relative">
+                    
+                    <!-- Yellow "BACK STORY" Protruding Header Tab -->
+                    <div class="folder-tab-header folder-tab-yellow -top-[30px] left-6">
+                        <span>BACK STORY</span>
+                    </div>
+
+                    <!-- Handwritten Pull Quote -->
+                    <div class="border-b-2 border-dashed border-slate-200 pb-6 mb-6">
+                        <p class="font-hand text-2xl sm:text-3xl text-ink-black leading-relaxed">
+                            "I'm a full-stack engineer who gets a little too excited about making complicated things feel simple. I care about the small details, the edge cases everyone forgets, and shipping work that genuinely makes someone's day easier."
                         </p>
                     </div>
 
-                    <!-- Highlight Metrics -->
-                    <div class="grid grid-cols-3 gap-4 pt-4">
-                        <div class="glass-card p-4 text-center">
-                            <span class="block text-2xl sm:text-3xl font-extrabold text-blue-400 mb-1">100%</span>
-                            <span class="text-xs text-slate-400 font-medium">Type-Safe TypeScript</span>
-                        </div>
-                        <div class="glass-card p-4 text-center">
-                            <span class="block text-2xl sm:text-3xl font-extrabold text-purple-400 mb-1">3NF</span>
-                            <span class="text-xs text-slate-400 font-medium">Relational Schemas</span>
-                        </div>
-                        <div class="glass-card p-4 text-center">
-                            <span class="block text-2xl sm:text-3xl font-extrabold text-emerald-400 mb-1">RAG</span>
-                            <span class="text-xs text-slate-400 font-medium">AI & Agent Workflows</span>
-                        </div>
-                    </div>
-
-                    <!-- Direct Links -->
-                    <div class="flex items-center space-x-6 pt-2">
-                        <a href="https://github.com/Tanvir-shahriar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors">
-                            <span>GitHub Repositories</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                        <a href="https://www.linkedin.com/in/tanvir-s-b59639117/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-sm font-medium text-slate-300 hover:text-blue-400 transition-colors">
-                            <span>LinkedIn Profile</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                            </svg>
-                        </a>
-                    </div>
-
-                </div>
-
-                <!-- Right Column: Framed Portrait -->
-                <div class="lg:col-span-5 relative">
-                    <div class="relative mx-auto max-w-sm lg:max-w-none">
-                        
-                        <!-- Glowing Backing -->
-                        <div class="absolute -inset-2 bg-gradient-to-r from-blue-600 to-purple-600 rounded-3xl blur-2xl opacity-30 animate-pulse"></div>
-
-                        <!-- Image Container -->
-                        <div class="relative rounded-2xl overflow-hidden border border-slate-700/80 bg-slate-900 shadow-2xl">
-                            <img src="images/my image.jpeg" alt="Tanvir Shahriar - Software Engineer" class="w-full h-auto object-cover transform hover:scale-105 transition-transform duration-500">
-                            
-                            <!-- Overlay Gradient -->
-                            <div class="absolute inset-0 bg-gradient-to-t from-dark-950/80 via-transparent to-transparent pointer-events-none"></div>
-
-                            <!-- Bottom Image Caption -->
-                            <div class="absolute bottom-4 left-4 right-4 p-4 glass-card border border-white/10 backdrop-blur-md">
-                                <p class="text-sm font-bold text-white">Tanvir Shahriar</p>
-                                <p class="text-xs text-blue-300 font-mono">Full-Stack & AI Systems Engineer</p>
-                            </div>
-                        </div>
-
-                        <!-- Floating Badges -->
-                        <div class="absolute -top-3 -right-3 hidden sm:flex items-center space-x-2 px-3 py-2 rounded-xl glass-card border border-indigo-500/30 text-xs font-semibold text-indigo-300 shadow-lg">
-                            <span>⚡ Next.js & TypeScript</span>
-                        </div>
-                        <div class="absolute -bottom-3 -left-3 hidden sm:flex items-center space-x-2 px-3 py-2 rounded-xl glass-card border border-emerald-500/30 text-xs font-semibold text-emerald-300 shadow-lg">
-                            <span>🤖 LangGraph & pgvector</span>
-                        </div>
-
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Tech Stack & Engineering Arsenal -->
-    <section id="skills" class="py-24 relative border-t border-slate-800/60 bg-dark-900/40">
-        <div class="max-w-6xl mx-auto px-4">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-purple-400 mb-3">
-                    <span class="w-2 h-2 rounded-full bg-purple-500"></span>
-                    <span>Engineering Arsenal</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-                    Tech Stack & <span class="gradient-text">Specializations</span>
-                </h2>
-                <p class="text-slate-400 text-base sm:text-lg">
-                    Production-proven technologies I leverage to build scalable, resilient, and intelligent applications.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-
-                <!-- 1. Languages & Core -->
-                <div class="glass-card p-6 reveal-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold">
-                            &lt;/&gt;
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white text-lg">Languages & Core</h3>
-                            <p class="text-xs text-slate-400">Foundation of type-safety & speed</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-chip font-mono">TypeScript</span>
-                        <span class="tech-chip font-mono">JavaScript (ES6+)</span>
-                        <span class="tech-chip font-mono">SQL</span>
-                        <span class="tech-chip font-mono">HTML5</span>
-                        <span class="tech-chip font-mono">CSS3 / Tailwind</span>
-                    </div>
-                </div>
-
-                <!-- 2. Frontend Engineering -->
-                <div class="glass-card p-6 reveal-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-cyan-500/20 text-cyan-400 flex items-center justify-center">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white text-lg">Frontend Engineering</h3>
-                            <p class="text-xs text-slate-400">High-performance reactive interfaces</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-chip font-mono">Next.js (App Router)</span>
-                        <span class="tech-chip font-mono">React 18 / 19</span>
-                        <span class="tech-chip font-mono">Tailwind CSS</span>
-                        <span class="tech-chip font-mono">TanStack Query</span>
-                        <span class="tech-chip font-mono">Redux Toolkit</span>
-                        <span class="tech-chip font-mono">Responsive UI</span>
-                    </div>
-                </div>
-
-                <!-- 3. Backend & System Architecture -->
-                <div class="glass-card p-6 reveal-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-purple-500/20 text-purple-400 flex items-center justify-center">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white text-lg">Backend & Architecture</h3>
-                            <p class="text-xs text-slate-400">Scalable REST & microservice APIs</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-chip font-mono">Node.js</span>
-                        <span class="tech-chip font-mono">Express.js</span>
-                        <span class="tech-chip font-mono">NestJS</span>
-                        <span class="tech-chip font-mono">Zod Validation</span>
-                        <span class="tech-chip font-mono">JWT & RBAC</span>
-                        <span class="tech-chip font-mono">Layered Architecture</span>
-                    </div>
-                </div>
-
-                <!-- 4. Databases, ORMs & Caching -->
-                <div class="glass-card p-6 reveal-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2 1.5 3 3.5 3h9c2 0 3.5-1 3.5-3V7c0-2-1.5-3-3.5-3h-9C5.5 4 4 5 4 7zm0 5h16M9 4v16"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white text-lg">Databases & Caching</h3>
-                            <p class="text-xs text-slate-400">Normalized schemas & fast caching</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-chip font-mono">PostgreSQL</span>
-                        <span class="tech-chip font-mono">MongoDB</span>
-                        <span class="tech-chip font-mono">Drizzle ORM</span>
-                        <span class="tech-chip font-mono">Prisma</span>
-                        <span class="tech-chip font-mono">Mongoose</span>
-                        <span class="tech-chip font-mono">Redis</span>
-                    </div>
-                </div>
-
-                <!-- 5. AI Engineering & Agentic Systems -->
-                <div class="glass-card p-6 reveal-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-pink-500/20 text-pink-400 flex items-center justify-center">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white text-lg">AI & Agentic Systems</h3>
-                            <p class="text-xs text-slate-400">Stateful agents, RAG & vector DBs</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-chip font-mono">LangGraph Workflows</span>
-                        <span class="tech-chip font-mono">LangChain</span>
-                        <span class="tech-chip font-mono">pgvector Vector DB</span>
-                        <span class="tech-chip font-mono">RAG Pipelines</span>
-                        <span class="tech-chip font-mono">Vector Embeddings</span>
-                        <span class="tech-chip font-mono">OpenAI & LLM APIs</span>
-                    </div>
-                </div>
-
-                <!-- 6. DevOps, Cloud & Testing -->
-                <div class="glass-card p-6 reveal-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
-                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
-                            </svg>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-white text-lg">DevOps & Quality</h3>
-                            <p class="text-xs text-slate-400">Continuous integration & containerization</p>
-                        </div>
-                    </div>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-chip font-mono">Docker & Compose</span>
-                        <span class="tech-chip font-mono">AWS (EC2, S3, IAM)</span>
-                        <span class="tech-chip font-mono">NGINX Proxy</span>
-                        <span class="tech-chip font-mono">GitHub Actions CI/CD</span>
-                        <span class="tech-chip font-mono">Vitest & Supertest</span>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Architecture & Engineering Competencies -->
-    <section id="architecture" class="py-24 relative border-t border-slate-800/60">
-        <div class="max-w-6xl mx-auto px-4">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-emerald-400 mb-3">
-                    <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
-                    <span>System Design</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-                    Architectural <span class="gradient-text">Competencies</span>
-                </h2>
-                <p class="text-slate-400 text-base sm:text-lg">
-                    How I structure maintainable, enterprise-ready systems from database schema to user interaction.
-                </p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8">
-
-                <!-- 1. Layered Architecture -->
-                <div class="glass-card p-6 sm:p-8 reveal-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <span class="text-2xl">🏛️</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-white">Modular Layered Architecture</h3>
-                            <p class="text-xs text-slate-400">Strict separation of concerns across application layers</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-300 text-sm mb-6 leading-relaxed">
-                        I organize backends around a strict <code class="text-blue-300 font-mono text-xs">Route → Controller → Service → Repository</code> flow. This prevents business logic leakage, simplifies unit testing with mocks, and ensures schema migrations don't break consumers.
-                    </p>
-                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 text-center text-xs font-mono font-semibold">
-                        <div class="arch-step justify-center text-blue-400">1. Route</div>
-                        <div class="arch-step justify-center text-indigo-400">2. Controller</div>
-                        <div class="arch-step justify-center text-purple-400">3. Service</div>
-                        <div class="arch-step justify-center text-emerald-400">4. Repo</div>
-                    </div>
-                </div>
-
-                <!-- 2. Multi-Tenant SaaS Isolation -->
-                <div class="glass-card p-6 sm:p-8 reveal-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <span class="text-2xl">🏢</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-white">Multi-Tenant SaaS Engineering</h3>
-                            <p class="text-xs text-slate-400">Tenant segmentation, security & quotas</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-300 text-sm mb-6 leading-relaxed">
-                        Architecting SaaS applications with rock-solid workspace boundaries. Implementing organization invitation workflows, granular Role-Based Access Control (RBAC), refresh token rotation, and Redis rate-limiting/quota enforcement.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-chip text-xs">Workspace Isolation</span>
-                        <span class="tech-chip text-xs">RBAC & JWT Rotation</span>
-                        <span class="tech-chip text-xs">Redis Rate Limiting</span>
-                        <span class="tech-chip text-xs">Subscription Quotas</span>
-                    </div>
-                </div>
-
-                <!-- 3. Production RAG & AI Workflows -->
-                <div class="glass-card p-6 sm:p-8 reveal-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <span class="text-2xl">🧠</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-white">Production AI & RAG Pipelines</h3>
-                            <p class="text-xs text-slate-400">Grounded generation with citations & stateful agents</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-300 text-sm mb-6 leading-relaxed">
-                        Going beyond simple prompts: building end-to-end document chunking pipelines, generating dense vector embeddings, performing hybrid search using <code class="text-blue-300 font-mono text-xs">pgvector</code>, and orchestrating multi-step agent tools with <code class="text-blue-300 font-mono text-xs">LangGraph</code>.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-chip text-xs">Document Chunking</span>
-                        <span class="tech-chip text-xs">pgvector Search</span>
-                        <span class="tech-chip text-xs">Citation Grounding</span>
-                        <span class="tech-chip text-xs">LangGraph State Machine</span>
-                    </div>
-                </div>
-
-                <!-- 4. Database Optimization & Relational Integrity -->
-                <div class="glass-card p-6 sm:p-8 reveal-on-scroll">
-                    <div class="flex items-center space-x-3 mb-4">
-                        <span class="text-2xl">📊</span>
-                        <div>
-                            <h3 class="text-xl font-bold text-white">Database Modeling & Performance</h3>
-                            <p class="text-xs text-slate-400">Normalized schemas, index plans & transactions</p>
-                        </div>
-                    </div>
-                    <p class="text-slate-300 text-sm mb-6 leading-relaxed">
-                        Relational database modeling up to 3rd Normal Form (3NF), query plan optimization with <code class="text-blue-300 font-mono text-xs">EXPLAIN ANALYZE</code>, compound B-tree indexing strategies, ACID transactional safety, and high-volume NoSQL aggregation pipelines.
-                    </p>
-                    <div class="flex flex-wrap gap-2">
-                        <span class="tech-chip text-xs">3NF Schema Design</span>
-                        <span class="tech-chip text-xs">EXPLAIN ANALYZE</span>
-                        <span class="tech-chip text-xs">B-Tree Indexes</span>
-                        <span class="tech-chip text-xs">ACID Transactions</span>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Featured Projects Section -->
-    <section id="projects" class="py-24 relative border-t border-slate-800/60 bg-dark-900/40">
-        <div class="max-w-6xl mx-auto px-4">
-            
-            <div class="text-center max-w-3xl mx-auto mb-16">
-                <div class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-blue-400 mb-3">
-                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-                    <span>Portfolio Showcase</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-                    Featured <span class="gradient-text">Projects</span>
-                </h2>
-                <p class="text-slate-400 text-base sm:text-lg">
-                    Real-world platforms demonstrating SaaS multi-tenancy, AI agents, high-throughput APIs, and clean engineering.
-                </p>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-
-                <!-- Project 1: Multi-Tenant AI SaaS Platform -->
-                <div class="project-card flex flex-col justify-between reveal-on-scroll">
-                    <div>
-                        <!-- Card Header -->
-                        <div class="p-6 sm:p-8 bg-gradient-to-br from-blue-900/40 via-indigo-900/20 to-dark-950 border-b border-slate-800/80">
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-blue-500/20 text-blue-400 border border-blue-500/30">
-                                    Flagship System
-                                </span>
-                                <span class="text-xs text-slate-400 font-mono">Full-Stack SaaS + AI</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-2">Multi-Tenant AI SaaS Platform</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed">
-                                Production multi-tenant SaaS platform with workspace isolation, RBAC, streaming RAG chat over uploaded documents via <code class="text-blue-300">LangGraph</code> & <code class="text-blue-300">pgvector</code>, Redis rate limiting, and Docker/NGINX deployment.
+                    <!-- Editorial Two-Column Biography Copy -->
+                    <div class="grid sm:grid-cols-2 gap-6 text-sm text-ink-black leading-relaxed">
+                        <div class="space-y-4">
+                            <p>
+                                I started writing code by taking apart things that already worked just to see why they tick. That curiosity evolved into a career building high-velocity web products, multi-tenant SaaS architectures, and autonomous AI agents.
+                            </p>
+                            <p>
+                                Rather than chasing fleeting framework trends, I anchor my engineering in timeless principles: clean modular boundaries (<code class="bg-amber-100 px-1 py-0.5 rounded text-xs">Route → Controller → Service → Repository</code>), strict end-to-end TypeScript types, and normalized relational schemas.
                             </p>
                         </div>
-                        
-                        <!-- Tech Tags -->
-                        <div class="p-6 sm:p-8 space-y-4">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="tech-chip text-xs">Next.js 14/15</span>
-                                <span class="tech-chip text-xs">TypeScript</span>
-                                <span class="tech-chip text-xs">LangGraph</span>
-                                <span class="tech-chip text-xs">pgvector</span>
-                                <span class="tech-chip text-xs">Redis</span>
-                                <span class="tech-chip text-xs">Docker & NGINX</span>
-                            </div>
-                            <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
-                                <li>Tenant-scoped data partitioning & workspace invitation tokens</li>
-                                <li>Streaming citation-backed vector search over PDFs</li>
-                                <li>Containerized micro-services with Redis rate-limiting</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Card Footer Actions -->
-                    <div class="p-6 sm:p-8 pt-0 flex items-center justify-between border-t border-slate-800/40 mt-4">
-                        <a href="https://github.com/Tanvir-shahriar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-sm font-semibold text-blue-400 hover:text-blue-300 transition-colors">
-                            <span>View Source</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                        <span class="text-xs text-slate-500 font-mono">Docker Compose • AWS</span>
-                    </div>
-                </div>
-
-                <!-- Project 2: Next.js E-Commerce Marketplace -->
-                <div class="project-card flex flex-col justify-between reveal-on-scroll">
-                    <div>
-                        <!-- Card Header -->
-                        <div class="p-6 sm:p-8 bg-gradient-to-br from-emerald-900/40 via-teal-900/20 to-dark-950 border-b border-slate-800/80">
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-                                    Next.js App Router
-                                </span>
-                                <span class="text-xs text-slate-400 font-mono">E-Commerce & Admin</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-2">Full-Stack E-Commerce & Marketplace</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed">
-                                End-to-end storefront and custom admin dashboard with Stripe payment webhooks, role-based auth, server-side search/filtering, and transactional inventory management.
+                        <div class="space-y-4">
+                            <p>
+                                In 2024 and 2025, I’ve been focused on bridging the power of LLMs with real-world production constraints — building multi-agent workflows with <strong>LangGraph</strong> and hybrid semantic retrieval with <strong>pgvector</strong>.
+                            </p>
+                            <p>
+                                When I’m not debugging concurrency issues or tuning database index plans with <code class="bg-amber-100 px-1 py-0.5 rounded text-xs">EXPLAIN ANALYZE</code>, you’ll find me exploring stationery shops, tinkering with retro hardware, or drinking good coffee.
                             </p>
                         </div>
-                        
-                        <!-- Tech Tags -->
-                        <div class="p-6 sm:p-8 space-y-4">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="tech-chip text-xs">Next.js App Router</span>
-                                <span class="tech-chip text-xs">React 18</span>
-                                <span class="tech-chip text-xs">PostgreSQL</span>
-                                <span class="tech-chip text-xs">Stripe API</span>
-                                <span class="tech-chip text-xs">Tailwind CSS</span>
-                                <span class="tech-chip text-xs">TanStack Query</span>
-                            </div>
-                            <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
-                                <li>Atomic database transactions for order creation & stock deduction</li>
-                                <li>Role-protected admin analytics & inventory management suite</li>
-                                <li>Server-side rendering (SSR) for fast storefront indexing</li>
-                            </ul>
-                        </div>
                     </div>
 
-                    <!-- Card Footer Actions -->
-                    <div class="p-6 sm:p-8 pt-0 flex items-center justify-between border-t border-slate-800/40 mt-4">
-                        <a href="https://github.com/Tanvir-shahriar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-sm font-semibold text-emerald-400 hover:text-emerald-300 transition-colors">
-                            <span>View Source</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                        <span class="text-xs text-slate-500 font-mono">Stripe • PostgreSQL</span>
+                    <!-- Values & Pillars Badges -->
+                    <div class="mt-8 pt-6 border-t border-slate-200 flex flex-wrap gap-2">
+                        <span class="sticker-tag sticker-mint text-xs">100% TYPE-SAFE</span>
+                        <span class="sticker-tag sticker-yellow text-xs">MULTI-TENANT SAAS</span>
+                        <span class="sticker-tag sticker-pink text-xs">LANGGRAPH AGENTS</span>
+                        <span class="sticker-tag sticker-blue text-xs">CLEAN ARCHITECTURE</span>
                     </div>
+
                 </div>
 
-                <!-- Project 3: Production REST API Engine -->
-                <div class="project-card flex flex-col justify-between reveal-on-scroll">
-                    <div>
-                        <!-- Card Header -->
-                        <div class="p-6 sm:p-8 bg-gradient-to-br from-purple-900/40 via-pink-900/20 to-dark-950 border-b border-slate-800/80">
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-purple-500/20 text-purple-400 border border-purple-500/30">
-                                    Backend Architecture
-                                </span>
-                                <span class="text-xs text-slate-400 font-mono">TypeScript & Drizzle</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-2">Production REST API Engine</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed">
-                                Modular layered architecture built with Express.js, TypeScript, PostgreSQL & Drizzle ORM. Complete with Zod schema validation, centralized error handling, Vitest test suite, and Swagger docs.
-                            </p>
-                        </div>
-                        
-                        <!-- Tech Tags -->
-                        <div class="p-6 sm:p-8 space-y-4">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="tech-chip text-xs">Express.js</span>
-                                <span class="tech-chip text-xs">TypeScript</span>
-                                <span class="tech-chip text-xs">PostgreSQL</span>
-                                <span class="tech-chip text-xs">Drizzle ORM</span>
-                                <span class="tech-chip text-xs">Zod</span>
-                                <span class="tech-chip text-xs">Vitest & Supertest</span>
-                            </div>
-                            <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
-                                <li>Modular <code class="text-purple-300">Route → Controller → Service → Repository</code> pattern</li>
-                                <li>Type-safe request & response contracts enforced at runtime</li>
-                                <li>Comprehensive integration & unit tests with Vitest</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Card Footer Actions -->
-                    <div class="p-6 sm:p-8 pt-0 flex items-center justify-between border-t border-slate-800/40 mt-4">
-                        <a href="https://github.com/Tanvir-shahriar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-sm font-semibold text-purple-400 hover:text-purple-300 transition-colors">
-                            <span>View Source</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                        <span class="text-xs text-slate-500 font-mono">Vitest • Swagger</span>
-                    </div>
-                </div>
-
-                <!-- Project 4: MERN Real-Time B2B Web App -->
-                <div class="project-card flex flex-col justify-between reveal-on-scroll">
-                    <div>
-                        <!-- Card Header -->
-                        <div class="p-6 sm:p-8 bg-gradient-to-br from-amber-900/40 via-orange-900/20 to-dark-950 border-b border-slate-800/80">
-                            <div class="flex items-center justify-between mb-4">
-                                <span class="text-xs font-mono font-semibold px-3 py-1 rounded-full bg-amber-500/20 text-amber-400 border border-amber-500/30">
-                                    MERN Real-Time
-                                </span>
-                                <span class="text-xs text-slate-400 font-mono">MongoDB & WebSockets</span>
-                            </div>
-                            <h3 class="text-2xl font-bold text-white mb-2">MERN Real-Time B2B Web Application</h3>
-                            <p class="text-slate-300 text-sm leading-relaxed">
-                                Full-stack MongoDB, Express, React, and Node.js business application showcasing NoSQL aggregation pipelines, WebSocket live sync, JWT refresh rotation, and responsive state management.
-                            </p>
-                        </div>
-                        
-                        <!-- Tech Tags -->
-                        <div class="p-6 sm:p-8 space-y-4">
-                            <div class="flex flex-wrap gap-2">
-                                <span class="tech-chip text-xs">MongoDB</span>
-                                <span class="tech-chip text-xs">Express.js</span>
-                                <span class="tech-chip text-xs">React</span>
-                                <span class="tech-chip text-xs">Node.js</span>
-                                <span class="tech-chip text-xs">WebSockets</span>
-                                <span class="tech-chip text-xs">Redux Toolkit</span>
-                            </div>
-                            <ul class="text-xs text-slate-400 space-y-1.5 list-disc list-inside">
-                                <li>Complex MongoDB aggregation pipelines for reporting</li>
-                                <li>Bi-directional WebSocket live sync for instant collaboration</li>
-                                <li>Secure auth flow with HTTP-only refresh cookies</li>
-                            </ul>
-                        </div>
-                    </div>
-
-                    <!-- Card Footer Actions -->
-                    <div class="p-6 sm:p-8 pt-0 flex items-center justify-between border-t border-slate-800/40 mt-4">
-                        <a href="https://github.com/Tanvir-shahriar" target="_blank" rel="noopener noreferrer" class="inline-flex items-center space-x-2 text-sm font-semibold text-amber-400 hover:text-amber-300 transition-colors">
-                            <span>View Source</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
-                            </svg>
-                        </a>
-                        <span class="text-xs text-slate-500 font-mono">WebSockets • JWT</span>
-                    </div>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Contact & Get In Touch Section -->
-    <section id="contact" class="py-24 relative border-t border-slate-800/60">
-        <div class="max-w-4xl mx-auto px-4">
-            
-            <div class="text-center max-w-2xl mx-auto mb-16">
-                <div class="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-blue-400 mb-3">
-                    <span class="w-2 h-2 rounded-full bg-blue-500"></span>
-                    <span>Let's Build Together</span>
-                </div>
-                <h2 class="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-white mb-4">
-                    Get In <span class="gradient-text">Touch</span>
-                </h2>
-                <p class="text-slate-400 text-base sm:text-lg">
-                    Have a project inquiry, a SaaS system to build, or an engineering role to discuss? I'd love to connect.
-                </p>
-            </div>
-
-            <div class="grid lg:grid-cols-5 gap-8">
-                
-                <!-- Left: Quick Direct Contact Info -->
-                <div class="lg:col-span-2 space-y-4">
+                <!-- Right Column: Taped Portrait & Details -->
+                <div class="lg:col-span-4 space-y-6">
                     
-                    <div class="glass-card p-6">
-                        <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block mb-1">Direct Email</span>
-                        <a href="mailto:tanvirshahriar106@gmail.com" class="text-white font-medium hover:text-blue-400 transition-colors text-sm break-all">
-                            tanvirshahriar106@gmail.com
-                        </a>
-                        <button onclick="copyEmail()" class="mt-3 w-full py-2 px-3 text-xs rounded-lg bg-slate-800 hover:bg-slate-700 text-slate-300 font-medium flex items-center justify-center space-x-2 transition-colors">
-                            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5H6a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2v-1M8 5a2 2 0 002 2h2a2 2 0 002-2M8 5a2 2 0 012-2h2a2 2 0 012 2m0 0h2a2 2 0 012 2v3m2 4H10m0 0l3-3m-3 3l3 3"></path>
-                            </svg>
-                            <span>Copy Address</span>
-                        </button>
+                    <!-- Taped Portrait -->
+                    <div class="polaroid-card rotate-2 max-w-sm mx-auto">
+                        <span class="tape-strip tape-top-center"></span>
+                        <span class="tape-strip tape-bottom-center"></span>
+                        <div class="aspect-[4/5] bg-slate-200 overflow-hidden mb-3">
+                            <img src="assets/images/author-portrait.jpg" alt="Tanvir portrait" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-1">
+                            <span class="sticker-tag sticker-yellow text-xs block text-center mb-1 font-mono-code">TANVIR SHAHRIAR</span>
+                            <p class="font-hand text-center text-sm text-ink-muted">full-stack & AI systems</p>
+                        </div>
                     </div>
 
-                    <div class="glass-card p-6">
-                        <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block mb-1">LinkedIn Network</span>
-                        <a href="https://www.linkedin.com/in/tanvir-s-b59639117/" target="_blank" rel="noopener noreferrer" class="text-white font-medium hover:text-blue-400 transition-colors text-sm">
-                            linkedin.com/in/tanvir-s-b59639117
-                        </a>
-                        <p class="text-xs text-slate-400 mt-2">Connect for professional collaborations & opportunities.</p>
+                    <!-- Quick Facts Notepad -->
+                    <div class="bg-[#FFF3A8] border-2 border-ink-black rounded-lg p-5 shadow-[4px_4px_0px_#141416] space-y-3 font-mono-code text-xs">
+                        <p class="font-bold border-b border-black/20 pb-1">QUICK FACTS // 2025</p>
+                        <div class="flex justify-between">
+                            <span class="text-ink-muted">Location:</span>
+                            <span class="font-bold">Available Worldwide</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-ink-muted">Core Focus:</span>
+                            <span class="font-bold">SaaS & Agentic AI</span>
+                        </div>
+                        <div class="flex justify-between">
+                            <span class="text-ink-muted">Status:</span>
+                            <span class="font-bold text-emerald-700">Open to Eng Roles</span>
+                        </div>
                     </div>
 
-                    <div class="glass-card p-6">
-                        <span class="text-xs font-mono uppercase tracking-wider text-slate-400 block mb-1">GitHub Profile</span>
-                        <a href="https://github.com/Tanvir-shahriar" target="_blank" rel="noopener noreferrer" class="text-white font-medium hover:text-blue-400 transition-colors text-sm">
-                            github.com/Tanvir-shahriar
-                        </a>
-                        <p class="text-xs text-slate-400 mt-2">Explore active repositories, stars, and code commits.</p>
-                    </div>
-
-                </div>
-
-                <!-- Right: Interactive Contact Form -->
-                <div class="lg:col-span-3">
-                    <form id="contact-form" class="glass-card p-6 sm:p-8 space-y-5">
-                        
-                        <div class="grid sm:grid-cols-2 gap-4">
-                            <div>
-                                <label for="name" class="block text-xs font-medium text-slate-300 mb-1.5">Your Name</label>
-                                <input type="text" id="name" name="name" required class="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-slate-500 text-sm" placeholder="e.g. Alex Miller">
-                            </div>
-                            <div>
-                                <label for="email" class="block text-xs font-medium text-slate-300 mb-1.5">Your Email</label>
-                                <input type="email" id="email" name="email" required class="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-slate-500 text-sm" placeholder="alex@company.com">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label for="subject" class="block text-xs font-medium text-slate-300 mb-1.5">Subject</label>
-                            <input type="text" id="subject" name="subject" required class="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-slate-500 text-sm" placeholder="Project Inquiry / Job Opportunity">
-                        </div>
-
-                        <div>
-                            <label for="message" class="block text-xs font-medium text-slate-300 mb-1.5">Message</label>
-                            <textarea id="message" name="message" rows="5" required class="w-full px-4 py-2.5 bg-slate-900/80 border border-slate-700 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-transparent text-white placeholder-slate-500 text-sm resize-none" placeholder="Describe your project, timeline, or requirements..."></textarea>
-                        </div>
-
-                        <button type="submit" class="hero-btn-primary w-full text-sm py-3 justify-center">
-                            <span>Send Message Directly</span>
-                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
-                            </svg>
-                        </button>
-                    </form>
                 </div>
 
             </div>
 
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="py-12 border-t border-slate-800/60 relative">
-        <div class="max-w-6xl mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
-            <div>
-                <p class="text-sm font-semibold text-white">Tanvir Shahriar</p>
-                <p class="text-xs text-slate-400 mt-1">Full-Stack Software Engineer • MERN, Next.js & AI Systems</p>
-            </div>
-            <div class="flex items-center space-x-6 text-slate-400 text-xs">
-                <a href="#about" class="hover:text-white transition-colors">About</a>
-                <a href="#skills" class="hover:text-white transition-colors">Stack</a>
-                <a href="#projects" class="hover:text-white transition-colors">Projects</a>
-                <a href="#contact" class="hover:text-white transition-colors">Contact</a>
-            </div>
-            <p class="text-xs text-slate-500">
-                © 2026 Tanvir Shahriar. All rights reserved.
-            </p>
-        </div>
-    </footer>
-
-    <!-- Social / Quick Connect Modal -->
-    <div id="socialModal" class="fixed inset-0 z-50 hidden items-center justify-center bg-black/70 backdrop-blur-md p-4">
-        <div class="glass-card max-w-md w-full p-6 sm:p-8 space-y-6 border border-slate-700/80 shadow-2xl relative">
+        <!-- ====================================================================
+             VIEW 3: FEATURED WORKS / CASE STUDIES (Screens 5 & 6)
+             ==================================================================== -->
+        <div id="view-works" class="view-container space-y-12">
             
-            <div class="flex items-center justify-between border-b border-slate-800 pb-4">
-                <div class="flex items-center space-x-3">
-                    <div class="w-9 h-9 rounded-lg bg-blue-600 flex items-center justify-center font-bold text-white text-sm">
-                        TS
+            <!-- Works View Header -->
+            <div class="pt-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <span class="font-hand text-2xl text-ink-muted block mb-1">selected my work //</span>
+                    <h1 class="font-pixel text-6xl sm:text-8xl text-ink-black">FEATURED WORKS</h1>
+                </div>
+
+                <!-- Presentation Mode Switcher -->
+                <div class="inline-flex border-2 border-black rounded-full p-1 bg-white shadow-[2px_2px_0px_#141416]">
+                    <button id="btn-works-grid" class="px-3.5 py-1.5 rounded-full font-mono text-xs font-bold transition-all bg-black text-white">
+                        📁 FOLDER GRID
+                    </button>
+                    <button id="btn-works-stacked" class="px-3.5 py-1.5 rounded-full font-mono text-xs font-bold transition-all bg-white text-black">
+                        📑 STACKED TABS
+                    </button>
+                </div>
+            </div>
+
+            <!-- MODE A: 2-Column Manila Folder Grid (Screen 5) -->
+            <div id="works-folder-grid" class="grid md:grid-cols-2 gap-8 pt-6">
+                
+                <!-- Project 1: Wayline -->
+                <div onclick="loadProjectDetail('wayline')" class="folder-card-cream p-6 cursor-pointer group">
+                    <div class="folder-tab-header folder-tab-cream">
+                        <span>• MAR 19, 2024</span>
                     </div>
-                    <div>
-                        <h3 class="font-bold text-white text-base">Quick Connect</h3>
-                        <p class="text-xs text-slate-400">Reach out directly to Tanvir</p>
+                    <div class="aspect-video bg-slate-900 rounded-lg overflow-hidden border border-black/10 my-3">
+                        <img src="assets/images/wayline-train.jpg" alt="Wayline" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="font-pixel text-3xl text-ink-black mt-4 mb-1">Wayline</h3>
+                    <p class="text-sm text-ink-muted mb-4 font-mono-code">Making a whole city's transit app feel less like decoding a puzzle.</p>
+                    <div class="flex gap-2">
+                        <span class="sticker-tag sticker-yellow text-xs">MOBILITY</span>
+                        <span class="sticker-tag sticker-mint text-xs">CONSUMER APP</span>
                     </div>
                 </div>
-                <button onclick="closeSocialModal()" class="text-slate-400 hover:text-white p-1 rounded-lg hover:bg-slate-800" aria-label="Close modal">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                    </svg>
+
+                <!-- Project 2: Tandem -->
+                <div onclick="loadProjectDetail('tandem')" class="folder-card-navy p-6 cursor-pointer group">
+                    <div class="folder-tab-header folder-tab-navy">
+                        <span>• MAR 3, 2024</span>
+                    </div>
+                    <div class="aspect-video bg-slate-800 rounded-lg overflow-hidden border border-white/10 my-3">
+                        <img src="assets/images/tandem-app.jpg" alt="Tandem" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                    </div>
+                    <h3 class="font-pixel text-3xl text-white mt-4 mb-1">Tandem</h3>
+                    <p class="text-sm text-slate-300 mb-4 font-mono-code">Dark/light mode companion app for tracking fitness and audio telemetry.</p>
+                    <div class="flex gap-2">
+                        <span class="sticker-tag sticker-blue text-xs">AUDIO TECH</span>
+                        <span class="sticker-tag sticker-lavender text-xs">DARK MODE</span>
+                    </div>
+                </div>
+
+                <!-- Project 3: Forge -->
+                <div onclick="loadProjectDetail('forge')" class="folder-card-yellow p-6 cursor-pointer group md:col-span-2">
+                    <div class="folder-tab-header folder-tab-yellow">
+                        <span>• JAN 2, 2024</span>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6 items-center">
+                        <div class="aspect-video bg-slate-900 rounded-lg overflow-hidden border border-black/20 my-3">
+                            <img src="assets/images/forge-laptop.jpg" alt="Forge Devtools" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                        </div>
+                        <div>
+                            <h3 class="font-pixel text-3xl text-ink-black mb-2">Forge Developer Engine</h3>
+                            <p class="text-sm text-ink-black mb-4 font-mono-code">
+                                Building a new developer workstation tool from day one to shipping without friction or type regressions.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="sticker-tag bg-white text-xs">DEV TOOLS</span>
+                                <span class="sticker-tag bg-white text-xs">TYPESCRIPT</span>
+                                <span class="sticker-tag bg-white text-xs">DRIZZLE ORM</span>
+                            </div>
+                            <span class="inline-flex items-center text-xs font-bold font-mono text-black group-hover:translate-x-1 transition-transform">
+                                VIEW CASE STUDY →
+                            </span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- MODE B: Overlapping Stacked Physical Folder Tabs (Screen 6) -->
+            <div id="works-stacked-folders" class="hidden space-y-8 pt-4">
+                
+                <!-- Stacked Folder 1: Tandem (Navy) -->
+                <div class="folder-card-navy p-8 sm:p-10 relative">
+                    <!-- Protruding Tab Set -->
+                    <div class="flex space-x-2 absolute -top-[31px] left-6">
+                        <span class="folder-tab-header folder-tab-blue !relative !top-0 !left-0">
+                            • PROJECT 01
+                        </span>
+                        <span class="folder-tab-header folder-tab-navy !relative !top-0 !left-0">
+                            • PROJECT 02
+                        </span>
+                    </div>
+
+                    <div class="grid md:grid-cols-12 gap-8 items-center">
+                        <div class="md:col-span-7 space-y-4">
+                            <span class="text-xs font-mono text-slate-400">• MAR 3, 2024</span>
+                            <h3 class="font-pixel text-4xl text-white">Tandem</h3>
+                            <p class="text-sm text-slate-300 leading-relaxed font-mono">
+                                Audio habits where tech meets daily rituals. Built with low-latency audio pipelines and adaptive dark-mode telemetry.
+                            </p>
+                            <button onclick="loadProjectDetail('tandem')" class="text-xs font-mono font-bold text-accent-yellow hover:underline block pt-2">
+                                VIEW PROJECT →
+                            </button>
+                        </div>
+                        <div class="md:col-span-5 relative flex justify-center">
+                            <div class="polaroid-card rotate-3 w-60 !p-2 !bg-[#222A38] border border-white/20">
+                                <span class="tape-strip tape-tl"></span>
+                                <span class="tape-strip tape-br"></span>
+                                <img src="assets/images/tandem-app.jpg" alt="Tandem Screen" class="w-full rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Stacked Folder 2: Forge (Mustard Yellow) -->
+                <div class="folder-card-yellow p-8 sm:p-10 relative">
+                    <!-- Protruding Tab -->
+                    <div class="folder-tab-header folder-tab-yellow -top-[31px] left-6">
+                        <span>• PROJECT 03</span>
+                    </div>
+
+                    <div class="grid md:grid-cols-12 gap-8 items-center">
+                        <div class="md:col-span-7 space-y-4">
+                            <span class="text-xs font-mono text-black/70">• JAN 2, 2024</span>
+                            <h3 class="font-pixel text-4xl text-ink-black">Forge</h3>
+                            <p class="text-sm text-ink-black leading-relaxed font-mono">
+                                Building a new developer tool from day one to shipping without the barriers. Modular layered architecture with strict Zod contracts.
+                            </p>
+                            <button onclick="loadProjectDetail('forge')" class="text-xs font-mono font-bold text-black hover:underline block pt-2">
+                                VIEW PROJECT →
+                            </button>
+                        </div>
+                        <div class="md:col-span-5 relative flex justify-center">
+                            <div class="polaroid-card -rotate-2 w-64 !p-2">
+                                <span class="tape-strip tape-tr"></span>
+                                <span class="tape-strip tape-bl"></span>
+                                <img src="assets/images/forge-laptop.jpg" alt="Forge Dev" class="w-full rounded">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ====================================================================
+             VIEW 4: PROJECT DETAIL CASE STUDY (Screens 7 & 8)
+             ==================================================================== -->
+        <div id="view-project-detail" class="view-container space-y-12">
+            
+            <!-- Top Back Link -->
+            <div class="pt-4">
+                <button onclick="switchView('works')" class="font-mono text-xs font-bold hover:underline inline-flex items-center space-x-1">
+                    <span>← BACK TO ALL WORKS</span>
                 </button>
             </div>
 
-            <div class="space-y-3">
+            <!-- Case Study Header & Bento Meta (Screen 7) -->
+            <div class="grid lg:grid-cols-12 gap-8 items-start">
                 
-                <!-- Email Option -->
-                <a href="mailto:tanvirshahriar106@gmail.com" class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-700/60 transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <span class="w-8 h-8 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center">
-                            ✉️
-                        </span>
-                        <div>
-                            <p class="text-xs text-slate-400">Send an Email</p>
-                            <p class="text-sm font-medium text-white group-hover:text-blue-400">tanvirshahriar106@gmail.com</p>
-                        </div>
+                <!-- Left Title & Intro -->
+                <div class="lg:col-span-7 space-y-3">
+                    <span id="project-detail-date" class="font-mono text-xs text-ink-muted">• MAR 19, 2024</span>
+                    <h1 id="project-detail-title" class="font-pixel text-6xl sm:text-8xl text-ink-black leading-tight">WAYLINE</h1>
+                    <p id="project-detail-sub" class="text-base sm:text-lg text-ink-black font-mono-code leading-relaxed">
+                        Making a whole city's transit app feel less like decoding a puzzle.
+                    </p>
+                    <div id="project-detail-tags" class="flex flex-wrap gap-2 pt-2">
+                        <span class="sticker-tag sticker-yellow text-xs">MOBILITY</span>
+                        <span class="sticker-tag sticker-mint text-xs">CONSUMER APP</span>
                     </div>
-                    <svg class="w-4 h-4 text-slate-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </a>
+                </div>
 
-                <!-- LinkedIn Option -->
-                <a href="https://www.linkedin.com/in/tanvir-s-b59639117/" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-700/60 transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <span class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center font-bold text-xs">
-                            in
-                        </span>
-                        <div>
-                            <p class="text-xs text-slate-400">LinkedIn Profile</p>
-                            <p class="text-sm font-medium text-white group-hover:text-blue-400">Connect on LinkedIn</p>
-                        </div>
+                <!-- Right 2x2 Metadata Bento -->
+                <div class="lg:col-span-5 grid grid-cols-2 gap-3 font-mono-code text-xs">
+                    <div class="sticker-tag sticker-blue flex-col !items-start p-3 w-full !rounded-xl">
+                        <span class="text-[10px] text-black/60 block font-bold">ROLE</span>
+                        <span id="project-meta-role" class="font-bold text-xs mt-1">Lead Full-Stack</span>
                     </div>
-                    <svg class="w-4 h-4 text-slate-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </a>
-
-                <!-- GitHub Option -->
-                <a href="https://github.com/Tanvir-shahriar" target="_blank" rel="noopener noreferrer" class="flex items-center justify-between p-3.5 rounded-xl bg-slate-900/60 hover:bg-slate-800 border border-slate-700/60 transition-colors group">
-                    <div class="flex items-center space-x-3">
-                        <span class="w-8 h-8 rounded-lg bg-purple-500/20 text-purple-400 flex items-center justify-center">
-                            🐙
-                        </span>
-                        <div>
-                            <p class="text-xs text-slate-400">GitHub Code & Repos</p>
-                            <p class="text-sm font-medium text-white group-hover:text-blue-400">github.com/Tanvir-shahriar</p>
-                        </div>
+                    <div class="sticker-tag sticker-yellow flex-col !items-start p-3 w-full !rounded-xl">
+                        <span class="text-[10px] text-black/60 block font-bold">TIMELINE</span>
+                        <span id="project-meta-timeline" class="font-bold text-xs mt-1">3 months</span>
                     </div>
-                    <svg class="w-4 h-4 text-slate-400 group-hover:text-white group-hover:translate-x-1 transition-all" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-                    </svg>
-                </a>
+                    <div class="sticker-tag sticker-mint flex-col !items-start p-3 w-full !rounded-xl">
+                        <span class="text-[10px] text-black/60 block font-bold">TEAM</span>
+                        <span id="project-meta-team" class="font-bold text-xs mt-1">2 Designers, 4 Devs</span>
+                    </div>
+                    <div class="sticker-tag sticker-pink flex-col !items-start p-3 w-full !rounded-xl">
+                        <span class="text-[10px] text-black/60 block font-bold">YEAR</span>
+                        <span id="project-meta-year" class="font-bold text-xs mt-1">2024</span>
+                    </div>
+                </div>
 
             </div>
 
-            <button onclick="copyEmail()" class="w-full py-2.5 px-4 rounded-xl bg-slate-800 hover:bg-slate-700 text-xs font-semibold text-slate-200 transition-colors flex items-center justify-center space-x-2">
-                <span>Copy Email Address</span>
-            </button>
+            <!-- Full-Width Hero Image Frame -->
+            <div class="relative bg-white p-3 sm:p-4 border-2 border-ink-black rounded-xl shadow-[5px_7px_0px_#141416]">
+                <span class="tape-strip tape-tl"></span>
+                <span class="tape-strip tape-tr"></span>
+                <div class="aspect-[16/9] sm:aspect-[21/9] bg-slate-900 rounded-lg overflow-hidden">
+                    <img id="project-detail-hero" src="assets/images/wayline-train.jpg" alt="Hero" class="w-full h-full object-cover">
+                </div>
+            </div>
+
+            <!-- Case Study Results & Metrics (Screen 8) -->
+            <div class="space-y-8 pt-4">
+                
+                <div>
+                    <span class="font-hand text-2xl text-ink-muted block mb-1">the results //</span>
+                    <p id="project-detail-narrative" class="text-sm sm:text-base text-ink-black max-w-3xl leading-relaxed font-sans">
+                        Transit passengers don't want to decipher routing tables or wait indefinitely for static schedules to refresh. We redesigned Wayline from the ground up to surface contextual departures, live platform crowding indicators, and instant tap-to-pay ticketing with sub-second feedback.
+                    </p>
+                </div>
+
+                <!-- 3 Paper Metric Cards -->
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
+                    <!-- Blue Metric -->
+                    <div class="sticker-tag sticker-blue flex-col !items-start p-5 !rounded-xl shadow-[3px_3px_0px_#141416]">
+                        <span id="project-metric1-val" class="font-pixel text-4xl sm:text-5xl text-ink-black">47%</span>
+                        <span id="project-metric1-lbl" class="font-mono text-xs font-bold text-black/70 mt-2">DAILY ACTIVE COMMUTERS</span>
+                    </div>
+                    <!-- Yellow Metric -->
+                    <div class="sticker-tag sticker-yellow flex-col !items-start p-5 !rounded-xl shadow-[3px_3px_0px_#141416]">
+                        <span id="project-metric2-val" class="font-pixel text-4xl sm:text-5xl text-ink-black">-55%</span>
+                        <span id="project-metric2-lbl" class="font-mono text-xs font-bold text-black/70 mt-2">PURCHASE FRICTION</span>
+                    </div>
+                    <!-- Mint Stamp Scalloped Metric -->
+                    <div class="stamp-border p-5 flex flex-col items-start bg-accent-mint">
+                        <span id="project-metric3-val" class="font-pixel text-4xl sm:text-5xl text-ink-black">100k+</span>
+                        <span id="project-metric3-lbl" class="font-mono text-xs font-bold text-black/70 mt-2">ACTIVE PASSES ISSUED</span>
+                    </div>
+                </div>
+
+                <!-- Dual Candid Photo Showcase -->
+                <div class="grid sm:grid-cols-2 gap-6 pt-4">
+                    <div class="polaroid-card -rotate-1">
+                        <span class="tape-strip tape-tl"></span>
+                        <div class="aspect-video bg-slate-200 rounded overflow-hidden">
+                            <img id="project-gallery-1" src="assets/images/wayline-bus.jpg" alt="Commuter ticket scan" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                    <div class="polaroid-card rotate-1">
+                        <span class="tape-strip tape-tr"></span>
+                        <div class="aspect-video bg-slate-200 rounded overflow-hidden">
+                            <img id="project-gallery-2" src="assets/images/wayline-commuters.jpg" alt="Smiling users" class="w-full h-full object-cover">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
+
+        <!-- ====================================================================
+             VIEW 5: PLAYGROUND / "JUST FOR FUN" (Screen 2)
+             ==================================================================== -->
+        <div id="view-playground" class="view-container space-y-8">
+            
+            <!-- Playground Title Block -->
+            <div class="pt-6 flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+                <div>
+                    <span class="font-hand text-2xl text-ink-muted block mb-1">playground //</span>
+                    <h1 class="font-pixel text-6xl sm:text-8xl text-ink-black">JUST FOR FUN</h1>
+                    <p class="font-mono text-xs text-ink-muted mt-2">An expressive pinboard of experiments, renders, and vintage artifacts.</p>
+                </div>
+
+                <!-- Zoom Controls Capsule -->
+                <div class="inline-flex items-center space-x-1 border-2 border-black rounded-full px-2 py-1 bg-white shadow-[2px_2px_0px_#141416]">
+                    <button onclick="zoomPlayground(0.1)" class="w-7 h-7 rounded-full font-mono text-sm font-bold hover:bg-slate-200 flex items-center justify-center">+</button>
+                    <button onclick="zoomPlayground(-0.1)" class="w-7 h-7 rounded-full font-mono text-sm font-bold hover:bg-slate-200 flex items-center justify-center">-</button>
+                    <button onclick="resetPlayground()" class="w-7 h-7 rounded-full font-mono text-xs font-bold hover:bg-slate-200 flex items-center justify-center">↺</button>
+                </div>
+            </div>
+
+            <!-- Interactive Pinboard Canvas -->
+            <div class="overflow-x-auto pb-8">
+                <div id="playground-pinboard" class="relative min-h-[640px] sm:min-h-[720px] w-full min-w-[700px] bg-white/40 border-2 border-dashed border-slate-300 rounded-2xl p-6 transition-transform duration-300 origin-top-left">
+                    
+                    <!-- 1. Retro Macintosh Classic Computer (Centerpiece) -->
+                    <div class="pinboard-item absolute top-10 left-[42%] -translate-x-1/2 w-52 sm:w-60 z-20">
+                        <div class="bg-white p-3 rounded-lg border-2 border-black shadow-[4px_6px_0px_#141416]">
+                            <img src="assets/svg/retro-mac.svg" alt="Retro Mac hello" class="w-full">
+                        </div>
+                    </div>
+
+                    <!-- 2. Sunset Silhouette Polaroid (Top Left) -->
+                    <div class="pinboard-item absolute top-6 left-6 w-48 -rotate-6 z-10">
+                        <div class="polaroid-card">
+                            <span class="tape-strip tape-tl"></span>
+                            <div class="sticker-tag sticker-yellow absolute -top-3 right-4 text-[10px]">2024 TAPE</div>
+                            <img src="assets/images/sunset-silhouette.jpg" alt="Sunset silhouettes" class="w-full aspect-square object-cover mb-2 rounded">
+                            <p class="font-hand text-xs text-center font-bold">golden hour</p>
+                        </div>
+                    </div>
+
+                    <!-- 3. Desktop Accessories Flatlay (Bottom Left) -->
+                    <div class="pinboard-item absolute bottom-12 left-10 w-52 rotate-3 z-15">
+                        <div class="polaroid-card">
+                            <span class="tape-strip tape-bl"></span>
+                            <img src="assets/images/desktop-accessories.jpg" alt="Desktop accessories" class="w-full aspect-[4/3] object-cover mb-2 rounded">
+                            <div class="sticker-tag sticker-lavender text-[10px] block text-center">what is this</div>
+                        </div>
+                    </div>
+
+                    <!-- 4. 3D Abstract Sphere Render (Center Bottom) -->
+                    <div class="pinboard-item absolute bottom-8 left-[38%] w-48 -rotate-3 z-25">
+                        <div class="polaroid-card">
+                            <span class="tape-strip tape-br"></span>
+                            <img src="assets/images/abstract-3d.jpg" alt="3D Sphere" class="w-full aspect-square object-cover mb-2 rounded">
+                            <p class="font-hand text-xs text-center font-bold">geometry study</p>
+                        </div>
+                    </div>
+
+                    <!-- 5. Purple Keyboard Setup (Top Right) -->
+                    <div class="pinboard-item absolute top-8 right-12 w-56 rotate-4 z-10">
+                        <div class="polaroid-card">
+                            <span class="tape-strip tape-tr"></span>
+                            <div class="sticker-tag sticker-pink absolute -top-3 left-4 text-[10px]">tactile</div>
+                            <img src="assets/images/purple-keyboard.jpg" alt="Mechanical Keyboard" class="w-full aspect-square object-cover mb-2 rounded">
+                            <p class="font-hand text-xs text-center font-bold">clicky switches</p>
+                        </div>
+                    </div>
+
+                    <!-- 6. Desk Setup Photo (Bottom Right) -->
+                    <div class="pinboard-item absolute bottom-10 right-8 w-52 -rotate-6 z-20">
+                        <div class="polaroid-card">
+                            <span class="tape-strip tape-tl"></span>
+                            <div class="sticker-tag sticker-mint absolute -bottom-3 right-3 text-[10px]">Next Time</div>
+                            <img src="assets/images/desk-setup.jpg" alt="Studio" class="w-full aspect-[4/3] object-cover mb-2 rounded">
+                            <p class="font-hand text-xs text-center font-bold">midnight coding</p>
+                        </div>
+                    </div>
+
+                    <!-- Scattered Sticky Notes & Stamps -->
+                    <div class="sticker-tag sticker-lavender absolute top-4 left-[28%] -rotate-12 z-5">
+                        <span>hello world</span>
+                    </div>
+
+                    <div class="sticker-tag sticker-mint absolute top-[44%] left-[22%] rotate-6 z-5">
+                        <span>practice</span>
+                    </div>
+
+                    <div class="sticker-tag sticker-butter absolute top-28 right-[32%] -rotate-6 z-5">
+                        <span>good vibes ✦</span>
+                    </div>
+
+                    <div class="sticker-tag sticker-pink absolute bottom-24 right-[28%] rotate-12 z-5">
+                        <span>cool stuff</span>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+        <!-- ====================================================================
+             VIEW 6: CONTACT (Screen 10)
+             ==================================================================== -->
+        <div id="view-contact" class="view-container space-y-12">
+            
+            <!-- Contact Header with Authentic Figma Bounding Box -->
+            <div class="pt-8 text-center">
+                <span class="font-hand text-2xl text-ink-muted block mb-3">say hello //</span>
+                
+                <!-- Bounding Box around "CONTACT" with 8 Drag Handles -->
+                <div class="figma-bounding-box">
+                    <span class="figma-handle handle-tl"></span>
+                    <span class="figma-handle handle-tr"></span>
+                    <span class="figma-handle handle-bl"></span>
+                    <span class="figma-handle handle-br"></span>
+                    <span class="figma-handle handle-tc"></span>
+                    <span class="figma-handle handle-bc"></span>
+                    <span class="figma-handle handle-ml"></span>
+                    <span class="figma-handle handle-mr"></span>
+                    
+                    <h1 class="font-pixel text-5xl sm:text-7xl text-ink-black tracking-wider">
+                        CONTACT
+                    </h1>
+                </div>
+            </div>
+
+            <!-- Taped Photos Flanking the Center Yellow Notepad -->
+            <div class="grid md:grid-cols-12 gap-8 items-center max-w-4xl mx-auto">
+                
+                <!-- Left Taped Polaroid (Sunset) -->
+                <div class="hidden md:flex md:col-span-3 justify-center">
+                    <div class="polaroid-card -rotate-6 w-44">
+                        <span class="tape-strip tape-tl"></span>
+                        <span class="tape-strip tape-br"></span>
+                        <img src="assets/images/sunset-silhouette.jpg" alt="Sunset" class="w-full aspect-[4/5] object-cover mb-2 rounded">
+                        <p class="font-hand text-center text-xs font-bold text-ink-muted">evening thoughts</p>
+                    </div>
+                </div>
+
+                <!-- Center Yellow Legal Notepad Message Card -->
+                <div class="md:col-span-6 bg-[#FFF3A8] border-2 border-ink-black rounded-lg p-6 sm:p-8 shadow-[6px_8px_0px_#141416] relative">
+                    
+                    <div class="text-center mb-6">
+                        <p class="font-mono text-xs font-bold tracking-wider uppercase text-black/80 leading-relaxed">
+                            GET A PROJECT, A HARD PROBLEM, OR JUST WANT TO SAY HI? DROP ME A LINE BELOW.
+                        </p>
+                    </div>
+
+                    <!-- Direct Contact Form -->
+                    <form id="contact-form" class="space-y-4">
+                        <div>
+                            <label class="block font-mono text-[10px] font-bold text-black uppercase mb-1">YOUR NAME</label>
+                            <input type="text" id="contact-name" required class="w-full px-3 py-2 bg-white/90 border-2 border-black rounded font-mono text-xs text-black placeholder-black/40 focus:outline-none focus:bg-white" placeholder="e.g. Alex Miller">
+                        </div>
+                        <div>
+                            <label class="block font-mono text-[10px] font-bold text-black uppercase mb-1">YOUR EMAIL</label>
+                            <input type="email" id="contact-email" required class="w-full px-3 py-2 bg-white/90 border-2 border-black rounded font-mono text-xs text-black placeholder-black/40 focus:outline-none focus:bg-white" placeholder="alex@company.com">
+                        </div>
+                        <div>
+                            <label class="block font-mono text-[10px] font-bold text-black uppercase mb-1">MESSAGE</label>
+                            <textarea id="contact-msg" rows="4" required class="w-full px-3 py-2 bg-white/90 border-2 border-black rounded font-mono text-xs text-black placeholder-black/40 focus:outline-none focus:bg-white resize-none" placeholder="Tell me what you're building..."></textarea>
+                        </div>
+                        <button type="submit" class="btn-pixel-black w-full text-xs">
+                            <span>SEND MESSAGE →</span>
+                        </button>
+                    </form>
+
+                    <!-- Quick Copy Email Button -->
+                    <div class="mt-4 pt-3 border-t border-black/20 text-center">
+                        <button onclick="copyEmail()" class="font-mono text-[11px] font-bold underline hover:text-blue-700">
+                            or copy tanvirshahriar106@gmail.com
+                        </button>
+                    </div>
+
+                </div>
+
+                <!-- Right Taped Polaroid (Gadgets) -->
+                <div class="hidden md:flex md:col-span-3 justify-center">
+                    <div class="polaroid-card rotate-6 w-44">
+                        <span class="tape-strip tape-tr"></span>
+                        <span class="tape-strip tape-bl"></span>
+                        <img src="assets/images/desktop-accessories.jpg" alt="Desktop accessories" class="w-full aspect-[4/5] object-cover mb-2 rounded">
+                        <p class="font-hand text-center text-xs font-bold text-ink-muted">daily tools</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Footer Note & Social Pills Links -->
+            <div class="text-center space-y-4 pt-4">
+                <p class="font-hand text-xl text-ink-muted">
+                    * Open to new work and good partners
+                </p>
+
+                <div class="flex flex-wrap items-center justify-center gap-3">
+                    <a href="https://www.linkedin.com/in/tanvir-s-b59639117/" target="_blank" rel="noopener noreferrer" class="btn-pill-outline">
+                        <span>LINKEDIN</span>
+                    </a>
+                    <a href="https://github.com/Tanvir-shahriar" target="_blank" rel="noopener noreferrer" class="btn-pill-outline">
+                        <span>GITHUB</span>
+                    </a>
+                    <a href="mailto:tanvirshahriar106@gmail.com" class="btn-pill-outline">
+                        <span>EMAIL</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Ruled Bottom Footer -->
+    <footer class="border-t border-paper-rule py-6 text-center font-mono text-xs text-ink-muted">
+        <p>© 2024–2026 Tanvir Shahriar • Crafted with ruled paper, pixel fonts & clean code.</p>
+    </footer>
+
+    <!-- Interactive Toast Notification -->
+    <div id="toast-notification" class="sticker-tag sticker-mint px-4 py-2.5 shadow-xl text-sm font-bold flex items-center space-x-2 border-2 border-black">
+        <span>🌸</span>
+        <span id="toast-msg">Notification</span>
     </div>
 
-    <!-- Toast Notification Element -->
-    <div id="toast" class="glass-card px-5 py-3 text-sm font-medium text-white flex items-center space-x-3 shadow-2xl border border-indigo-500/30">
-        <span class="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-500/20 text-emerald-400">
-            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-        </span>
-        <span id="toast-message">Notification</span>
-    </div>
-
+    <!-- Client Controller Script -->
     <script src="script.js"></script>
 </body>
 </html>

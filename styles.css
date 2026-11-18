@@ -1,28 +1,40 @@
 /* ==========================================================================
-   Tanvir Shahriar - Professional Portfolio Design System
-   Sleek Dark Theme | Linear & Vercel-inspired Glassmorphism
+   Tanvir Shahriar - Retro Stationery & Ruled Notebook Portfolio
+   Art Direction: Physical Notebook, Manila Folders, Translucent Tape,
+   Pixel Typography, Pastel Stickers, Polaroids & Figma Select Widgets
    ========================================================================== */
 
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Pixelify+Sans:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Silkscreen:wght@700&display=swap');
+@import url('assets/paper-craft.css');
+
 :root {
-  --bg-dark: #030712;
-  --bg-card: rgba(17, 24, 39, 0.7);
-  --bg-card-hover: rgba(31, 41, 55, 0.8);
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-hover: rgba(99, 102, 241, 0.4);
+  /* Canvas & Notebook Paper */
+  --paper-bg: #FBF9F5;
+  --paper-rule: #E5E0D8;
+  --paper-card: #F4EFE6;
   
-  --primary-blue: #3b82f6;
-  --primary-indigo: #6366f1;
-  --primary-purple: #8b5cf6;
-  --accent-cyan: #06b6d4;
-  --accent-emerald: #10b981;
+  /* Brand Inks & Primary Accents */
+  --ink-black: #141416;
+  --ink-muted: #666461;
+  --primary-yellow: #FFD028;
+  --folder-navy: #181E29;
+  --folder-yellow: #FFD028;
   
-  --gradient-brand: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 50%, #ec4899 100%);
-  --gradient-glow: linear-gradient(135deg, rgba(59, 130, 246, 0.15), rgba(139, 92, 246, 0.15));
-  --gradient-accent: linear-gradient(90deg, #38bdf8, #818cf8, #c084fc);
+  /* Pastel Sticker Tokens */
+  --pastel-pink: #FFBBD3;
+  --pastel-pink-border: #E694AF;
+  --pastel-mint: #B9E7CA;
+  --pastel-mint-border: #86CD9E;
+  --pastel-blue: #BADBFB;
+  --pastel-blue-border: #88BAEC;
+  --pastel-lavender: #D6C7FB;
+  --pastel-lavender-border: #B097F3;
+  --pastel-butter: #FFF3A8;
+  --pastel-butter-border: #ECCF69;
+  --sticker-orange: #FFB366;
   
-  --shadow-card: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
-  --shadow-glow: 0 0 30px -5px rgba(99, 102, 241, 0.35);
-  --shadow-blue-glow: 0 0 25px -5px rgba(59, 130, 246, 0.35);
+  /* Figma Blueprint Blue */
+  --figma-blue: #2563EB;
 }
 
 * {
@@ -33,383 +45,504 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 5rem;
+  background-color: var(--paper-bg);
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background-color: var(--bg-dark);
-  color: #f3f4f6;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  color: var(--ink-black);
+  background-color: var(--paper-bg);
+  min-height: 100vh;
   line-height: 1.6;
   overflow-x: hidden;
-  background-image: 
-    radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 60%),
-    radial-gradient(circle at 100% 50%, rgba(139, 92, 246, 0.05) 0%, transparent 50%),
-    radial-gradient(circle at 0% 100%, rgba(6, 182, 212, 0.05) 0%, transparent 50%);
-  background-attachment: fixed;
+  position: relative;
 }
 
-/* Custom Scrollbar */
+/* ==========================================================================
+   Ruled Notebook Paper Texture
+   ========================================================================== */
+.ruled-paper {
+  background-color: #FBF9F5;
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent,
+    transparent 31px,
+    #E5E0D8 31px,
+    #E5E0D8 32px
+  );
+  background-size: 100% 32px;
+}
+
+/* Custom Scrollbar in retro tone */
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 9px;
 }
 ::-webkit-scrollbar-track {
-  background: #030712;
+  background: #F4EFE6;
+  border-left: 1px solid #E5E0D8;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1f2937;
+  background: #D5CEC2;
   border-radius: 9999px;
-  border: 2px solid #030712;
+  border: 2px solid #F4EFE6;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #374151;
+  background: #B4ACA0;
 }
 
-/* Background Grid Pattern */
-.bg-grid-pattern {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+/* ==========================================================================
+   Typography Classes
+   ========================================================================== */
+.font-pixel {
+  font-family: 'Pixelify Sans', 'Silkscreen', monospace;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
-/* Modern Gradient Text */
-.gradient-text {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shine-gradient 6s linear infinite;
+.font-mono-code {
+  font-family: 'JetBrains Mono', monospace;
 }
 
-.gradient-text-subtle {
-  background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+.font-hand {
+  font-family: 'Caveat', cursive;
+  line-height: 1.25;
 }
 
-@keyframes shine-gradient {
-  to {
-    background-position: 200% center;
-  }
-}
-
-/* Glassmorphic Navbar */
-.glass-nav {
-  background: rgba(3, 7, 18, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
-}
-
-/* Navigation Links */
-.nav-link {
-  position: relative;
-  font-weight: 500;
-  font-size: 0.9375rem;
-  letter-spacing: -0.01em;
-  padding: 0.5rem 0.25rem;
-  color: #94a3b8;
-  transition: color 0.2s ease;
-}
-
-.nav-link::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: linear-gradient(90deg, #3b82f6, #8b5cf6);
+/* ==========================================================================
+   Top Navigation Capsule
+   ========================================================================== */
+.nav-capsule {
+  background: rgba(255, 255, 255, 0.94);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1.5px solid rgba(20, 20, 22, 0.18);
+  box-shadow: 0 4px 16px -2px rgba(20, 20, 22, 0.08);
   border-radius: 9999px;
-  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.nav-link:hover {
-  color: #f8fafc;
-}
-
-.nav-link:hover::after,
-.nav-link.active::after {
-  width: 100%;
-}
-
-.nav-link.active {
-  color: #f8fafc;
-}
-
-/* Hero Button Primary */
-.hero-btn-primary {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  font-weight: 600;
-  font-size: 0.95rem;
+.nav-pill {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 0.45rem 1rem;
   border-radius: 9999px;
-  background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%);
-  color: #ffffff;
-  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.hero-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 15px 35px -5px rgba(37, 99, 235, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.3);
-  color: #ffffff;
-}
-
-.hero-btn-primary:active {
-  transform: translateY(0);
-}
-
-/* Hero Button Secondary */
-.hero-btn-secondary {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  padding: 0.875rem 1.75rem;
-  font-weight: 600;
-  font-size: 0.95rem;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.03);
-  color: #e2e8f0;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(10px);
-  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: pointer;
-  text-decoration: none;
-}
-
-.hero-btn-secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-  border-color: rgba(99, 102, 241, 0.4);
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-/* Glass Cards */
-.glass-card {
-  background: rgba(15, 23, 42, 0.65);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.07);
-  border-radius: 1.25rem;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.glass-card:hover {
-  border-color: rgba(99, 102, 241, 0.3);
-  background: rgba(17, 24, 39, 0.85);
-  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.6), 0 0 30px -10px rgba(99, 102, 241, 0.15);
-  transform: translateY(-4px);
-}
-
-/* Project Cards */
-.project-card {
-  position: relative;
-  background: rgba(15, 23, 42, 0.7);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 1.25rem;
-  overflow: hidden;
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.project-card:hover {
-  transform: translateY(-6px);
-  border-color: rgba(99, 102, 241, 0.4);
-  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7), 0 0 35px -8px rgba(99, 102, 241, 0.2);
-}
-
-/* Ambient Blobs */
-.blob {
-  position: absolute;
-  border-radius: 9999px;
-  pointer-events: none;
-  filter: blur(100px);
-  z-index: 0;
-  opacity: 0.45;
-}
-
-.blob-1 {
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, rgba(37, 99, 235, 0.4) 0%, rgba(99, 102, 241, 0.1) 70%, transparent 100%);
-  top: 5%;
-  left: -15%;
-  animation: float-slow 16s ease-in-out infinite alternate;
-}
-
-.blob-2 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.35) 0%, rgba(236, 72, 153, 0.1) 70%, transparent 100%);
-  top: 25%;
-  right: -10%;
-  animation: float-slow 18s ease-in-out infinite alternate-reverse;
-}
-
-.blob-3 {
-  width: 450px;
-  height: 450px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, rgba(59, 130, 246, 0.05) 70%, transparent 100%);
-  bottom: 10%;
-  left: 20%;
-  animation: float-slow 20s ease-in-out infinite alternate;
-}
-
-@keyframes float-slow {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-30px) rotate(5deg); }
-  100% { transform: translateY(15px) rotate(-5deg); }
-}
-
-/* Typing Cursor */
-.typing-cursor::after {
-  content: '|';
-  color: #60a5fa;
-  animation: blink 0.9s infinite;
-  margin-left: 2px;
-  font-weight: 300;
-}
-
-@keyframes blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
-}
-
-/* Pulse Glow Badge */
-.live-pulse {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #10b981;
-  box-shadow: 0 0 0 rgba(16, 185, 129, 0.7);
-  animation: pulse-ring 2s infinite;
-}
-
-@keyframes pulse-ring {
-  0% {
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
-  }
-  70% {
-    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
-  }
-  100% {
-    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
-  }
-}
-
-/* Tech Chip */
-.tech-chip {
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
   display: inline-flex;
   align-items: center;
   gap: 0.375rem;
-  padding: 0.375rem 0.75rem;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  border-radius: 9999px;
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #cbd5e1;
-  transition: all 0.2s ease;
+  cursor: pointer;
+  color: var(--ink-muted);
+  border: 1.5px solid transparent;
+  white-space: nowrap;
 }
 
-.tech-chip:hover {
-  background: rgba(59, 130, 246, 0.1);
-  border-color: rgba(59, 130, 246, 0.3);
-  color: #93c5fd;
+@media (max-width: 640px) {
+  .nav-capsule {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .nav-pill {
+    padding: 0.35rem 0.5rem;
+    font-size: 0.65rem;
+    gap: 0.25rem;
+  }
+}
+
+.nav-pill:hover {
+  color: var(--ink-black);
+}
+
+.nav-pill.active {
+  background-color: var(--primary-yellow);
+  color: var(--ink-black);
+  border-color: var(--ink-black);
+  box-shadow: 0 2px 0 var(--ink-black);
+}
+
+/* ==========================================================================
+   Adhesive Frosted Masking Tape
+   ========================================================================== */
+.tape-strip {
+  position: absolute;
+  width: 76px;
+  height: 24px;
+  background: rgba(254, 252, 238, 0.78);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-left: 2px dashed rgba(185, 175, 155, 0.45);
+  border-right: 2px dashed rgba(185, 175, 155, 0.45);
+  box-shadow: 0 1px 3px rgba(20, 20, 22, 0.12);
+  z-index: 20;
+  pointer-events: none;
+}
+
+.tape-tl {
+  top: -10px;
+  left: -14px;
+  transform: rotate(-14deg);
+}
+
+.tape-tr {
+  top: -10px;
+  right: -14px;
+  transform: rotate(14deg);
+}
+
+.tape-bl {
+  bottom: -10px;
+  left: -14px;
+  transform: rotate(12deg);
+}
+
+.tape-br {
+  bottom: -10px;
+  right: -14px;
+  transform: rotate(-12deg);
+}
+
+.tape-top-center {
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-2deg);
+}
+
+.tape-bottom-center {
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%) rotate(2deg);
+}
+
+/* ==========================================================================
+   Polaroid Photo Frames
+   ========================================================================== */
+.polaroid-card {
+  background: #FFFFFF;
+  padding: 10px 10px 32px 10px;
+  border: 1.5px solid rgba(20, 20, 22, 0.14);
+  box-shadow: 0 10px 25px -4px rgba(20, 20, 22, 0.14), 0 3px 8px rgba(20, 20, 22, 0.06);
+  border-radius: 2px;
+  position: relative;
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.polaroid-card:hover {
+  transform: scale(1.03) rotate(0deg) !important;
+  box-shadow: 0 18px 36px -6px rgba(20, 20, 22, 0.22);
+  z-index: 30;
+}
+
+/* ==========================================================================
+   Manila File Folder Cards & Tabs
+   ========================================================================== */
+.folder-card-cream {
+  position: relative;
+  background: #F4EFE6;
+  border: 2px solid #141416;
+  border-radius: 0 12px 12px 12px;
+  box-shadow: 4px 6px 0px #141416;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.folder-card-cream:hover {
+  transform: translateY(-4px);
+  box-shadow: 6px 10px 0px #141416;
+}
+
+.folder-card-navy {
+  position: relative;
+  background: #181E29;
+  border: 2px solid #141416;
+  border-radius: 0 14px 14px 14px;
+  box-shadow: 5px 7px 0px #141416;
+  color: #FFFFFF;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.folder-card-navy:hover {
+  transform: translateY(-4px);
+  box-shadow: 7px 11px 0px #141416;
+}
+
+.folder-card-yellow {
+  position: relative;
+  background: #FFD028;
+  border: 2px solid #141416;
+  border-radius: 0 14px 14px 14px;
+  box-shadow: 5px 7px 0px #141416;
+  color: #141416;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.folder-card-yellow:hover {
+  transform: translateY(-4px);
+  box-shadow: 7px 11px 0px #141416;
+}
+
+/* Stepped Tab Top Header */
+.folder-tab-header {
+  position: absolute;
+  top: -30px;
+  left: -2px;
+  height: 31px;
+  padding: 4px 16px;
+  border: 2px solid #141416;
+  border-bottom: none;
+  border-radius: 8px 8px 0 0;
+  display: flex;
+  align-items: center;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  z-index: 5;
+}
+
+.folder-tab-cream {
+  background: #F4EFE6;
+  color: #141416;
+}
+
+.folder-tab-navy {
+  background: #181E29;
+  color: #FFFFFF;
+}
+
+.folder-tab-yellow {
+  background: #FFD028;
+  color: #141416;
+}
+
+.folder-tab-blue {
+  background: #3B82F6;
+  color: #FFFFFF;
+}
+
+/* ==========================================================================
+   Figma Vector Bounding Box with 8 Drag Handles
+   ========================================================================== */
+.figma-bounding-box {
+  position: relative;
+  border: 1.5px solid var(--figma-blue);
+  padding: 0.5rem 1.75rem;
+  display: inline-block;
+  user-select: none;
+}
+
+.figma-handle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #FFFFFF;
+  border: 1.5px solid var(--figma-blue);
+  pointer-events: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+}
+
+.handle-tl { top: -4.5px; left: -4.5px; }
+.handle-tr { top: -4.5px; right: -4.5px; }
+.handle-bl { bottom: -4.5px; left: -4.5px; }
+.handle-br { bottom: -4.5px; right: -4.5px; }
+.handle-tc { top: -4.5px; left: 50%; transform: translateX(-50%); }
+.handle-bc { bottom: -4.5px; left: 50%; transform: translateX(-50%); }
+.handle-ml { top: 50%; left: -4.5px; transform: translateY(-50%); }
+.handle-mr { top: 50%; right: -4.5px; transform: translateY(-50%); }
+
+/* ==========================================================================
+   Pastel Stickers & Tags
+   ========================================================================== */
+.sticker-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.85rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  border: 1.5px solid #141416;
+  box-shadow: 2px 2px 0px #141416;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  user-select: none;
+}
+
+.sticker-tag:hover {
+  transform: translateY(-2px);
+}
+
+.sticker-yellow {
+  background-color: var(--pastel-butter);
+  color: #141416;
+}
+
+.sticker-pink {
+  background-color: var(--pastel-pink);
+  color: #141416;
+}
+
+.sticker-mint {
+  background-color: var(--pastel-mint);
+  color: #141416;
+}
+
+.sticker-blue {
+  background-color: var(--pastel-blue);
+  color: #141416;
+}
+
+.sticker-lavender {
+  background-color: var(--pastel-lavender);
+  color: #141416;
+}
+
+.sticker-orange {
+  background-color: var(--sticker-orange);
+  color: #141416;
+}
+
+/* Scalloped Postage Stamp Border */
+.stamp-border {
+  background: var(--pastel-mint);
+  border: 2px dashed #141416;
+  border-radius: 8px;
+  box-shadow: 3px 3px 0px #141416;
+}
+
+/* ==========================================================================
+   Buttons
+   ========================================================================== */
+.btn-pixel-black {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background-color: #141416;
+  color: #FFFFFF;
+  border: 2px solid #141416;
+  border-radius: 9999px;
+  box-shadow: 3px 3px 0px rgba(20, 20, 22, 0.3);
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-pixel-black:hover {
+  background-color: #27272A;
+  transform: translateY(-2px);
+  box-shadow: 4px 5px 0px #141416;
+}
+
+.btn-pixel-black:active {
+  transform: translateY(0);
+  box-shadow: 1px 1px 0px #141416;
+}
+
+.btn-pixel-yellow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background-color: var(--primary-yellow);
+  color: #141416;
+  border: 2px solid #141416;
+  border-radius: 9999px;
+  box-shadow: 3px 3px 0px #141416;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-pixel-yellow:hover {
+  background-color: #FACC15;
+  transform: translateY(-2px);
+  box-shadow: 4px 5px 0px #141416;
+}
+
+.btn-pill-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.45rem 1.1rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  background-color: #FFFFFF;
+  color: #141416;
+  border: 1.5px solid #141416;
+  border-radius: 9999px;
+  box-shadow: 2px 2px 0px #141416;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.btn-pill-outline:hover {
+  background-color: var(--paper-card);
   transform: translateY(-1px);
 }
 
-/* Architecture Step / Flow Badge */
-.arch-step {
-  display: flex;
-  align-items: center;
-  padding: 0.75rem 1rem;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 0.75rem;
-  transition: all 0.2s ease;
+/* ==========================================================================
+   Playground Pinboard Cards
+   ========================================================================== */
+.pinboard-item {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+  cursor: grab;
 }
 
-.arch-step:hover {
-  border-color: rgba(99, 102, 241, 0.4);
-  background: rgba(30, 41, 59, 0.7);
+.pinboard-item:active {
+  cursor: grabbing;
 }
 
-/* Hamburger animation */
-.hamburger {
-  width: 2rem;
-  height: 2rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 5px;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 4px;
+.pinboard-item:hover {
+  transform: scale(1.04) rotate(0deg) !important;
+  z-index: 40 !important;
+  box-shadow: 0 20px 40px -8px rgba(20, 20, 22, 0.25);
 }
 
-.hamburger span {
-  display: block;
-  height: 2px;
-  width: 20px;
-  background: #cbd5e1;
-  border-radius: 9999px;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-.hamburger.open span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
-  background: #818cf8;
-}
-
-.hamburger.open span:nth-child(2) {
-  opacity: 0;
-  transform: scaleX(0);
-}
-
-.hamburger.open span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
-  background: #818cf8;
-}
-
-/* Toast Notification */
-#toast {
+/* ==========================================================================
+   Toast Notification & Modal
+   ========================================================================== */
+#toast-notification {
   position: fixed;
-  bottom: 2rem;
-  right: 2rem;
-  transform: translateY(120%);
+  bottom: 24px;
+  right: 24px;
+  transform: translateY(140%);
   opacity: 0;
   transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
   z-index: 100;
 }
 
-#toast.show {
+#toast-notification.show {
   transform: translateY(0);
   opacity: 1;
 }
 
-/* Responsive */
-@media (max-width: 640px) {
-  .blob-1, .blob-2, .blob-3 {
-    width: 280px;
-    height: 280px;
-  }
+/* Screen View Transition Animation */
+.view-container {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  display: none;
+}
+
+.view-container.active-view {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
 }

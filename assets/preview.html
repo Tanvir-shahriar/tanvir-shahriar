@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Asset System Preview — Tanvir Shahriar Scrapbook Portfolio</title>
+  
+  <!-- Google Fonts Embed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=JetBrains+Mono:wght@400;500;700&family=Pixelify+Sans:wght@700&family=Plus+Jakarta+Sans:wght@400;500;600&family=Silkscreen:wght@700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Paper Craft CSS -->
+  <link rel="stylesheet" href="paper-craft.css">
+  
+  <style>
+    body {
+      background-color: #FBF9F5;
+      color: #141416;
+    }
+  </style>
+</head>
+<body class="ruled-paper min-h-screen p-8 sm:p-12">
+  <div class="max-w-5xl mx-auto space-y-12">
+    
+    <!-- Header -->
+    <header class="flex items-center justify-between border-b-2 border-black/10 pb-6">
+      <div>
+        <span class="sticker sticker-yellow">Asset System v1.0</span>
+        <h1 class="font-pixel text-4xl mt-3">Paper & Sticker Asset Inventory</h1>
+        <p class="font-handwriting text-2xl text-stone-600 mt-1">all tactile components, doodles & curated photography // ready to use</p>
+      </div>
+      <div class="flex items-center gap-3">
+        <!-- Traffic light dots -->
+        <img src="svg/traffic-dots.svg" alt="traffic dots" width="60" height="16">
+        <span class="sticker sticker-mint">All 22 SVGs Valid</span>
+      </div>
+    </header>
+
+    <!-- 1. Doodles & Vector Stickers -->
+    <section class="space-y-4">
+      <h2 class="font-pixel text-2xl">1. Stickers & Hand-Drawn Doodles</h2>
+      <div class="bg-white/80 border-2 border-black/10 rounded-xl p-6 shadow-sm flex flex-wrap items-center gap-8">
+        <!-- Yellow Smiley -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-16 h-16">
+            <img src="svg/smiley-yellow.svg" alt="Yellow Smiley">
+          </div>
+          <span class="font-mono-meta text-xs">smiley-yellow</span>
+        </div>
+
+        <!-- Green Smiley -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12">
+            <img src="svg/smiley-green.svg" alt="Green Smiley">
+          </div>
+          <span class="font-mono-meta text-xs">smiley-green</span>
+        </div>
+
+        <!-- Pink Flower -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-14 h-14">
+            <img src="svg/flower-pink.svg" alt="Pink Flower">
+          </div>
+          <span class="font-mono-meta text-xs">flower-pink</span>
+        </div>
+
+        <!-- Sparkle -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-12 h-12">
+            <img src="svg/sparkle.svg" alt="Sparkle">
+          </div>
+          <span class="font-mono-meta text-xs">sparkle</span>
+        </div>
+
+        <!-- Starburst -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-14 h-14">
+            <img src="svg/starburst.svg" alt="Starburst">
+          </div>
+          <span class="font-mono-meta text-xs">starburst</span>
+        </div>
+
+        <!-- Arrows -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-16 h-10">
+            <img src="svg/arrow-curved.svg" alt="Curved Arrow">
+          </div>
+          <span class="font-mono-meta text-xs">arrow-curved</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-18 h-10">
+            <img src="svg/arrow-loop.svg" alt="Loop Arrow">
+          </div>
+          <span class="font-mono-meta text-xs">arrow-loop</span>
+        </div>
+
+        <!-- Retro Mac Computer Sticker -->
+        <div class="flex flex-col items-center gap-2">
+          <div class="w-20 h-24">
+            <img src="svg/retro-mac.svg" alt="Retro Mac">
+          </div>
+          <span class="font-mono-meta text-xs">retro-mac</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. Figma Bounding Box & Underlines -->
+    <section class="space-y-4">
+      <h2 class="font-pixel text-2xl">2. Figma Selection Box & Scribbles</h2>
+      <div class="bg-white/80 border-2 border-black/10 rounded-xl p-8 flex flex-wrap items-center gap-12">
+        <!-- Figma Bounding Box -->
+        <div class="figma-box">
+          <span class="handle h-tl"></span>
+          <span class="handle h-tc"></span>
+          <span class="handle h-tr"></span>
+          <span class="handle h-ml"></span>
+          <span class="handle h-mr"></span>
+          <span class="handle h-bl"></span>
+          <span class="handle h-bc"></span>
+          <span class="handle h-br"></span>
+          <span class="font-pixel text-3xl tracking-wide">CONTACT</span>
+        </div>
+
+        <!-- Scribble Underline -->
+        <div class="space-y-1">
+          <span class="font-body-copy text-xl font-bold">software that gets out of your way</span>
+          <div class="w-72 h-6">
+            <img src="svg/scribble-underline.svg" alt="Underline" class="w-full h-full">
+          </div>
+        </div>
+
+        <!-- Scribble Circle -->
+        <div class="relative inline-block px-4 py-2">
+          <span class="font-pixel text-2xl text-blue-600">WAYLINE</span>
+          <img src="svg/scribble-circle.svg" alt="Circle" class="absolute -inset-3 w-[120%] h-[150%] pointer-events-none">
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Masking Tape & Polaroid Cards -->
+    <section class="space-y-4">
+      <h2 class="font-pixel text-2xl">3. Masking Tape & Polaroids</h2>
+      <div class="flex flex-wrap items-center gap-8 pt-4">
+        
+        <!-- Author Polaroid with Tape -->
+        <div class="polaroid -rotate-3" style="width: 220px;">
+          <div class="tape tape-h tape-tl"></div>
+          <div class="tape tape-h tape-br"></div>
+          <img src="images/author-portrait.jpg" alt="Tanvir Shahriar">
+          <div class="caption">Tanvir // Creator</div>
+        </div>
+
+        <!-- Workspace Polaroid with Tape -->
+        <div class="polaroid rotate-2" style="width: 220px;">
+          <div class="tape tape-h tape-tr"></div>
+          <img src="images/desk-setup.jpg" alt="Desk setup">
+          <div class="caption">the lab // nyc</div>
+        </div>
+
+        <!-- Sunset Polaroid with Tape -->
+        <div class="polaroid -rotate-2" style="width: 220px;">
+          <div class="tape tape-h tape-tl tape-pink"></div>
+          <img src="images/sunset-silhouette.jpg" alt="Sunset">
+          <div class="caption">golden hour</div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 4. Folder Tabs & Cards -->
+    <section class="space-y-4">
+      <h2 class="font-pixel text-2xl">4. Folder Tab Geometries</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Manila Cream Folder -->
+        <div class="folder-container folder-cream">
+          <div class="folder-tab-badge">
+            <span class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></span>
+            • MAR 19, 2024
+          </div>
+          <div class="folder-body">
+            <div class="rounded-lg overflow-hidden border border-black/20 mb-4 h-48">
+              <img src="images/wayline-train.jpg" alt="Wayline" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-pixel text-2xl">Wayline</h3>
+            <p class="font-body-copy text-sm text-stone-700 mt-1">Making a whole city's transit app feel less like decoding a puzzle.</p>
+          </div>
+        </div>
+
+        <!-- Navy Folder -->
+        <div class="folder-container folder-navy">
+          <div class="folder-tab-badge">
+            <span class="w-2 h-2 rounded-full bg-blue-400 mr-2"></span>
+            • MAR 3, 2024
+          </div>
+          <div class="folder-body">
+            <div class="rounded-lg overflow-hidden border border-white/20 mb-4 h-48">
+              <img src="images/tandem-app.jpg" alt="Tandem" class="w-full h-full object-cover">
+            </div>
+            <h3 class="font-pixel text-2xl text-white">Tandem</h3>
+            <p class="font-body-copy text-sm text-stone-300 mt-1">Dark/light mode companion app for tracking fitness & music audio.</p>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 140 36" preserveAspectRatio="none" width="100%" height="100%">
+  <defs>
+    <filter id="tape-shadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.12" />
+    </filter>
+  </defs>
+  <!-- Jagged parchment tape body -->
+  <path d="M 8,2 L 132,2 L 135,6 L 131,10 L 137,15 L 132,20 L 138,25 L 133,30 L 136,34 L 8,34 L 5,30 L 9,25 L 4,20 L 8,15 L 3,10 L 7,6 Z" 
+        fill="#FBF6D9" fill-opacity="0.82" stroke="rgba(215, 205, 175, 0.4)" stroke-width="0.8" filter="url(#tape-shadow)" />
+  <!-- Subtle interior fibrous stripes -->
+  <line x1="15" y1="10" x2="125" y2="10" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="12 8" />
+  <line x1="20" y1="26" x2="120" y2="26" stroke="rgba(0,0,0,0.03)" stroke-width="1" stroke-dasharray="18 10" />
+</svg>

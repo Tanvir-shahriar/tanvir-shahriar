@@ -1,0 +1,194 @@
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+<defs>
+  <symbol id="smiley-yellow" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r="45" fill="#FFD028" stroke="#141416" stroke-width="4"/>
+  <!-- Eyes -->
+  <ellipse cx="36" cy="40" rx="4.5" ry="7.5" fill="#141416"/>
+  <ellipse cx="64" cy="40" rx="4.5" ry="7.5" fill="#141416"/>
+  <!-- Wide Smile -->
+  <path d="M 27 58 C 32 76, 68 76, 73 58" fill="none" stroke="#141416" stroke-width="4.5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="smiley-green" viewBox="0 0 60 60">
+    <circle cx="30" cy="30" r="26" fill="#B9E7CA" stroke="#141416" stroke-width="3"/>
+  <ellipse cx="22" cy="24" rx="2.8" ry="4.5" fill="#141416"/>
+  <ellipse cx="38" cy="24" rx="2.8" ry="4.5" fill="#141416"/>
+  <path d="M 18 36 C 22 47, 38 47, 42 36" fill="none" stroke="#141416" stroke-width="3" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="flower-pink" viewBox="0 0 80 80">
+    <!-- 8 Petals -->
+  <g fill="#FFBBD3" stroke="#141416" stroke-width="2.5">
+    <ellipse cx="40" cy="18" rx="9" ry="14" />
+    <ellipse cx="40" cy="62" rx="9" ry="14" />
+    <ellipse cx="18" cy="40" rx="14" ry="9" />
+    <ellipse cx="62" cy="40" rx="14" ry="9" />
+    <ellipse cx="24" cy="24" rx="14" ry="9" transform="rotate(45 24 24)" />
+    <ellipse cx="56" cy="56" rx="14" ry="9" transform="rotate(45 56 56)" />
+    <ellipse cx="56" cy="24" rx="14" ry="9" transform="rotate(-45 56 24)" />
+    <ellipse cx="24" cy="56" rx="14" ry="9" transform="rotate(-45 24 56)" />
+  </g>
+  <!-- Center button -->
+  <circle cx="40" cy="40" r="8.5" fill="#141416"/>
+  <circle cx="38" cy="38" r="2" fill="#FFFFFF" opacity="0.8"/>
+  </symbol>
+  <symbol id="tape-strip" viewBox="0 0 140 36">
+    <defs>
+    <filter id="tape-shadow" x="-5%" y="-10%" width="110%" height="130%">
+      <feDropShadow dx="0" dy="1.5" stdDeviation="1.5" flood-color="#000000" flood-opacity="0.12" />
+    </filter>
+  </defs>
+  <!-- Jagged parchment tape body -->
+  <path d="M 8,2 L 132,2 L 135,6 L 131,10 L 137,15 L 132,20 L 138,25 L 133,30 L 136,34 L 8,34 L 5,30 L 9,25 L 4,20 L 8,15 L 3,10 L 7,6 Z" 
+        fill="#FBF6D9" fill-opacity="0.82" stroke="rgba(215, 205, 175, 0.4)" stroke-width="0.8" filter="url(#tape-shadow)" />
+  <!-- Subtle interior fibrous stripes -->
+  <line x1="15" y1="10" x2="125" y2="10" stroke="rgba(255,255,255,0.45)" stroke-width="1.5" stroke-dasharray="12 8" />
+  <line x1="20" y1="26" x2="120" y2="26" stroke="rgba(0,0,0,0.03)" stroke-width="1" stroke-dasharray="18 10" />
+  </symbol>
+  <symbol id="arrow-curved" viewBox="0 0 100 60">
+    <path d="M 10,18 C 35,6 72,12 82,42" fill="none" stroke="#141416" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Arrow head -->
+  <path d="M 68,36 L 83,44 L 85,28" fill="none" stroke="#141416" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="arrow-loop" viewBox="0 0 120 70">
+    <path d="M 12,48 C 35,46 52,14 68,18 C 80,22 75,44 60,40 C 44,36 62,62 104,52" fill="none" stroke="#141416" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M 90,44 L 106,53 L 95,64" fill="none" stroke="#141416" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="arrow-swoop" viewBox="0 0 80 80">
+    <path d="M 18,16 Q 64,22 48,64" fill="none" stroke="#141416" stroke-width="3" stroke-linecap="round"/>
+  <path d="M 36,54 L 49,66 L 58,52" fill="none" stroke="#141416" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="sparkle" viewBox="0 0 60 60">
+    <path d="M 30,4 Q 30,30 4,30 Q 30,30 30,56 Q 30,30 56,30 Q 30,30 30,4 Z" 
+        fill="#D6C7FB" stroke="#141416" stroke-width="2.5" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="starburst" viewBox="0 0 80 80">
+    <g stroke="#141416" stroke-width="2.8" stroke-linecap="round">
+    <line x1="40" y1="8" x2="40" y2="72" />
+    <line x1="8" y1="40" x2="72" y2="40" />
+    <line x1="17" y1="17" x2="63" y2="63" />
+    <line x1="17" y1="63" x2="63" y2="17" />
+    <circle cx="40" cy="40" r="5" fill="#FFD028" stroke="#141416" stroke-width="2"/>
+  </g>
+  </symbol>
+  <symbol id="scribble-underline" viewBox="0 0 240 28">
+    <path d="M 6,12 Q 35,4 65,14 T 125,12 T 185,15 T 234,10" fill="none" stroke="#FFD028" stroke-width="4" stroke-linecap="round"/>
+  <path d="M 230,18 Q 175,24 120,18 T 12,22" fill="none" stroke="#FFD028" stroke-width="2.5" stroke-linecap="round" opacity="0.75"/>
+  </symbol>
+  <symbol id="scribble-circle" viewBox="0 0 180 80">
+    <path d="M 24,42 C 18,22 62,10 115,14 C 158,17 166,36 154,58 C 142,74 74,78 30,66 C 12,56 16,32 50,24 C 85,16 142,20 162,38" 
+        fill="none" stroke="#141416" stroke-width="2.5" stroke-linecap="round"/>
+  </symbol>
+  <symbol id="retro-mac" viewBox="0 0 160 210">
+    <defs>
+    <!-- White sticker die-cut outline filter -->
+    <filter id="sticker-cut" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="4" flood-color="#000000" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <g filter="url(#sticker-cut)">
+    <!-- Die-cut white border sticker backing -->
+    <path d="M 22,12 L 138,12 Q 146,12 146,20 L 146,190 Q 146,198 138,198 L 22,198 Q 14,198 14,190 L 14,20 Q 14,12 22,12 Z" 
+          fill="#FFFFFF" stroke="#E5E0D8" stroke-width="1"/>
+
+    <!-- Main Beige Computer Body -->
+    <rect x="20" y="18" width="120" height="172" rx="6" fill="#E5DFD1" stroke="#141416" stroke-width="3"/>
+    
+    <!-- Recessed CRT Monitor Bevel -->
+    <rect x="30" y="28" width="100" height="84" rx="8" fill="#6E6B65" stroke="#141416" stroke-width="2.5"/>
+    <!-- CRT Curved Screen Glass -->
+    <rect x="34" y="32" width="92" height="76" rx="6" fill="#222428" stroke="#141416" stroke-width="1.5"/>
+    
+    <!-- Screen Glare / Reflection -->
+    <path d="M 36,34 L 75,34 L 50,106 L 36,106 Z" fill="#FFFFFF" opacity="0.06"/>
+    
+    <!-- Cursive "hello." text on screen -->
+    <path d="M 48,76 C 48,58 53,52 55,52 C 57,52 57,60 57,74 M 57,64 C 62,56 68,58 68,66 L 68,74 M 73,68 C 73,60 81,60 81,67 C 81,69 73,69 73,71 C 73,75 80,75 82,73 M 87,52 L 87,74 M 93,52 L 93,74 M 99,66 C 99,60 107,60 107,67 C 107,75 99,75 99,66 Z M 111,73 A 1.5,1.5 0 1,1 111,73.1" 
+          fill="none" stroke="#F5F3E9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+
+    <!-- Rainbow Apple Logo Badge -->
+    <rect x="32" y="128" width="8" height="10" rx="1" fill="#FFD028" stroke="#141416" stroke-width="1"/>
+    <line x1="32" y1="130" x2="40" y2="130" stroke="#48BB78" stroke-width="1.5"/>
+    <line x1="32" y1="132" x2="40" y2="132" stroke="#ED8936" stroke-width="1.5"/>
+    <line x1="32" y1="134" x2="40" y2="134" stroke="#E53E3E" stroke-width="1.5"/>
+    <line x1="32" y1="136" x2="40" y2="136" stroke="#9F7AEA" stroke-width="1.5"/>
+
+    <!-- Horizontal 3.5" Floppy Disk Drive Slot -->
+    <rect x="82" y="128" width="44" height="5" rx="1.5" fill="#141416"/>
+    <rect x="116" y="136" width="10" height="3" rx="0.5" fill="#8E8B83" stroke="#141416" stroke-width="0.8"/>
+
+    <!-- Bottom Recessed Grille Lines -->
+    <g stroke="#141416" stroke-width="1.5" stroke-linecap="round">
+      <line x1="32" y1="172" x2="128" y2="172"/>
+      <line x1="32" y1="177" x2="128" y2="177"/>
+    </g>
+  </g>
+  </symbol>
+  <symbol id="traffic-dots" viewBox="0 0 60 16">
+    <circle cx="10" cy="8" r="5.5" fill="#FF5F56" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
+  <circle cx="30" cy="8" r="5.5" fill="#FFBD2E" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
+  <circle cx="50" cy="8" r="5.5" fill="#27C93F" stroke="rgba(0,0,0,0.15)" stroke-width="1"/>
+  </symbol>
+  <symbol id="folder-tab-left" viewBox="0 0 400 48">
+    <path d="M 0,48 L 0,8 Q 0,0 8,0 L 140,0 Q 148,0 154,6 L 174,42 Q 177,48 184,48 L 400,48" 
+        fill="currentColor" stroke="#141416" stroke-width="2.5" stroke-linejoin="round"/>
+  </symbol>
+  <symbol id="stamp-border" viewBox="0 0 160 120">
+    <defs>
+    <pattern id="scallop" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="8" cy="0" r="3.5" fill="#FBF9F5"/>
+    </pattern>
+  </defs>
+  <rect x="4" y="4" width="152" height="112" rx="4" fill="#B9E7CA" stroke="#141416" stroke-width="2"/>
+  <!-- Top/Bottom perforation dots -->
+  <g fill="#141416">
+    <circle cx="16" cy="4" r="3"/>
+    <circle cx="32" cy="4" r="3"/>
+    <circle cx="48" cy="4" r="3"/>
+    <circle cx="64" cy="4" r="3"/>
+    <circle cx="80" cy="4" r="3"/>
+    <circle cx="96" cy="4" r="3"/>
+    <circle cx="112" cy="4" r="3"/>
+    <circle cx="128" cy="4" r="3"/>
+    <circle cx="144" cy="4" r="3"/>
+    
+    <circle cx="16" cy="116" r="3"/>
+    <circle cx="32" cy="116" r="3"/>
+    <circle cx="48" cy="116" r="3"/>
+    <circle cx="64" cy="116" r="3"/>
+    <circle cx="80" cy="116" r="3"/>
+    <circle cx="96" cy="116" r="3"/>
+    <circle cx="112" cy="116" r="3"/>
+    <circle cx="128" cy="116" r="3"/>
+    <circle cx="144" cy="116" r="3"/>
+  </g>
+  </symbol>
+  <symbol id="logo-dji" viewBox="0 0 80 32">
+    <path d="M 14,8 L 22,8 C 28,8 30,12 30,16 C 30,20 28,24 22,24 L 14,24 Z M 19,12 L 19,20 L 22,20 C 24,20 25,18 25,16 C 25,14 24,12 22,12 Z M 35,8 L 40,8 L 40,20 C 40,23 38,24 35,24 C 33,24 32,23 32,22 L 35,20 C 35,20.5 35.5,21 36.5,21 C 37.5,21 37.5,20 37.5,19 L 37.5,8 Z M 46,8 L 50,8 L 50,24 L 46,24 Z" fill="#141416"/>
+  </symbol>
+  <symbol id="logo-f1" viewBox="0 0 80 32">
+    <path d="M 14,24 L 20,8 L 32,8 L 30,13 L 23,13 L 21,17 L 27,17 L 25,22 L 19,22 L 18,24 Z" fill="#E10600"/>
+  <path d="M 32,8 L 38,8 L 32,24 L 26,24 Z" fill="#141416"/>
+  <path d="M 40,9 L 38,13 L 42,13 L 40,17 L 36,17 L 34,21 L 44,21 L 43,24 L 30,24 L 38,8 L 46,8 Z" fill="#E10600" opacity="0.9"/>
+  </symbol>
+  <symbol id="logo-slack" viewBox="0 0 32 32">
+    <path d="M 7,12 C 5.3,12 4,13.3 4,15 C 4,16.7 5.3,18 7,18 L 10,18 L 10,15 C 10,13.3 8.7,12 7,12 Z" fill="#E01E5A"/>
+  <path d="M 12,7 C 12,5.3 13.3,4 15,4 C 16.7,4 18,5.3 18,7 L 18,17 C 18,18.7 16.7,20 15,20 C 13.3,20 12,18.7 12,17 Z" fill="#36C5F0"/>
+  <path d="M 25,20 C 26.7,20 28,18.7 28,17 C 28,15.3 26.7,14 25,14 L 22,14 L 22,17 C 22,18.7 23.3,20 25,20 Z" fill="#2EB67D"/>
+  <path d="M 20,25 C 20,26.7 18.7,28 17,28 C 15.3,28 14,26.7 14,25 L 14,15 C 14,13.3 15.3,12 17,12 C 18.7,12 20,13.3 20,15 Z" fill="#ECB22E"/>
+  </symbol>
+  <symbol id="logo-nike" viewBox="0 0 80 32">
+    <path d="M 12,19 C 24,24 45,26 68,9 C 61,16 46,27 28,27 C 18,27 12,23 12,19 Z" fill="#141416"/>
+  </symbol>
+  <symbol id="logo-honda" viewBox="0 0 40 32">
+    <path d="M 6,6 C 6,4 34,4 34,6 L 31,24 C 31,27 28,28 25,28 C 22,28 20,27 20,27 C 20,27 18,28 15,28 C 12,28 9,27 9,24 Z M 13,8 L 14,24 C 16,24.5 18,24.5 19,22 L 19,8 Z M 21,8 L 21,22 C 22,24.5 24,24.5 26,24 L 27,8 Z" fill="#141416"/>
+  </symbol>
+  <symbol id="logo-typescript" viewBox="0 0 32 32">
+    <rect width="32" height="32" rx="4" fill="#3178C6"/>
+  <path d="M 14,10 L 8,10 L 8,8 L 20,8 L 20,10 L 14,10 L 14,24 L 11,24 L 11,10 Z M 22,17 C 22,14 28,13 28,16 C 28,19 22,18 22,22 C 22,25 28,25 29,22 L 27,21 C 26,23 24,23 24,21 C 24,19 30,19 30,16 C 30,12 24,12 22,14 Z" fill="#FFFFFF"/>
+  </symbol>
+  <symbol id="logo-nextjs" viewBox="0 0 32 32">
+    <circle cx="16" cy="16" r="16" fill="#000000"/>
+  <path d="M 10,8 L 12.5,8 L 12.5,24 L 10,24 Z M 21,8 L 23.5,8 L 23.5,24 L 21,24 Z M 12.5,8 L 23.5,24 L 21,24 L 10,8 Z" fill="#FFFFFF"/>
+  </symbol>
+</defs>
+</svg>
