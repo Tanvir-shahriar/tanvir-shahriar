@@ -75,7 +75,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // Handle hash change from browser navigation
     function handleHashRoute() {
         const hash = window.location.hash.replace('#', '') || 'home';
-        if (hash.startsWith('project/')) {
+        if (hash === 'stack' || hash === 'techstack' || hash === 'arsenal' || hash === 'skills') {
+            switchView('about', false);
+            setTimeout(() => {
+                document.getElementById('tech-stack-section')?.scrollIntoView({ behavior: 'smooth' });
+            }, 120);
+        } else if (hash.startsWith('project/')) {
             const projectId = hash.replace('project/', '');
             loadProjectDetail(projectId, false);
         } else if (views[hash]) {

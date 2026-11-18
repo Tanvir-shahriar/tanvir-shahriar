@@ -234,13 +234,15 @@
                     </div>
 
                     <!-- Skills Pill Bar (Bottom of card) -->
-                    <div class="mt-8 pt-6 border-t border-dashed border-slate-300 flex flex-wrap items-center justify-center gap-3">
-                        <span class="sticker-tag sticker-yellow">System Design</span>
-                        <span class="sticker-tag sticker-mint">Next.js & TypeScript</span>
-                        <span class="sticker-tag sticker-pink">AI & LangGraph</span>
-                        <span class="sticker-tag sticker-lavender">Multi-Tenant SaaS ✦</span>
-                        <button onclick="switchView('about')" class="w-8 h-8 rounded-full bg-[#BADBFB] border-1.5 border-black flex items-center justify-center font-bold text-xs hover:scale-110 transition-transform" title="View full backstory in About">
-                            &gt;&gt;
+                    <div class="mt-8 pt-6 border-t border-dashed border-slate-300 flex flex-wrap items-center justify-between gap-3">
+                        <div class="flex flex-wrap items-center gap-2">
+                            <span class="sticker-tag sticker-yellow">System Design</span>
+                            <span class="sticker-tag sticker-mint">Next.js & TypeScript</span>
+                            <span class="sticker-tag sticker-pink">AI & LangGraph</span>
+                            <span class="sticker-tag sticker-lavender">Multi-Tenant SaaS ✦</span>
+                        </div>
+                        <button onclick="switchView('about'); setTimeout(() => document.getElementById('tech-stack-section')?.scrollIntoView({ behavior: 'smooth' }), 120);" class="btn-pixel-black text-xs py-1.5 px-3 inline-flex items-center space-x-1" title="View Full Engineering Arsenal">
+                            <span>VIEW FULL ARSENAL →</span>
                         </button>
                     </div>
 
@@ -440,11 +442,17 @@
             <!-- Paper-Framed Document Section with Left Margin Protruding Tabs -->
             <div class="relative grid lg:grid-cols-12 gap-8 items-start">
                 
-                <!-- Left Margin Protruding Tabs (Binder style) -->
-                <div class="hidden lg:flex flex-col space-y-3 absolute -left-12 top-16 z-10">
-                    <span class="sticker-tag sticker-pink text-xs font-bold py-1 px-2.5 shadow-sm">01</span>
-                    <span class="sticker-tag sticker-yellow text-xs font-bold py-1 px-2.5 shadow-sm">02</span>
-                    <span class="sticker-tag sticker-blue text-xs font-bold py-1 px-2.5 shadow-sm">03</span>
+                <!-- Left Margin Protruding Tabs (Binder style with quick anchors) -->
+                <div class="hidden lg:flex flex-col space-y-2 absolute -left-24 top-14 z-10 font-mono text-[10px] font-bold">
+                    <button onclick="window.scrollTo({ top: 0, behavior: 'smooth' })" class="sticker-tag sticker-yellow py-1 px-2.5 shadow-sm hover:scale-105 transition-transform text-left" title="Jump to Back Story">
+                        01 BIO
+                    </button>
+                    <button onclick="document.getElementById('tech-stack-section')?.scrollIntoView({ behavior: 'smooth' })" class="sticker-tag sticker-pink py-1 px-2.5 shadow-sm hover:scale-105 transition-transform text-left" title="Jump to Tech Stack">
+                        02 ARSENAL
+                    </button>
+                    <button onclick="document.getElementById('competencies-pad')?.scrollIntoView({ behavior: 'smooth' })" class="sticker-tag sticker-blue py-1 px-2.5 shadow-sm hover:scale-105 transition-transform text-left" title="Jump to Engineering Pillars">
+                        03 PILLARS
+                    </button>
                 </div>
 
                 <!-- Main Biography Document Card -->
@@ -528,6 +536,238 @@
                 </div>
 
             </div>
+
+            <!-- Section 2.2: Tech Stack & Engineering Arsenal (From README) -->
+            <section id="tech-stack-section" class="pt-8 space-y-8">
+                
+                <!-- Section Header -->
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b-2 border-dashed border-slate-300 pb-4">
+                    <div>
+                        <span class="font-hand text-2xl text-ink-muted block mb-1">engineering toolbox //</span>
+                        <h2 class="font-pixel text-4xl sm:text-6xl text-ink-black">TECH STACK & ARSENAL</h2>
+                    </div>
+                    <p class="font-mono text-xs text-ink-muted max-w-sm sm:text-right">
+                        Clean code, type-safe APIs, layered architectures & agentic AI workflows.
+                    </p>
+                </div>
+
+                <!-- 6-Category Stationery Arsenal Grid -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+                    
+                    <!-- 1. Languages & Core (Blue Folder Tab) -->
+                    <div class="folder-card-blue p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="folder-tab-header folder-tab-blue">
+                                <span>01 // CORE & LANGUAGES</span>
+                            </div>
+                            <div class="flex items-center space-x-2 my-2">
+                                <span class="font-hand text-lg text-ink-black">foundational syntax //</span>
+                            </div>
+                            <p class="text-xs font-mono text-slate-600 mb-4 leading-relaxed">
+                                Strict static typing, normalized SQL querying, and semantic web standards.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="sticker-tag sticker-blue text-xs font-bold">● TypeScript</span>
+                                <span class="sticker-tag sticker-yellow text-xs font-bold">● JavaScript (ESNext)</span>
+                                <span class="sticker-tag sticker-mint text-xs font-bold">● SQL (PostgreSQL)</span>
+                                <span class="sticker-tag sticker-orange text-xs font-bold">● HTML5</span>
+                                <span class="sticker-tag sticker-lavender text-xs font-bold">● CSS3</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-t border-black/10 text-[11px] font-mono text-slate-600">
+                            <span>Focus:</span> Strict typing, zero-runtime bugs
+                        </div>
+                    </div>
+
+                    <!-- 2. Frontend Engineering (Manila Cream) -->
+                    <div class="folder-card-cream p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="folder-tab-header folder-tab-cream">
+                                <span>02 // FRONTEND</span>
+                            </div>
+                            <div class="flex items-center space-x-2 my-2">
+                                <span class="font-hand text-lg text-ink-black">client & SSR //</span>
+                            </div>
+                            <p class="text-xs font-mono text-ink-muted mb-4 leading-relaxed">
+                                Component-driven architectures, server-rendered views, and optimistic state.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="sticker-tag sticker-yellow text-xs font-bold">● Next.js (App Router)</span>
+                                <span class="sticker-tag sticker-blue text-xs font-bold">● React 18</span>
+                                <span class="sticker-tag sticker-mint text-xs font-bold">● Tailwind CSS</span>
+                                <span class="sticker-tag sticker-lavender text-xs font-bold">● Redux Toolkit</span>
+                                <span class="sticker-tag sticker-pink text-xs font-bold">● TanStack Query</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-t border-black/10 text-[11px] font-mono text-ink-muted">
+                            <span>Focus:</span> Fast FCP, SEO snapshots, fluid UX
+                        </div>
+                    </div>
+
+                    <!-- 3. Backend & Architecture (Yellow Folder) -->
+                    <div class="folder-card-yellow p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="folder-tab-header folder-tab-yellow">
+                                <span>03 // BACKEND & API</span>
+                            </div>
+                            <div class="flex items-center space-x-2 my-2">
+                                <span class="font-hand text-lg text-ink-black">modular services //</span>
+                            </div>
+                            <p class="text-xs font-mono text-ink-black mb-4 leading-relaxed">
+                                Route → Controller → Service → Repository pattern with strict contracts.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="sticker-tag bg-white text-xs font-bold">● Node.js</span>
+                                <span class="sticker-tag bg-white text-xs font-bold">● Express.js</span>
+                                <span class="sticker-tag bg-white text-xs font-bold">● NestJS</span>
+                                <span class="sticker-tag bg-white text-xs font-bold">● Zod Validation</span>
+                                <span class="sticker-tag bg-white text-xs font-bold">● JWT & RBAC</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-t border-black/15 text-[11px] font-mono text-ink-black">
+                            <span>Pattern:</span> Layered modular boundaries
+                        </div>
+                    </div>
+
+                    <!-- 4. Databases, ORMs & Caching (Dark Navy) -->
+                    <div class="folder-card-navy p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="folder-tab-header folder-tab-navy">
+                                <span>04 // DATA & ORMS</span>
+                            </div>
+                            <div class="flex items-center space-x-2 my-2">
+                                <span class="font-hand text-lg text-white">storage & persistence //</span>
+                            </div>
+                            <p class="text-xs font-mono text-slate-300 mb-4 leading-relaxed">
+                                Relational modeling, atomic row locks, and distributed sub-millisecond caching.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="sticker-tag sticker-blue text-xs font-bold">● PostgreSQL</span>
+                                <span class="sticker-tag sticker-mint text-xs font-bold">● MongoDB</span>
+                                <span class="sticker-tag sticker-yellow text-xs font-bold">● Drizzle ORM</span>
+                                <span class="sticker-tag sticker-lavender text-xs font-bold">● Prisma</span>
+                                <span class="sticker-tag sticker-pink text-xs font-bold">● Mongoose</span>
+                                <span class="sticker-tag sticker-orange text-xs font-bold">● Redis Cache</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-t border-white/10 text-[11px] font-mono text-slate-300">
+                            <span>Strategy:</span> 3NF schemas, FOR UPDATE locks
+                        </div>
+                    </div>
+
+                    <!-- 5. AI Engineering & Agentic Workflows (Mint Green) -->
+                    <div class="folder-card-mint p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="folder-tab-header folder-tab-mint">
+                                <span>05 // AI & AGENTS</span>
+                            </div>
+                            <div class="flex items-center space-x-2 my-2">
+                                <span class="font-hand text-lg text-emerald-950">intelligent systems //</span>
+                            </div>
+                            <p class="text-xs font-mono text-emerald-950 mb-4 leading-relaxed">
+                                Stateful multi-agent graphs, citation-backed RAG, and vector embeddings.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="sticker-tag bg-white text-xs font-bold">● LangGraph</span>
+                                <span class="sticker-tag bg-white text-xs font-bold">● LangChain</span>
+                                <span class="sticker-tag bg-white text-xs font-bold">● pgvector Vector DB</span>
+                                <span class="sticker-tag bg-white text-xs font-bold">● OpenAI LLMs & RAG</span>
+                                <span class="sticker-tag bg-white text-xs font-bold">● Multi-Agent Tooling</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-t border-black/10 text-[11px] font-mono text-emerald-950">
+                            <span>Focus:</span> Deterministic agent routing
+                        </div>
+                    </div>
+
+                    <!-- 6. DevOps, Cloud & Testing (Manila Cream) -->
+                    <div class="folder-card-cream p-6 flex flex-col justify-between">
+                        <div>
+                            <div class="folder-tab-header folder-tab-cream">
+                                <span>06 // DEVOPS & CLOUD</span>
+                            </div>
+                            <div class="flex items-center space-x-2 my-2">
+                                <span class="font-hand text-lg text-ink-black">delivery & infra //</span>
+                            </div>
+                            <p class="text-xs font-mono text-ink-muted mb-4 leading-relaxed">
+                                Container orchestration, automated test suites, and zero-downtime CI/CD.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="sticker-tag sticker-blue text-xs font-bold">● Docker & Compose</span>
+                                <span class="sticker-tag sticker-orange text-xs font-bold">● AWS (EC2, S3, IAM)</span>
+                                <span class="sticker-tag sticker-mint text-xs font-bold">● NGINX Proxy</span>
+                                <span class="sticker-tag sticker-yellow text-xs font-bold">● GitHub Actions</span>
+                                <span class="sticker-tag sticker-pink text-xs font-bold">● Vitest & Supertest</span>
+                            </div>
+                        </div>
+                        <div class="pt-3 border-t border-black/10 text-[11px] font-mono text-ink-muted">
+                            <span>Pipeline:</span> Automated lint, test & deploy
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Core Engineering Competencies Sticky Legal Pad -->
+                <div id="competencies-pad" class="bg-[#FFFCE6] border-2 border-ink-black rounded-xl p-6 sm:p-8 shadow-[5px_7px_0px_#141416] relative mt-10">
+                    <span class="tape-strip tape-tl !w-24"></span>
+                    <span class="tape-strip tape-tr !w-24"></span>
+                    
+                    <div class="border-b-2 border-black/10 pb-4 mb-6">
+                        <span class="sticker-tag sticker-yellow text-xs font-bold mb-2">SYSTEM DESIGN PILLARS</span>
+                        <h3 class="font-pixel text-3xl sm:text-4xl text-ink-black mt-1">Core Engineering Competencies</h3>
+                        <p class="font-hand text-lg text-ink-muted mt-1">principles that drive production reliability //</p>
+                    </div>
+
+                    <div class="grid md:grid-cols-2 gap-6 font-mono-code text-xs">
+                        
+                        <!-- Pillar 1 -->
+                        <div class="bg-white p-4 rounded-lg border border-black/15 shadow-sm space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-6 h-6 rounded bg-[#FDE047] border border-black flex items-center justify-center font-bold text-xs">01</span>
+                                <h4 class="font-bold text-sm text-ink-black">Multi-Tenant SaaS Engineering</h4>
+                            </div>
+                            <p class="text-ink-muted leading-relaxed">
+                                Workspace isolation, team invitation workflows, granular RBAC (Owner/Admin/Editor), refresh token rotation, and subscription/quota gating.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 2 -->
+                        <div class="bg-white p-4 rounded-lg border border-black/15 shadow-sm space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-6 h-6 rounded bg-[#86EFAC] border border-black flex items-center justify-center font-bold text-xs">02</span>
+                                <h4 class="font-bold text-sm text-ink-black">Production AI & RAG Pipelines</h4>
+                            </div>
+                            <p class="text-ink-muted leading-relaxed">
+                                Document chunking, vector embeddings, hybrid semantic retrieval (<code class="bg-slate-100 px-1 py-0.5 rounded">pgvector</code>), citation-backed answers, and stateful multi-agent workflows with <code class="bg-slate-100 px-1 py-0.5 rounded">LangGraph</code>.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 3 -->
+                        <div class="bg-white p-4 rounded-lg border border-black/15 shadow-sm space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-6 h-6 rounded bg-[#93C5FD] border border-black flex items-center justify-center font-bold text-xs">03</span>
+                                <h4 class="font-bold text-sm text-ink-black">Database Design & Query Tuning</h4>
+                            </div>
+                            <p class="text-ink-muted leading-relaxed">
+                                Relational 3NF schema modeling, index optimization with <code class="bg-slate-100 px-1 py-0.5 rounded">EXPLAIN ANALYZE</code>, database transactions, <code class="bg-slate-100 px-1 py-0.5 rounded">FOR UPDATE</code> row locking, and NoSQL aggregation pipelines.
+                            </p>
+                        </div>
+
+                        <!-- Pillar 4 -->
+                        <div class="bg-white p-4 rounded-lg border border-black/15 shadow-sm space-y-2">
+                            <div class="flex items-center space-x-2">
+                                <span class="w-6 h-6 rounded bg-[#F9A8D4] border border-black flex items-center justify-center font-bold text-xs">04</span>
+                                <h4 class="font-bold text-sm text-ink-black">Containerized Cloud & CI/CD</h4>
+                            </div>
+                            <p class="text-ink-muted leading-relaxed">
+                                Multi-container orchestration with Docker Compose, NGINX reverse proxies, AWS infrastructure (EC2, S3, IAM), and automated GitHub Actions test and deployment pipelines.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
 
         </div>
 
