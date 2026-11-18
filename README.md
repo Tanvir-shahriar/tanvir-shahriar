@@ -1,7 +1,5 @@
 <div align="center">
 
-<img src="./assets/banner.jpg" alt="Tanvir Shahriar Banner" width="100%" />
-
 # Hi 👋, I'm Tanvir Shahriar
 ### Full-Stack Software Engineer | MERN, Next.js, TypeScript & AI Engineering
 
