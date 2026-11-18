@@ -1,6 +1,8 @@
 <div align="center">
 
-# Hi 👋, I'm A Z M Tanvir Shahriar
+<img src="./assets/banner.jpg" alt="Tanvir Shahriar Banner" width="100%" />
+
+# Hi 👋, I'm Tanvir Shahriar
 ### Full-Stack Software Engineer | MERN, Next.js, TypeScript & AI Engineering
 
 [![Portfolio](https://img.shields.io/badge/Portfolio-000000?style=for-the-badge&logo=vercel&logoColor=white)](https://your-portfolio-link.com)
